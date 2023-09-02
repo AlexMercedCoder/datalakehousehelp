@@ -1,6 +1,6 @@
 ---
-title: Example Reference
-description: A reference page in my new Starlight docs site.
+title: What is a Table Format?
+description: A Page describing what is a data lakehouse
 ---
 
 Reference pages are ideal for outlining how things work in terse and clear terms.
