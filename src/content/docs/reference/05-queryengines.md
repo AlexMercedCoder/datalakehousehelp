@@ -3,7 +3,7 @@ title: What is a Query Engine?
 description: A Page describing are data lakehouse query engines
 ---
 
-query engines stand as the driving force behind unlocking the potential of the data lakehouse architecture. These engines play a pivotal role in transforming raw data stored within data lakes into actionable insights, enabling organizations to harness the full value of their data assets. In this section, we explore the significance of query engines in the data lakehouse ecosystem and highlight Dremio as a prime example, showcasing its unique features and contributions.
+Query engines stand as the driving force behind unlocking the potential of the data lakehouse architecture. These engines play a pivotal role in transforming raw data stored within data lakes into actionable insights, enabling organizations to harness the full value of their data assets. In this section, we explore the significance of query engines in the data lakehouse ecosystem and highlight Dremio as a prime example, showcasing its unique features and contributions.
 
 ### The Role of Query Engines: Turning Data into Insights
 

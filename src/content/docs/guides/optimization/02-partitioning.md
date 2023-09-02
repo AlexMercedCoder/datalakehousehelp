@@ -1,4 +1,4 @@
 ---
-title: Clustering Data
-description: A guide to what is clustering and best practices.
+title: Partitioning Data
+description: A guide to what is paritioning and best practices.
 ---
