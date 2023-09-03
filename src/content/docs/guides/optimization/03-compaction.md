@@ -48,7 +48,7 @@ Compaction emerges as a pivotal strategy for enhancing storage efficiency and qu
 ## Further reading
 
 - [Blog: Maintaining Iceberg Tables – Compaction, Expiring Snapshots, and More](https://www.dremio.com/blog/maintaining-iceberg-tables-compaction-expiring-snapshots-and-more/)
-- []()
+- [Blog: Compaction in Apache Iceberg: Fine-Tuning Your Iceberg Table’s Data Files](https://www.dremio.com/blog/compaction-in-apache-iceberg-fine-tuning-your-iceberg-tables-data-files/)
 - []()
 - []()
 - []()

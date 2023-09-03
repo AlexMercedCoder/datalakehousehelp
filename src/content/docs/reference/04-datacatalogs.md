@@ -44,10 +44,11 @@ In conclusion, data catalogs are indispensable in modern data lakehouse environm
 
 #### About Nessie
 - [Blog: A Notebook for getting started with Project Nessie, Apache Iceberg, and Apache Spark](https://www.dremio.com/blog/a-notebook-for-getting-started-with-project-nessie-apache-iceberg-and-apache-spark/)
+- [Blog: Getting Started with Project Nessie, Apache Iceberg, and Apache Spark Using Docker](https://www.dremio.com/blog/getting-started-with-project-nessie-apache-iceberg-and-apache-spark-using-docker/)
 
 #### Data Catalog Services
 - Dremio Arctic (Nessie Based)
-  - [Docs: Dremio Arctic Docs]()
-  - [Blog: Multi-Table Transactions on the Lakehouse – Enabled by Dremio Arctic]()
-  - [Blog: ]()
-  - []()
+  - [Docs: Dremio Arctic Docs](https://docs.dremio.com/cloud/arctic/)
+  - [Blog: Multi-Table Transactions on the Lakehouse – Enabled by Dremio Arctic](https://www.dremio.com/blog/multi-table-transactions-on-the-lakehouse-enabled-by-dremio-arctic/)
+  - [Blog: Managing Data as Code with Dremio Arctic: Support Machine Learning Experimentation in Your Data Lakehouse](https://www.dremio.com/blog/managing-data-as-code-with-dremio-arctic-support-machine-learning-experimentation-in-your-data-lakehouse/)
+  - [Blog: Managing Data as Code with Dremio Arctic – Easily ensure data quality in your data lakehouse](https://www.dremio.com/blog/managing-data-as-code-with-dremio-arctic-easily-ensure-data-quality-in-your-data-lakehouse/)
