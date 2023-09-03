@@ -48,3 +48,11 @@ Neglecting Regular Reviews: Failing to update access controls as roles change or
 ### In Conclusion: Fortifying Security through Access Controls
 
 Access controls serve as a cornerstone of data security in the data lakehouse landscape. By understanding the importance of access controls, differentiating between RBAC, Row & Column Masking, and other types of access controls, and implementing best practices while avoiding common mistakes, organizations can establish robust security mechanisms. By making informed decisions and maintaining a vigilant approach to access controls, you ensure that your data lakehouse remains a stronghold of data protection, integrity, and compliance, safeguarding your valuable data assets against unauthorized access and potential breaches.
+
+## Further reading
+
+- [Blog: RBAC in Dremio](https://www.dremio.com/blog/introducing-new-rbac-privileges-for-admin-operations/)
+- [Blog: Row and Column Access Rules in Dremio](https://www.dremio.com/blog/new-row-level-and-column-level-access-controls/)
+- []()
+- []()
+- []()

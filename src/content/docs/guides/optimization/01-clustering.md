@@ -40,3 +40,11 @@ Several clustering techniques enhance data organization and access efficiency:
 ### In Conclusion: Elevating Performance with Clustering
 
 Clustering is a foundational strategy for enhancing data lakehouse performance, optimizing query execution, and improving overall data access efficiency. By understanding the concept of clustering, its significance in data lakehouses, and various clustering techniques like Z-Order, organizations can implement effective strategies to organize their data for maximum insights and minimal resource consumption. Adopting best practices ensures that clustering remains a powerful tool in your arsenal for deriving valuable insights and driving innovation within your data lakehouse ecosystem.
+
+## Further reading
+
+- [Blog: How Z-Ordering in Apache Iceberg Helps Improve Performance](https://www.dremio.com/blog/how-z-ordering-in-apache-iceberg-helps-improve-performance/)
+- []()
+- []()
+- []()
+- []()

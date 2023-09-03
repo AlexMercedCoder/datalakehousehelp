@@ -31,6 +31,11 @@ In conclusion, an advanced table format redefines the way data is organized and 
 
 ## Further reading
 
+- [Blog: Comparison of Table Formats](https://www.dremio.com/blog/comparison-of-data-lake-table-formats-apache-iceberg-apache-hudi-and-delta-lake/)
+- [Blog: Comparison of Table Format Community Development](https://www.dremio.com/blog/table-format-governance-and-community-contributions-apache-iceberg-apache-hudi-and-delta-lake/)
+- [Blog: Comparison of Table Format Partitioning Features](https://www.dremio.com/blog/table-format-partitioning-comparison-apache-iceberg-apache-hudi-and-delta-lake/)
+
+
 #### Apache Iceberg
 - [Docs: Apache Iceberg Documentation](https://iceberg.apache.org)
 - [Blog: Apache Iceberg 101](https://www.dremio.com/blog/apache-iceberg-101-your-guide-to-learning-apache-iceberg-concepts-and-practices/)

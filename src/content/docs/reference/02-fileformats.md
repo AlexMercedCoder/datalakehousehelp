@@ -40,4 +40,8 @@ In conclusion, data lake file formats play a crucial role in shaping data storag
 
 ## Further reading
 
-- Read [about reference](https://diataxis.fr/reference/) in the Diátaxis framework
+- []()
+- []()
+- []()
+- []()
+- []()

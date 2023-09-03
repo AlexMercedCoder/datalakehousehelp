@@ -76,3 +76,11 @@ Encryption algorithms are mathematical formulas used to transform plain text int
 ### In Conclusion: Strengthening Security with File Encryption
 
 File encryption stands as a cornerstone of data security within the data lakehouse environment. By understanding the significance of file encryption, differentiating between encryption types, and adhering to best practices while avoiding common mistakes, organizations can fortify their security mechanisms. Through informed encryption decisions and vigilant implementation, you ensure that your data lakehouse remains a fortress of data protection, maintaining confidentiality and minimizing the risk of unauthorized access or data breaches.
+
+## Further reading
+
+- []()
+- []()
+- []()
+- []()
+- []()

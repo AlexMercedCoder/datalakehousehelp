@@ -44,3 +44,11 @@ Compaction, in the context of data lakehouses, refers to the process of merging 
 ### In Conclusion: Streamlining Efficiency through Compaction
 
 Compaction emerges as a pivotal strategy for enhancing storage efficiency and query performance within data lakehouses. By grasping the concept of compaction, understanding its benefits, and adhering to best practices while avoiding common pitfalls, organizations can harness its power to optimize data organization, storage management, and query processing. By making informed compaction decisions and maintaining a balanced approach, you ensure that your data lakehouse operates at its peak efficiency, facilitating better resource utilization and enabling streamlined insights for effective decision-making.
+
+## Further reading
+
+- [Blog: Maintaining Iceberg Tables – Compaction, Expiring Snapshots, and More](https://www.dremio.com/blog/maintaining-iceberg-tables-compaction-expiring-snapshots-and-more/)
+- []()
+- []()
+- []()
+- []()

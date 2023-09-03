@@ -43,6 +43,11 @@ In conclusion, data catalogs are indispensable in modern data lakehouse environm
 ## Further reading
 
 #### About Nessie
-- Read [about reference](https://diataxis.fr/reference/) in the Diátaxis framework
+- [Blog: A Notebook for getting started with Project Nessie, Apache Iceberg, and Apache Spark](https://www.dremio.com/blog/a-notebook-for-getting-started-with-project-nessie-apache-iceberg-and-apache-spark/)
 
 #### Data Catalog Services
+- Dremio Arctic (Nessie Based)
+  - [Docs: Dremio Arctic Docs]()
+  - [Blog: Multi-Table Transactions on the Lakehouse – Enabled by Dremio Arctic]()
+  - [Blog: ]()
+  - []()

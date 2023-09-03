@@ -44,3 +44,11 @@ Choose Appropriate Partition Keys: Select attributes that are frequently used in
 ### In Conclusion: Optimizing Performance through Partitioning
 
 Partitioning stands as a cornerstone strategy for elevating data lakehouse performance and efficiency. By understanding the concept of partitioning, recognizing its benefits, and adhering to best practices while avoiding common mistakes, organizations can harness its power to enhance data organization, querying, and analysis. By making informed partitioning decisions and maintaining a balanced approach, you ensure that your data lakehouse is poised to deliver optimal performance, enabling more effective data utilization and driving insights for informed decision-making.
+
+## Further reading
+
+- []()
+- []()
+- []()
+- []()
+- []()

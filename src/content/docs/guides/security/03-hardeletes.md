@@ -40,3 +40,11 @@ Copy-on-Write (COW) and Merge-on-Read (MOR) are two prevalent mechanisms for han
 ### In Conclusion: Safeguarding Data Privacy through Hard Deletion
 
 Hard deletion of files within the data lakehouse environment is a multifaceted endeavor that requires a deep understanding of table snapshots, retention mechanisms, and data update strategies. By comprehending the nuances of copy-on-write and merge-on-read approaches, adhering to best practices, and avoiding common mistakes, organizations can ensure the timely and secure deletion of sensitive data while maintaining data integrity. By implementing a thoughtful approach to hard deletion, data lakehouses can uphold data privacy, regulatory compliance, and organizational trust, even in the face of evolving data management challenges.
+
+## Further reading
+
+- [Blog: Row-Level Changes on the Lakehouse: Copy-On-Write vs. Merge-On-Read in Apache Iceberg](https://www.dremio.com/blog/row-level-changes-on-the-lakehouse-copy-on-write-vs-merge-on-read-in-apache-iceberg/)
+- [Blog: Apache Iceberg and the Right to be Forgotten](https://www.dremio.com/blog/apache-iceberg-and-the-right-to-be-forgotten/)
+- []()
+- []()
+- []()

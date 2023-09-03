@@ -54,3 +54,11 @@ Several compression algorithms are commonly used in data storage and transfer:
 ### In Conclusion: Optimizing Efficiency through File Compression
 
 File compression emerges as a fundamental strategy for enhancing data lakehouse efficiency, improving storage utilization, and accelerating query performance. By comprehending the concept of file compression, recognizing its benefits, adhering to best practices, and avoiding common pitfalls, organizations can effectively implement compression strategies to optimize data storage, retrieval, and analysis. Through informed compression decisions and continuous monitoring, you can harness the power of compression to achieve efficient data lakehouse operations, enabling streamlined insights and data-driven decision-making.
+
+## Further reading
+
+- []()
+- []()
+- []()
+- []()
+- []()
