@@ -43,6 +43,7 @@ In conclusion, an advanced table format redefines the way data is organized and 
 - [Blog: Apache Iceberg: An Architectural Look Under the Covers](https://www.dremio.com/resources/guides/apache-iceberg-an-architectural-look-under-the-covers/)
 - [Blog: Fewer Accidental Full Table Scans Brought to You by Apache Iceberg’s Hidden Partitioning](https://www.dremio.com/subsurface/fewer-accidental-full-table-scans-brought-to-you-by-apache-icebergs-hidden-partitioning/)
 - [Blog: Future-Proof Partitioning and Fewer Table Rewrites with Apache Iceberg](https://www.dremio.com/blog/future-proof-partitioning-and-fewer-table-rewrites-with-apache-iceberg/)
+- [Blog: Partition and File Pruning for Dremio’s Apache Iceberg-backed Reflections](https://www.dremio.com/blog/partition-and-file-pruning-for-dremios-apache-iceberg-backed-reflections/)
 
 #### Apache Hudi
 - [Apache Hudi Documentation](https://hudi.apache.org)

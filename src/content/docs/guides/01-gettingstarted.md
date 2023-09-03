@@ -14,4 +14,12 @@ It is recommended you start with this tutorial that will setup an environment on
 
 ## Further reading
 
-- Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
+#### Ingest & Query
+- [Blog: Ingest with Fivetran, Query with Dremio](https://www.dremio.com/blog/building-your-data-lakehouse-just-got-a-whole-lot-easier-with-dremio-fivetran/)
+- [Blog: Ingest with Flink using SQL](https://www.dremio.com/blog/getting-started-with-flink-sql-and-apache-iceberg/)
+- [Blog: Ingest in Flink with Java, Query in Dremio](https://www.dremio.com/blog/using-flink-with-apache-iceberg-and-nessie/)
+- []()
+
+#### BI Dashboards
+- [Blog: Connecting Tableau to Apache Iceberg Tables with Dremio](https://www.dremio.com/blog/connecting-tableau-to-apache-iceberg-tables-with-dremio/)
+- [Blog: 5 Easy Steps to Migrate an Apache Superset Dashboard to Your Lakehouse](https://www.dremio.com/blog/5-easy-steps-to-migrate-an-apache-superset-dashboard-to-your-lakehouse/)
