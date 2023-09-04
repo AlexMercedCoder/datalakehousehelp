@@ -45,8 +45,5 @@ In the evolving landscape of data lakehouse architecture, the choice of storage 
 ## Further reading
 
 - [Blog: Ensuring High Performance at Any Scale with Apache Iceberg’s Object Store File Layout](https://www.dremio.com/blog/ensuring-high-performance-at-any-scale-with-apache-icebergs-object-store-file-layout/)
-- []()
-- []()
-- []()
-- []()
+
 

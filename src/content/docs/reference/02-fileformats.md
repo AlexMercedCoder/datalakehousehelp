@@ -40,8 +40,3 @@ In conclusion, data lake file formats play a crucial role in shaping data storag
 
 ## Further reading
 
-- []()
-- []()
-- []()
-- []()
-- []()

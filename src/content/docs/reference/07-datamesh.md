@@ -51,7 +51,3 @@ Data Mesh, with its domain-oriented ownership, data product focus, and federated
 ## Further reading
 
 - [Blog: Problems with Monolithic Data Architectures & Why Data Mesh Is a Solution](https://www.dremio.com/blog/from-monolithic-data-architectures-to-data-mesh/)
-- []()
-- []()
-- []()
-- []()
