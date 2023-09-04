@@ -1,6 +1,6 @@
 ---
 title: Hands-On With Data Lakehouses
-description: A guide in my new Starlight docs site.
+description: A list of tutorial and resources with hand-on exercises for working with Data Lakehouses.
 ---
 
 On this page you'll find several guides walking your through several types of data lakehouse tasks such as:
