@@ -45,6 +45,3 @@ Hard deletion of files within the data lakehouse environment is a multifaceted e
 
 - [Blog: Row-Level Changes on the Lakehouse: Copy-On-Write vs. Merge-On-Read in Apache Iceberg](https://www.dremio.com/blog/row-level-changes-on-the-lakehouse-copy-on-write-vs-merge-on-read-in-apache-iceberg/)
 - [Blog: Apache Iceberg and the Right to be Forgotten](https://www.dremio.com/blog/apache-iceberg-and-the-right-to-be-forgotten/)
-- []()
-- []()
-- []()

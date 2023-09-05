@@ -47,8 +47,5 @@ Partitioning stands as a cornerstone strategy for elevating data lakehouse perfo
 
 ## Further reading
 
-- []()
-- []()
-- []()
-- []()
-- []()
+- [Apache Iceberg's Hidden Partitioning](https://www.dremio.com/subsurface/fewer-accidental-full-table-scans-brought-to-you-by-apache-icebergs-hidden-partitioning/)
+- [Apache Iceberg's Partition Evolution](https://www.dremio.com/blog/future-proof-partitioning-and-fewer-table-rewrites-with-apache-iceberg/)

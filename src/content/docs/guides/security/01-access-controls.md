@@ -53,6 +53,3 @@ Access controls serve as a cornerstone of data security in the data lakehouse la
 
 - [Blog: RBAC in Dremio](https://www.dremio.com/blog/introducing-new-rbac-privileges-for-admin-operations/)
 - [Blog: Row and Column Access Rules in Dremio](https://www.dremio.com/blog/new-row-level-and-column-level-access-controls/)
-- []()
-- []()
-- []()

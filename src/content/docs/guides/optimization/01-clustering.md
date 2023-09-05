@@ -44,7 +44,3 @@ Clustering is a foundational strategy for enhancing data lakehouse performance, 
 ## Further reading
 
 - [Blog: How Z-Ordering in Apache Iceberg Helps Improve Performance](https://www.dremio.com/blog/how-z-ordering-in-apache-iceberg-helps-improve-performance/)
-- []()
-- []()
-- []()
-- []()

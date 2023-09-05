@@ -45,6 +45,8 @@ In conclusion, data catalogs are indispensable in modern data lakehouse environm
 #### About Nessie
 - [Blog: A Notebook for getting started with Project Nessie, Apache Iceberg, and Apache Spark](https://www.dremio.com/blog/a-notebook-for-getting-started-with-project-nessie-apache-iceberg-and-apache-spark/)
 - [Blog: Getting Started with Project Nessie, Apache Iceberg, and Apache Spark Using Docker](https://www.dremio.com/blog/getting-started-with-project-nessie-apache-iceberg-and-apache-spark-using-docker/)
+- [Blog: What is Nessie and Why as a Data Engineer or Architect you should care?](https://dev.to/alexmercedcoder/what-is-nessie-and-why-as-a-data-engineer-or-architect-you-should-care-413b)
+- [Blog: Resources for Learning more about Catalog level versioning (Rollbacks, Branching, Tagging and Multi-Table Txns)](https://dev.to/alexmercedcoder/resources-for-learning-more-about-catalog-level-versioning-with-project-nessie-dremio-arctic-4bcj)
 
 #### Data Catalog Services
 - Dremio Arctic (Nessie Based)

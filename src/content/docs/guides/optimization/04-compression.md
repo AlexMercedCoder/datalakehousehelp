@@ -57,8 +57,4 @@ File compression emerges as a fundamental strategy for enhancing data lakehouse 
 
 ## Further reading
 
-- []()
-- []()
-- []()
-- []()
-- []()
+- [Blog: Parquet File Compression for Everyone (zstd, brotli, lz4, gzip, snappy)](https://dev.to/alexmercedcoder/parquet-file-compression-for-everyone-zstd-brotli-lz4-gzip-snappy-5gb8)

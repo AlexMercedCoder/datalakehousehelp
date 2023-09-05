@@ -34,3 +34,6 @@ In summary, a data lakehouse represents a pivotal advancement in data management
 
 - [Blog: What is a Data Lakehouse](https://www.dremio.com/blog/what-is-a-data-lakehouse/)
 - [Blog: 5 use cases for the Dremio Lakehouse](https://www.dremio.com/blog/5-use-cases-for-the-dremio-lakehouse/)
+- [Blog: Dremio and Modern Data Architecture: Data Lakes, Data Lakehouses and Data Mesh](https://dev.to/alexmercedcoder/dremio-and-modern-data-architecture-data-lakes-data-lakehouses-and-data-mesh-5a92)
+- [Blog: Overview of the Data Lakehouse, Dremio and Apache Iceberg](https://dev.to/alexmercedcoder/overview-of-the-data-lakehouse-dremio-and-apache-iceberg-e11)
+- []()

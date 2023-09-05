@@ -43,3 +43,7 @@ SQL plays a vital role in both data analytics and data engineering realms:
 ### In Conclusion: SQL's Essential Role in Data Management
 
 SQL's journey from its inception to its present form as a universal data manipulation language has been transformative. Its role in data analytics and data engineering is irreplaceable, offering a standardized way to interact with various data processing platforms. From database management to advanced analytical operations, SQL empowers individuals across industries to explore, analyze, and derive insights from vast and diverse datasets. Whether you're querying a traditional database or harnessing the power of a modern data lakehouse query engine like Dremio, SQL remains an essential tool for unlocking the potential of your data.
+
+## Further Reading
+
+- [Blog: Learn SQL Video Playlist](https://www.youtube.com/playlist?list=PLY6oTPmKnKbb8R-o64IT1vLp5mUTXUuyx)

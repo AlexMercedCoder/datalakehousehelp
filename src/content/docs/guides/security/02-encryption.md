@@ -79,8 +79,4 @@ File encryption stands as a cornerstone of data security within the data lakehou
 
 ## Further reading
 
-- []()
-- []()
-- []()
-- []()
-- []()
+- [Blog: Overview of File Encryption Algorithms for Everyone](https://dev.to/alexmercedcoder/overview-of-file-encryption-algorithms-for-everyone-49ok)
