@@ -44,6 +44,23 @@ In conclusion, query engines are the engines that propel the data lakehouse forw
 
 ## Further reading
 
-- [Docs: Dremio Docs](https://docs.dremio.com)
-- [Blog: 5 Use Cases for Dremio](https://www.dremio.com/blog/5-use-cases-for-the-dremio-lakehouse/)
-- [Hadoop Modernization with Dremio](https://www.dremio.com/blog/hadoop-modernization/)
+- Dremio
+  - [Docs: Dremio Docs](https://docs.dremio.com)
+  - [Blog: 5 Use Cases for Dremio](https://www.dremio.com/blog/5-use-cases-for-the-dremio-lakehouse/)
+  - [Hadoop Modernization with Dremio](https://www.dremio.com/blog/hadoop-modernization/)
+
+- Apache Spark
+  - [Docs: Apache Spark](https://spark.apache.org/docs/latest/)
+  - [Blog: Getting Started with Apache Iceberg, Nessie and Spark using Docker](https://www.dremio.com/blog/getting-started-with-project-nessie-apache-iceberg-and-apache-spark-using-docker/)
+  - [Blog: A Notebook for getting started with Nessie, Apache Iceberg and Spark](https://www.dremio.com/blog/a-notebook-for-getting-started-with-project-nessie-apache-iceberg-and-apache-spark/)
+
+- Apache Flink
+  - [Docs: Apache Flink](https://nightlies.apache.org/flink/flink-docs-stable/)
+  - [Blog: Getting Started with Apache Iceberg, Nessie and Flink](https://www.dremio.com/blog/using-flink-with-apache-iceberg-and-nessie/)
+  - [Blog: Getting Started with Apache Iceberg and Flink SQL](https://www.dremio.com/blog/getting-started-with-flink-sql-and-apache-iceberg/)
+
+- Presto
+  - [Docs: Presto](https://prestodb.io/docs/current/)
+
+- Trino
+  - [Docs: Trino](https://trino.io/docs/current/)

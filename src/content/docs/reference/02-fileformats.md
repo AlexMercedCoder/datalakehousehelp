@@ -40,3 +40,6 @@ In conclusion, data lake file formats play a crucial role in shaping data storag
 
 ## Further reading
 
+- [Docs: Apache Parquet](https://parquet.apache.org/docs/)
+- [Docs: Apache ORC](https://orc.apache.org/docs/)
+- [Docs: Apache AVRO](https://avro.apache.org/docs/)

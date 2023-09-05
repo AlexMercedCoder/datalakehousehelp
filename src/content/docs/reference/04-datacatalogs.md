@@ -48,9 +48,18 @@ In conclusion, data catalogs are indispensable in modern data lakehouse environm
 - [Blog: What is Nessie and Why as a Data Engineer or Architect you should care?](https://dev.to/alexmercedcoder/what-is-nessie-and-why-as-a-data-engineer-or-architect-you-should-care-413b)
 - [Blog: Resources for Learning more about Catalog level versioning (Rollbacks, Branching, Tagging and Multi-Table Txns)](https://dev.to/alexmercedcoder/resources-for-learning-more-about-catalog-level-versioning-with-project-nessie-dremio-arctic-4bcj)
 
-#### Data Catalog Services
+#### Data Catalog/Management Services
 - Dremio Arctic (Nessie Based)
   - [Docs: Dremio Arctic Docs](https://docs.dremio.com/cloud/arctic/)
   - [Blog: Multi-Table Transactions on the Lakehouse – Enabled by Dremio Arctic](https://www.dremio.com/blog/multi-table-transactions-on-the-lakehouse-enabled-by-dremio-arctic/)
   - [Blog: Managing Data as Code with Dremio Arctic: Support Machine Learning Experimentation in Your Data Lakehouse](https://www.dremio.com/blog/managing-data-as-code-with-dremio-arctic-support-machine-learning-experimentation-in-your-data-lakehouse/)
   - [Blog: Managing Data as Code with Dremio Arctic – Easily ensure data quality in your data lakehouse](https://www.dremio.com/blog/managing-data-as-code-with-dremio-arctic-easily-ensure-data-quality-in-your-data-lakehouse/)
+- Tabular
+  - [Docs: Tabular](https://docs.tabular.io/)
+  - [Blog: How to Create a Table in Tabular](https://tabular.io/blog/how-to-create-a-table-in-tabular/)
+  - [Video: Tabular Solutions - Dremio](https://www.youtube.com/watch?v=8K-Smy3oyX8&pp=ygUOVGFidWxhciBEcmVtaW8%3D)
+- Onehouse
+  - [Blog: Onehouse's Privacy First Architecture](https://www.onehouse.ai/blog/onehouse-privacy-first-data-architecture)
+  - [Blog: Onehouse and Kafka](https://www.onehouse.ai/blog/powering-real-time-analytics-with-confluent-kafka-and-onehouse)
+- Unity Catalog
+  - [Docs: Unity Catalog](https://docs.databricks.com/en/data-governance/unity-catalog/index.html)

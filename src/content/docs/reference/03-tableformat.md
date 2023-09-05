@@ -47,7 +47,10 @@ In conclusion, an advanced table format redefines the way data is organized and 
 
 #### Apache Hudi
 - [Apache Hudi Documentation](https://hudi.apache.org)
-
+- [Blog: Hudi Metadata Fields Demystified](https://www.onehouse.ai/blog/hudi-metafields-demystified)
+- [Blog: Getting Started - Incrementally Process Data with Apache Hudi ](https://www.onehouse.ai/blog/getting-started-incrementally-process-data-with-apache-hudi)
 
 #### Delta Lake
 - [Delta Lake Documentation](https://www.delta.io)
+- [Blog: Using Delta Lake with Ibis and PySpark](https://delta.io/blog/2023-06-15-using-ibis-pyspark-delta-lake/)
+- [Blog: Open Source self hosted Delta Sharing Server](https://delta.io/blog/2023-04-24-open-source-selfhosted-delta-sharing-server/)
