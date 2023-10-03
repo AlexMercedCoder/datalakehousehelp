@@ -4,6 +4,7 @@ description: A page describing what are data lakehouse table formats.
 ---
 
 - [Video: The Who, What and Why of Data Lakehouse Table Formats](https://www.youtube.com/watch?v=1eEcWopaFqE&pp=ygUhd2hvIHdoYXQgd2h5IHRhYmxlIGZvcm1hdHMgZHJlbWlv)
+- [Overview of the Architecture of Iceberg, Hudi and Delta Lake](https://www.dremio.com/blog/exploring-the-architecture-of-apache-iceberg-delta-lake-and-apache-hudi/)
 
 Data Lakehouse table formats like Apache Iceberg, Apache Hudi, and Delta Lake have emerged as game-changers, redefining how data is organized and processed. These formats provide a structured and efficient way to store and manage data within a data lake environment, offering solutions to common challenges associated with data quality, schema evolution, and processing speed.
 
