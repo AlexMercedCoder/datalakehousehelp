@@ -251,7 +251,8 @@ SQL aggregations are essential for summarizing and analyzing large datasets. The
 
 Combining datasets in ANSI SQL is a fundamental operation when working with relational databases. There are several ways to combine data from multiple tables, and SQL provides different techniques to achieve this. The most common methods include:
 
-## JOIN: A SQL JOIN operation combines rows from two or more tables based on a related column between them. There are several types of joins:
+## JOIN: 
+A SQL JOIN operation combines rows from two or more tables based on a related column between them. There are several types of joins:
 
 ### INNER JOIN: 
 Returns only the rows where there is a match in both tables based on the specified join condition.
