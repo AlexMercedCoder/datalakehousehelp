@@ -25,9 +25,24 @@ export default defineConfig({
 				},
 				
 			],
-			components: {
-				Head: './src/components/Head.astro',
-			  }
+			head: [
+				{
+				  tag: 'script',
+				  attrs: {
+					async: true,
+					src: 'https://www.googletagmanager.com/gtag/js?id=G-DQMSHK8YQM', // Replace with your Google Analytics ID
+				  },
+				},
+				{
+				  tag: 'script',
+				  content: `
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', 'G-DQMSHK8YQM'); // Replace with your Google Analytics ID
+				  `,
+				},
+			  ],
 		}),
 	],
 
