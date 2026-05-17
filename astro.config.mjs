@@ -11,6 +11,7 @@ export default defineConfig({
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/developer-advocacy-dremio/quick-guides-from-dremio' },
 			],
 			tableOfContents: true,
+			customCss: ['./src/styles/custom.css'],
 			sidebar: [
 				{
 					label: 'Reference',
@@ -30,6 +31,26 @@ export default defineConfig({
 				},
 			],
 			head: [
+				// Google Fonts — Inter (Sequel Sans substitute per design.md)
+				{
+				  tag: 'link',
+				  attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+				},
+				{
+				  tag: 'link',
+				  attrs: {
+					rel: 'preconnect',
+					href: 'https://fonts.gstatic.com',
+					crossorigin: '',
+				  },
+				},
+				{
+				  tag: 'link',
+				  attrs: {
+					rel: 'stylesheet',
+					href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap',
+				  },
+				},
 				// Google Analytics
 				{
 				  tag: 'script',

@@ -1,0 +1,558 @@
+/* =============================================================
+   DataLakehouse.help — Emerald + Navy Theme
+   Based on the Jeton design system (design.md)
+   Accent: Emerald (#10b981) | Base: Navy (#0d1b2a)
+   ============================================================= */
+
+/* ── Google Fonts: Inter ───────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ── Design tokens ─────────────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --dlh-emerald:        #10b981; /* primary accent */
+  --dlh-emerald-dark:   #059669; /* focused / hover */
+  --dlh-emerald-deeper: #047857; /* active / pressed */
+  --dlh-teal:           #14b8a6; /* secondary accent / tags */
+  --dlh-emerald-pale:   #6ee7b7; /* subtle highlight bg */
+  --dlh-navy:           #0d1b2a; /* darkest background */
+  --dlh-navy-mid:       #112236; /* sidebar / nav bg */
+  --dlh-navy-soft:      #1a3350; /* card surfaces on dark */
+  --dlh-navy-muted:     #2a4a6b; /* borders on dark */
+
+  /* Jeton-derived shadows → emerald-keyed */
+  --dlh-shadow-lg: rgba(16, 185, 129, 0.12) 0px 8px 24px 0px,
+                   rgba(16, 185, 129, 0.06) 0px 2px 8px 0px;
+  --dlh-shadow-md: rgba(0, 0, 0, 0.08) 0px -4px 16px 0px;
+
+  /* Jeton spacing & radius (from design.md) */
+  --dlh-radius-card:   16px;
+  --dlh-radius-pill:   84px;
+  --dlh-radius-btn:    16px;
+  --dlh-radius-input:  16px;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+:root {
+  --sl-font: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Heading letter-spacing — tighter, per Jeton spec */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+.page-title {
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   DARK MODE (default)  —  Deep Navy + Emerald
+   Override :root Starlight vars (dark is default in Starlight)
+   ────────────────────────────────────────────────────────────── */
+:root {
+  /* Gray scale → navy-tinted */
+  --sl-color-white:  hsl(160, 5%, 98%);
+  --sl-color-gray-1: hsl(210, 25%, 88%);
+  --sl-color-gray-2: hsl(210, 18%, 68%);
+  --sl-color-gray-3: hsl(214, 16%, 46%);
+  --sl-color-gray-4: hsl(214, 20%, 28%);
+  --sl-color-gray-5: hsl(214, 28%, 16%);
+  --sl-color-gray-6: hsl(214, 35%, 10%);
+  --sl-color-black:  hsl(214, 40%, 7%);
+
+  /* Accent scale → emerald */
+  --sl-color-accent-low:  hsl(160, 40%, 12%);
+  --sl-color-accent:      hsl(160, 70%, 48%);
+  --sl-color-accent-high: hsl(160, 75%, 78%);
+
+  /* Semantic surfaces */
+  --sl-color-bg:              var(--dlh-navy);
+  --sl-color-bg-nav:          var(--dlh-navy-mid);
+  --sl-color-bg-sidebar:      var(--dlh-navy-mid);
+  --sl-color-bg-inline-code:  var(--dlh-navy-soft);
+  --sl-color-bg-accent:       var(--dlh-emerald-dark);
+  --sl-color-text:            var(--sl-color-gray-1);
+  --sl-color-text-accent:     var(--dlh-emerald-pale);
+  --sl-color-text-invert:     var(--dlh-navy);
+  --sl-color-hairline:        var(--dlh-navy-muted);
+  --sl-color-hairline-light:  hsl(214, 22%, 22%);
+  --sl-color-hairline-shade:  var(--dlh-navy);
+
+  /* Shadows */
+  --sl-shadow-sm: 0px 1px 1px hsla(214, 40%, 0%, 0.3),
+                  0px 2px 1px hsla(214, 40%, 0%, 0.3);
+  --sl-shadow-md: 0px 8px 4px hsla(214, 40%, 0%, 0.15),
+                  0px 3px 2px hsla(214, 40%, 0%, 0.2),
+                  0px 1px 1px hsla(214, 40%, 0%, 0.25);
+  --sl-shadow-lg: 0px 16px 12px hsla(214, 40%, 0%, 0.25),
+                  0px 4px 6px hsla(214, 40%, 0%, 0.4);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   LIGHT MODE  —  White Canvas + Emerald (Jeton spec)
+   ────────────────────────────────────────────────────────────── */
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+  /* Gray scale → navy-tinted whites */
+  --sl-color-white:  hsl(214, 40%, 7%);
+  --sl-color-gray-1: hsl(214, 35%, 14%);
+  --sl-color-gray-2: hsl(214, 20%, 25%);
+  --sl-color-gray-3: hsl(214, 12%, 42%);
+  --sl-color-gray-4: hsl(214, 8%, 58%);
+  --sl-color-gray-5: hsl(210, 12%, 82%);
+  --sl-color-gray-6: hsl(210, 20%, 94%);
+  --sl-color-gray-7: hsl(210, 30%, 98%);
+  --sl-color-black:  hsl(0, 0%, 100%);
+
+  /* Accent scale → emerald on light */
+  --sl-color-accent-high: hsl(160, 84%, 22%);
+  --sl-color-accent:      hsl(160, 75%, 36%);
+  --sl-color-accent-low:  hsl(160, 55%, 92%);
+
+  /* Semantic surfaces */
+  --sl-color-bg:              #ffffff;
+  --sl-color-bg-nav:          hsl(210, 30%, 98%);
+  --sl-color-bg-sidebar:      hsl(210, 28%, 97%);
+  --sl-color-bg-inline-code:  hsl(210, 20%, 94%);
+  --sl-color-bg-accent:       var(--dlh-emerald);
+  --sl-color-text-accent:     hsl(160, 84%, 28%);
+  --sl-color-hairline-light:  hsl(210, 18%, 88%);
+  --sl-color-hairline-shade:  hsl(210, 20%, 94%);
+
+  /* Shadows — emerald-keyed (from design.md) */
+  --sl-shadow-sm: 0px 1px 1px hsla(0, 0%, 0%, 0.06),
+                  0px 2px 1px hsla(0, 0%, 0%, 0.06);
+  --sl-shadow-md: var(--dlh-shadow-md);
+  --sl-shadow-lg: var(--dlh-shadow-lg);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   NAVIGATION BAR
+   ────────────────────────────────────────────────────────────── */
+header.header {
+  border-bottom: 1px solid var(--dlh-navy-muted);
+  backdrop-filter: blur(8px);
+}
+
+[data-theme='light'] header.header {
+  border-bottom: 1px solid hsl(160, 30%, 88%);
+  backdrop-filter: blur(8px);
+}
+
+/* Site title */
+.site-title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.site-title:hover {
+  color: var(--dlh-emerald) !important;
+}
+
+/* Nav social icons */
+.social-icons a:hover {
+  color: var(--dlh-emerald) !important;
+  opacity: 0.9;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SIDEBAR
+   ────────────────────────────────────────────────────────────── */
+
+/* Group labels */
+.sidebar-content summary,
+.group-label span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dlh-emerald);
+  opacity: 0.75;
+}
+
+/* Active sidebar link — pill highlight */
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 8px;
+  color: var(--dlh-emerald-pale) !important;
+  font-weight: 500;
+}
+
+[data-theme='light'] .sidebar-content a[aria-current='page'],
+[data-theme='light'] .sidebar-content a[aria-current='page']:hover {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--dlh-emerald-deeper) !important;
+}
+
+/* Sidebar link hover */
+.sidebar-content a:not([aria-current='page']):hover {
+  color: var(--dlh-emerald) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   CONTENT — Links & Headings
+   ────────────────────────────────────────────────────────────── */
+.sl-markdown-content a {
+  color: var(--dlh-emerald);
+  text-decoration-color: rgba(16, 185, 129, 0.35);
+  text-underline-offset: 2px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.sl-markdown-content a:hover {
+  color: var(--dlh-emerald-pale);
+  text-decoration-color: var(--dlh-emerald);
+}
+
+[data-theme='light'] .sl-markdown-content a {
+  color: var(--dlh-emerald-deeper);
+  text-decoration-color: rgba(4, 120, 87, 0.35);
+}
+
+[data-theme='light'] .sl-markdown-content a:hover {
+  color: var(--dlh-emerald-dark);
+}
+
+/* Horizontal rule */
+.sl-markdown-content hr {
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+/* Anchor heading links */
+.sl-markdown-content :is(h2, h3, h4) > a {
+  color: inherit !important;
+}
+
+.sl-markdown-content :is(h2, h3, h4) > a:hover {
+  color: var(--dlh-emerald) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   CARDS  (Jeton: 16px radius, emerald border, subtle shadow)
+   ────────────────────────────────────────────────────────────── */
+.sl-markdown-content starlight-card,
+.card,
+.sl-card {
+  border-radius: var(--dlh-radius-card) !important;
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.sl-markdown-content starlight-card:hover,
+.card:hover,
+.sl-card:hover {
+  border-color: rgba(16, 185, 129, 0.55) !important;
+  box-shadow: var(--dlh-shadow-lg);
+  transform: translateY(-1px);
+}
+
+[data-theme='light'] .card,
+[data-theme='light'] .sl-card {
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+/* LinkCard title */
+.card .title,
+.sl-card .title {
+  color: var(--dlh-emerald) !important;
+  font-weight: 600;
+}
+
+[data-theme='light'] .card .title,
+[data-theme='light'] .sl-card .title {
+  color: var(--dlh-emerald-deeper) !important;
+}
+
+/* Card icon */
+.card .icon,
+.sl-card .icon {
+  color: var(--dlh-emerald) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   BUTTONS / LINK BUTTONS
+   Jeton: ghost outline style, 16px radius (pill at 84px)
+   ────────────────────────────────────────────────────────────── */
+
+/* Primary (default) */
+.sl-link-button.primary {
+  background: transparent !important;
+  color: var(--dlh-emerald) !important;
+  border: 1.5px solid var(--dlh-emerald) !important;
+  border-radius: var(--dlh-radius-btn) !important;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.sl-link-button.primary:hover {
+  background: rgba(16, 185, 129, 0.12) !important;
+  box-shadow: var(--dlh-shadow-lg);
+}
+
+/* Minimal / secondary */
+.sl-link-button.minimal {
+  color: var(--dlh-emerald) !important;
+  border-radius: var(--dlh-radius-btn) !important;
+}
+
+.sl-link-button.minimal:hover {
+  background: rgba(16, 185, 129, 0.1) !important;
+}
+
+/* Secondary — pill shape (Outline Inverse from design.md) */
+.sl-link-button.secondary {
+  background: transparent !important;
+  border: 1.5px solid currentColor !important;
+  border-radius: var(--dlh-radius-pill) !important;
+  font-weight: 400;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   HERO (homepage)
+   Gradient background — Jeton "Sunrise" adapted to emerald
+   ────────────────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(
+    160deg,
+    var(--dlh-navy) 0%,
+    hsl(160, 60%, 8%) 45%,
+    hsl(160, 70%, 14%) 100%
+  );
+  border-radius: 0 0 24px 24px;
+  padding-block: 4rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative emerald glow blob behind hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 80%,
+    rgba(16, 185, 129, 0.18) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.hero .tagline {
+  color: var(--dlh-emerald-pale);
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.hero .title {
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+[data-theme='light'] .hero {
+  background: linear-gradient(
+    160deg,
+    hsl(210, 30%, 98%) 0%,
+    hsl(160, 40%, 94%) 60%,
+    hsl(160, 50%, 88%) 100%
+  );
+}
+
+[data-theme='light'] .hero .tagline {
+  color: var(--dlh-emerald-deeper);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   CODE BLOCKS (Expressive Code)
+   ────────────────────────────────────────────────────────────── */
+.expressive-code .frame {
+  border-radius: var(--dlh-radius-card) !important;
+  border: 1px solid var(--dlh-navy-muted) !important;
+  overflow: hidden;
+}
+
+.expressive-code .frame .header {
+  background: var(--dlh-navy-soft) !important;
+  border-bottom: 1px solid var(--dlh-navy-muted) !important;
+}
+
+[data-theme='light'] .expressive-code .frame {
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+[data-theme='light'] .expressive-code .frame .header {
+  background: hsl(160, 20%, 95%) !important;
+  border-bottom-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Inline code */
+:not(pre) > code {
+  border-radius: 6px !important;
+  font-size: 0.875em;
+  color: var(--dlh-emerald-pale) !important;
+}
+
+[data-theme='light'] :not(pre) > code {
+  color: var(--dlh-emerald-deeper) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   ASIDES / CALLOUTS
+   ────────────────────────────────────────────────────────────── */
+.starlight-aside {
+  border-radius: var(--dlh-radius-card) !important;
+  border-inline-start-width: 3px !important;
+}
+
+/* Note → navy + emerald */
+.starlight-aside--note {
+  border-color: var(--dlh-emerald) !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+/* Tip → teal */
+.starlight-aside--tip {
+  border-color: var(--dlh-teal) !important;
+  background: rgba(20, 184, 166, 0.08) !important;
+}
+
+/* Caution → amber */
+.starlight-aside--caution {
+  border-color: hsl(38, 92%, 50%) !important;
+  background: hsla(38, 92%, 50%, 0.08) !important;
+}
+
+/* Danger → rose */
+.starlight-aside--danger {
+  border-color: hsl(0, 82%, 60%) !important;
+  background: hsla(0, 82%, 60%, 0.08) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   TABLE OF CONTENTS
+   ────────────────────────────────────────────────────────────── */
+.right-sidebar a[aria-current='true'] {
+  color: var(--dlh-emerald) !important;
+  font-weight: 500;
+}
+
+.right-sidebar a:hover {
+  color: var(--dlh-emerald) !important;
+}
+
+[data-theme='light'] .right-sidebar a[aria-current='true'] {
+  color: var(--dlh-emerald-deeper) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   PAGEFIND SEARCH
+   ────────────────────────────────────────────────────────────── */
+/* Search button */
+button[data-open-modal] {
+  border-radius: 10px !important;
+  transition: background 0.15s ease;
+}
+
+/* Search input focus ring */
+#pagefind-search:focus-within {
+  --pagefind-ui-primary: var(--dlh-emerald);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   BADGES
+   ────────────────────────────────────────────────────────────── */
+.badge-base {
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Default badge → emerald */
+.badge-base:not([class*='danger']):not([class*='caution']):not([class*='success']) {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: var(--dlh-emerald) !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   PAGINATION (prev/next)
+   ────────────────────────────────────────────────────────────── */
+.pagination-links a {
+  border-radius: var(--dlh-radius-btn) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.pagination-links a:hover {
+  border-color: var(--dlh-emerald) !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+.pagination-links .link-title {
+  color: var(--dlh-emerald) !important;
+}
+
+[data-theme='light'] .pagination-links .link-title {
+  color: var(--dlh-emerald-deeper) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   MISC POLISH
+   ────────────────────────────────────────────────────────────── */
+
+/* Focus outline → emerald */
+:focus-visible {
+  outline-color: var(--dlh-emerald) !important;
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.55);
+}
+
+/* Selection highlight */
+::selection {
+  background: rgba(16, 185, 129, 0.25);
+  color: inherit;
+}
+
+/* Tables */
+.sl-markdown-content table thead th {
+  color: var(--dlh-emerald) !important;
+  border-bottom: 2px solid rgba(16, 185, 129, 0.35) !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.sl-markdown-content table tr:hover td {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+/* Steps component numbered circles */
+.sl-steps li:before {
+  background: linear-gradient(
+    135deg,
+    var(--dlh-emerald-dark) 0%,
+    var(--dlh-emerald) 100%
+  ) !important;
+  border-radius: 50% !important;
+  font-weight: 600;
+}
