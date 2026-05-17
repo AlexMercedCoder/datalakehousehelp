@@ -7,28 +7,27 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'DataLakehouse.help – Data Lakehouse & Apache Iceberg Guides',
-			social: {
-				github: 'https://github.com/developer-advocacy-dremio/quick-guides-from-dremio',
-			},
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/developer-advocacy-dremio/quick-guides-from-dremio' },
+			],
 			tableOfContents: true,
 			sidebar: [
 				{
 					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					items: [{ autogenerate: { directory: 'reference' } }],
 				},
 				{
 					label: 'Guides',
-					autogenerate: { directory: 'guides' },
+					items: [{ autogenerate: { directory: 'guides' } }],
 				},
 				{
 					label: 'Agentic AI',
-					autogenerate: { directory: 'guides/agentic' },
+					items: [{ autogenerate: { directory: 'guides/agentic' } }],
 				},
 				{
 					label: 'Other',
-					autogenerate: { directory: 'other' },
+					items: [{ autogenerate: { directory: 'other' } }],
 				},
-				
 			],
 			head: [
 				// Google Analytics
