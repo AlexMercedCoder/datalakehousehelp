@@ -1,6 +1,6 @@
 ---
-title: JDBC/ODBC vs Arrow Flight
-description: Comparison of Popular Data Transfer Protocols
+title: "JDBC/ODBC vs Arrow Flight"
+description: "Comparison of Popular Data Transfer Protocols"
 ---
 
 Efficient data transfer is essential for seamless collaboration, accurate analysis, and informed decision-making. This page delves into data transfer protocols, exploring what they are, highlighting specific protocols like JDBC/ODBC and Apache Arrow Flight, and examining the scenarios in which one may be more suitable than the other based on data characteristics.

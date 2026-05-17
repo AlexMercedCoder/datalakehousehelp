@@ -1,6 +1,6 @@
 ---
-title: Data Structures
-description: Data Structures
+title: "Data Structures"
+description: "Data Structures"
 ---
 
 # Data Structures

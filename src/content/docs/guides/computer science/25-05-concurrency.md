@@ -1,6 +1,6 @@
 ---
-title: Understanding Concurrency
-description: Understanding Concurrency
+title: "Understanding Concurrency"
+description: "Understanding Concurrency"
 ---
 
 # Concurrency: Understanding Parallelism in Computing

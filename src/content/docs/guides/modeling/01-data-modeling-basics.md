@@ -1,6 +1,6 @@
 ---
-title: What is Data Modeling?
-description: What is Data Modeling
+title: "What is Data Modeling?"
+description: "What is Data Modeling"
 ---
 
 Data modeling is a foundational practice in the realm of data management, providing a structured framework for representing and organizing data. This page delves into the essence of data modeling, why it holds significance, and highlights key topics essential for creating comprehensive and effective data models.

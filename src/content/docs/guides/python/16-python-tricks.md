@@ -1,6 +1,6 @@
 ---
-title: Python Tips and Tricks
-description: Useful Python tricks reference
+title: "Python Tips and Tricks"
+description: "Useful Python tricks reference"
 ---
 
 ## Part 1

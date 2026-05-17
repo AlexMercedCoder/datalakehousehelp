@@ -1,6 +1,6 @@
 ---
-title: ANSI SQL
-description: A Guide to Writing ANSI SQL
+title: "ANSI SQL"
+description: "A Guide to Writing ANSI SQL"
 ---
 
 # ANSI SQL: A Foundation for Database Querying

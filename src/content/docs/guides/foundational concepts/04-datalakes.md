@@ -1,6 +1,6 @@
 ---
-title: Key Concept - Data Lakes
-description: Foundational Concepts in Data Lakes
+title: "Key Concept - Data Lakes"
+description: "Foundational Concepts in Data Lakes"
 ---
 
 ### Data Lakes

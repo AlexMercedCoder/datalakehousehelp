@@ -1,6 +1,6 @@
 ---
-title: Design Patterns
-description: Design Patterns in OOP
+title: "Design Patterns"
+description: "Design Patterns in OOP"
 ---
 
 # Design Patterns in Programming

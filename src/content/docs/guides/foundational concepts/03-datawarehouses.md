@@ -1,6 +1,6 @@
 ---
-title: Key Concept - Data Warehouses
-description: Foundational Concepts in Data Warehouses
+title: "Key Concept - Data Warehouses"
+description: "Foundational Concepts in Data Warehouses"
 ---
 
 # Data Warehouses

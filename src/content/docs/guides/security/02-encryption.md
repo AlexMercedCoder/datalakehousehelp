@@ -1,6 +1,6 @@
 ---
-title: Encryption
-description: A guide to what file encryption and best practices.
+title: "Encryption"
+description: "A guide to what file encryption and best practices."
 ---
 
  file encryption emerges as a pivotal strategy for safeguarding sensitive data, mitigating risks, and ensuring the confidentiality of information. Encryption transforms data into an unreadable format, rendering it inaccessible without the appropriate decryption keys. This documentation page explores the importance of file encryption, the types of file encryption, best practices for implementation, and key mistakes to avoid.

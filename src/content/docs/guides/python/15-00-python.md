@@ -1,6 +1,6 @@
 ---
-title: Python
-description: A reference on python programming
+title: "Python"
+description: "A reference on python programming"
 ---
 
 # Basics of Python:

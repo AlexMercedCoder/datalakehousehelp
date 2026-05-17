@@ -1,6 +1,6 @@
 ---
-title: Relationships
-description: The Basics of data model relationships
+title: "Relationships"
+description: "The Basics of data model relationships"
 ---
 
 Database relationships form the foundation of relational databases, defining how data entities interact and relate to one another. This section explores the essence of database relationships, elaborates on the various types of relationships through written descriptions and ASCII art ERD diagram examples, outlines best practices for designing effective relationships, and highlights common pitfalls to avoid.

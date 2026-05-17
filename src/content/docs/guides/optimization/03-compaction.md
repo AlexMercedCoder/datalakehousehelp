@@ -1,6 +1,6 @@
 ---
-title: Compaction
-description: A guide to what is compaction and best practices.
+title: "Compaction"
+description: "A guide to what is compaction and best practices."
 ---
 
 Compaction stands as a crucial strategy to optimize storage efficiency and query performance. By consolidating and reducing the number of data files, compaction significantly enhances data retrieval speed, resource utilization, and overall data lakehouse efficiency. This documentation page delves into the concept of compaction, its benefits, best practices for implementation, and key mistakes to avoid.

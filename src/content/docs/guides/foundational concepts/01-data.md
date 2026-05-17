@@ -1,6 +1,6 @@
 ---
-title: Key Concept - Data
-description: Foundational Concepts in Data
+title: "Key Concept - Data"
+description: "Foundational Concepts in Data"
 ---
 
 # Understanding Data

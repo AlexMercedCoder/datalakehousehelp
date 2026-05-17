@@ -1,6 +1,6 @@
 ---
-title: Slowly Changing Dimensions
-description: Learn about Slowly Changing Dimensions
+title: "Slowly Changing Dimensions"
+description: "Learn about Slowly Changing Dimensions"
 ---
 
 Slowly Changing Dimensions (SCD) pose a significant challenge in data management as they involve handling data changes over time while maintaining historical context. This page delves into the intricacies of SCD, explores different approaches to manage these changes, outlines the pros and cons of each method, offers best practices, and highlights common pitfalls to avoid.

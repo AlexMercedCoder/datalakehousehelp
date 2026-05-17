@@ -1,11 +1,11 @@
 ---
-title: What is a Data Catalog?
-description: A Page describing what is a data lakehouse data catalog
+title: "What is a Data Catalog?"
+description: "Learn how data catalogs like Nessie, AWS Glue, and Apache Polaris power metadata management, governance, and discoverability in modern data lakehouse environments built on Apache Iceberg."
 ---
 
 Data catalogs play a pivotal role in enhancing the organization, discoverability, and accessibility of data assets. A data catalog serves as a centralized repository that provides metadata-driven insights into the data stored within a data lakehouse, facilitating efficient data governance, collaboration, and analytics. In this section, we delve into the significance of data catalogs and explore the unique capabilities of Nessie, a cutting-edge data catalog, in revolutionizing data lakehouse environments.
 
-#### The Role of Data Catalogs: Enabling Data Discovery and Collaboration
+## The Role of Data Catalogs: Enabling Data Discovery and Collaboration
 
 A data catalog acts as a navigator in the vast sea of data, offering a structured approach to understanding and utilizing data assets. It serves as a metadata repository, capturing essential information about datasets, tables, schemas, lineage, and usage patterns. By cataloging metadata, data catalogs empower users to:
 
@@ -26,7 +26,7 @@ Nessie stands as an innovative data catalog that distinguishes itself by its sea
 
 - **Collaboration and Concurrency:** Nessie's distributed nature supports concurrent access and collaboration among data practitioners. Changes to metadata can be proposed, reviewed, and merged, enhancing teamwork and efficiency.
 
-#### Enhancing the Data Lakehouse with Nessie
+## Enhancing the Data Lakehouse with Nessie
 
 Nessie's integration with the data lakehouse architecture introduces several advantages:
 

@@ -1,6 +1,6 @@
 ---
-title: Partitioning Data
-description: A guide to what is paritioning and best practices.
+title: "Partitioning Data"
+description: "A guide to what is paritioning and best practices."
 ---
 
 Partitioning emerges as a pivotal strategy to optimize data management, querying, and analysis. By logically segmenting data based on specific attributes, partitioning significantly enhances data organization and access efficiency. This documentation page delves into the concept of partitioning, its benefits in data lakehouse performance, best practices for implementation, and key mistakes to avoid.

@@ -1,6 +1,6 @@
 ---
-title: Advanced Python
-description: Advanced Python Techniques
+title: "Advanced Python"
+description: "Advanced Python Techniques"
 ---
 
 # Python List and Dictionary Comprehensions

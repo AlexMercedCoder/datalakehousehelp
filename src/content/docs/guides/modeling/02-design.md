@@ -1,6 +1,6 @@
 ---
-title: Data Model Design
-description: Discussing the basics of designing a data model
+title: "Data Model Design"
+description: "Discussing the basics of designing a data model"
 ---
 
 Designing data models is akin to crafting a map that guides data organization, relationships, and integrity. This page delves into the art of data model design, offering insights into selecting entities, attributes, relationships, and keys, along with best practices to follow and common pitfalls to steer clear of.

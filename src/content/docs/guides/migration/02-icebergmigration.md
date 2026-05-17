@@ -1,6 +1,6 @@
 ---
-title: Apache Iceberg
-description: Resources for migrating to Apache Iceberg
+title: "Migrating to Apache Iceberg: Hive, Delta Lake & Hudi Migration Guide"
+description: "Step-by-step guide to migrating data to Apache Iceberg from Hive, Delta Lake, and Apache Hudi — covering in-place migration, CTAS, the add_files procedure, and built-in conversion modules."
 ---
 
 Migrating data management and storage solutions is a strategic endeavor that organizations undertake to unlock new capabilities, streamline processes, and enhance overall efficiency. Apache Iceberg, a cutting-edge open-source data table format, has garnered significant attention for its comprehensive capabilities. This page delves into the reasons for migrating to Apache Iceberg, various migration procedures, and the modules integrated into Iceberg for seamless migration from other platforms.

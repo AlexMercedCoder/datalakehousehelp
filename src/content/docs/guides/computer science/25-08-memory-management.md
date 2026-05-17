@@ -1,6 +1,6 @@
 ---
-title: Understanding Memory Management
-description: Reference on Memory Management
+title: "Understanding Memory Management"
+description: "Reference on Memory Management"
 ---
 
 # Memory in Software

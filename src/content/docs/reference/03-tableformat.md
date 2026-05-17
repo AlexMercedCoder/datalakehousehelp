@@ -1,6 +1,6 @@
 ---
-title: What is a Table Format?
-description: A page describing what are data lakehouse table formats.
+title: "What is a Table Format?"
+description: "Understand data lakehouse table formats — Apache Iceberg, Apache Hudi, and Delta Lake — and how they bring ACID transactions, schema evolution, and time travel to open data lakes."
 ---
 
 - [Video: The Who, What and Why of Data Lakehouse Table Formats](https://www.youtube.com/watch?v=1eEcWopaFqE&pp=ygUhd2hvIHdoYXQgd2h5IHRhYmxlIGZvcm1hdHMgZHJlbWlv)
@@ -8,13 +8,13 @@ description: A page describing what are data lakehouse table formats.
 
 Data Lakehouse table formats like Apache Iceberg, Apache Hudi, and Delta Lake have emerged as game-changers, redefining how data is organized and processed. These formats provide a structured and efficient way to store and manage data within a data lake environment, offering solutions to common challenges associated with data quality, schema evolution, and processing speed.
 
-### What is a Table Format?
+## What is a Table Format?
 
 A table format, in the context of data lake management, is a structured approach to organizing and storing data within a data lake. Traditionally, data lakes have been repositories of raw and unprocessed data, often lacking the structure and organization necessary for efficient querying and analysis. Advanced table formats address this by introducing a layer of organization that resembles the tabular structure of relational databases.
 
 A table format incorporates metadata, schema information, and optimizations that enhance data accessibility, integrity, and performance. It offers the ability to define and enforce schemas, manage data changes over time, and support both batch and real-time data processing. By adopting a table format, organizations can transform their data lakes into more organized and manageable repositories, bridging the gap between the flexibility of data lakes and the structured querying of data warehouses.
 
-### Key Benefits of Advanced Table Formats:
+## Key Benefits of Advanced Table Formats:
 
 - **Data Quality Assurance:** Table formats facilitate the implementation of data quality checks and validations. They ensure that the data stored conforms to predefined schemas, minimizing errors and inconsistencies.
 

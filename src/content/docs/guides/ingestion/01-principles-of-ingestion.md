@@ -1,6 +1,6 @@
 ---
-title: Basics of Data Ingestion
-description: The Basics Concepts around ingesting data.
+title: "Basics of Data Ingestion"
+description: "The Basics Concepts around ingesting data."
 ---
 
 

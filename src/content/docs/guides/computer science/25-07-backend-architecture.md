@@ -1,6 +1,6 @@
 ---
-title: Understanding Backend Architecture
-description: Understanding Backend Architecture
+title: "Understanding Backend Architecture"
+description: "Understanding Backend Architecture"
 ---
 
 # Backend Application and Architecture

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://datalakehouse.help/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <!-- Reference -->
+  <url><loc>https://datalakehouse.help/reference/01-datalakehouse/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/reference/02-fileformats/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/reference/03-tableformat/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/reference/04-datacatalogs/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/reference/05-queryengines/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/reference/06-datalakehousestorage/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/reference/07-python/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/reference/08-sql/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Guides -->
+  <url><loc>https://datalakehouse.help/guides/01-gettingstarted/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <!-- Agentic AI -->
+  <url><loc>https://datalakehouse.help/guides/agentic/01-agentic-ai-lakehouse/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <!-- Migration -->
+  <url><loc>https://datalakehouse.help/guides/migration/01-hadooptocloud/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/migration/02-icebergmigration/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <!-- Foundational Concepts -->
+  <url><loc>https://datalakehouse.help/guides/foundational-concepts/01-data/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/foundational-concepts/02-databases/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/foundational-concepts/03-datawarehouses/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/foundational-concepts/04-datalakes/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/foundational-concepts/05-datalakehouses/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/foundational-concepts/06-distributed-systems/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Modeling -->
+  <url><loc>https://datalakehouse.help/guides/modeling/01-data-modeling-basics/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/modeling/02-design/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/modeling/03-normalization/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/modeling/04-relationships/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/modeling/05-types/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/modeling/06-scd/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Optimization -->
+  <url><loc>https://datalakehouse.help/guides/optimization/01-clustering/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/optimization/02-partitioning/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/optimization/03-compaction/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/optimization/04-compression/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Security -->
+  <url><loc>https://datalakehouse.help/guides/security/01-access-controls/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/security/02-encryption/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/security/03-hardeletes/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Tooling -->
+  <url><loc>https://datalakehouse.help/guides/tooling/01-apache-spark/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/tooling/02-apache-flink/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/tooling/03-apache-kafka/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/tooling/04-dremio/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/tooling/05-pandas-polars/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/tooling/22-00-docker/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <!-- Python -->
+  <url><loc>https://datalakehouse.help/guides/python/15-00-python/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/python/15-01-advanced-python/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/python/15-02-virtual-environments/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/python/15-03-backend-python/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/python/16-python-tricks/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <!-- Other -->
+  <url><loc>https://datalakehouse.help/guides/ingestion/01-principles-of-ingestion/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/querying/01-ansi-sql/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/quality/01-data-quality-checks/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/transfer/01-jdbc-odbc-arrow-flight/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Computer Science -->
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-00-computer-science/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-01-design-patterns/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-02-data-structures/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-03-algorithms/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-04-functional-prog/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-05-concurrency/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-06-frontend-architecture/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-07-backend-architecture/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/25-08-memory-management/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/computer-science/26-00-regex/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <!-- Java -->
+  <url><loc>https://datalakehouse.help/guides/java/27-00-jvm/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/guides/java/27-01-java-spring/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <!-- Other resources -->
+  <url><loc>https://datalakehouse.help/other/01-big_data_glossary/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://datalakehouse.help/other/02-video-library/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+</urlset>

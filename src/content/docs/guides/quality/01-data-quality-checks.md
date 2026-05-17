@@ -1,6 +1,6 @@
 ---
-title: Data Quality Checks
-description: A guide to what is data quality checks and best practices.
+title: "Data Quality Checks"
+description: "A guide to what is data quality checks and best practices."
 ---
 
 The quality of your data is paramount. High-quality data ensures accurate insights, informed actions, and reliable business outcomes. This page delves into the significance of data quality, different types of data quality checks, best practices to uphold data quality, and common mistakes to avoid.

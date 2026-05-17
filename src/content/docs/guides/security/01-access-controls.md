@@ -1,6 +1,6 @@
 ---
-title: Access Controls
-description: A guide to what types of access controls and best practices.
+title: "Access Controls"
+description: "A guide to what types of access controls and best practices."
 ---
 
 Robust access controls are paramount for safeguarding sensitive information, ensuring data privacy, and maintaining regulatory compliance. Access controls define who can access what data and to what extent, providing a critical layer of protection against unauthorized access and data breaches. This documentation page explores the importance of access controls, the differences between Role-Based Access Controls (RBAC), Row & Column Masking, and other types of access controls, along with best practices and key mistakes to avoid.

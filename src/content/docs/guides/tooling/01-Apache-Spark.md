@@ -1,6 +1,6 @@
 ---
-title: Apache Spark
-description: A Reference on Apache Spark
+title: "Apache Spark"
+description: "A Reference on Apache Spark"
 ---
 
 ### Apache Spark and its Architecture

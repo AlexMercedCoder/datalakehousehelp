@@ -1,6 +1,6 @@
 ---
-title: Understanding Frontend Architecture
-description: Understanding Frontend Architecture
+title: "Understanding Frontend Architecture"
+description: "Understanding Frontend Architecture"
 ---
 
 # Frontend Application Architecture

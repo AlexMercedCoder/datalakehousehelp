@@ -1,11 +1,11 @@
 ---
-title: Data Lake File Formats
-description: A Page discussing different file formats
+title: "Data Lake File Formats"
+description: "Compare data lake file formats — Parquet, ORC, and Avro — and learn which columnar format powers the best performance in Apache Iceberg and data lakehouse architectures."
 ---
 
 The choice of file format plays a pivotal role in determining how data is stored, organized, and accessed within a data lake environment. Each file format brings a unique set of characteristics that influence factors such as storage efficiency, query performance, and compatibility. In this section, we delve into the significance of data lake file formats and shed light on the distinctions between popular formats like Parquet, ORC, and Avro.
 
-### The Role of Data Lake File Formats: Striking the Balance
+## The Role of Data Lake File Formats: Striking the Balance
 
 File formats serve as the blueprint for data storage within a data lake. They dictate the structure in which data is written to disk, impacting how efficiently data can be read, processed, and analyzed. The choice of a file format influences key aspects of data lake management:
 
@@ -15,7 +15,7 @@ File formats serve as the blueprint for data storage within a data lake. They di
 - **Compression:** Formats often employ compression techniques to minimize storage footprint and improve data transmission speeds.
 - **Data Type Support:** The ability to handle different data types impacts the versatility of the format for various use cases.
 
-### Comparing Data Lake File Formats: Parquet, ORC, and Avro
+## Comparing Data Lake File Formats: Parquet, ORC, and Avro
 
 While various file formats exist, three prominent contenders—Parquet, ORC, and Avro—stand out due to their widespread adoption and distinctive characteristics:
 
@@ -28,7 +28,7 @@ ORC takes a hybrid approach by storing data in both columnar and row formats. Th
 - **Avro:** Schema Evolution and Interoperability
 Avro focuses on supporting schema evolution and interoperability. It embeds the schema within data files, allowing for flexible schema changes without requiring all data to conform to the same schema. Avro is well-suited for scenarios where data sources vary and schema changes are frequent.
 
-### Selecting the Right Format: Matching Your Needs
+## Selecting the Right Format: Matching Your Needs
 
 Choosing the optimal file format depends on your data's characteristics and usage patterns:
 

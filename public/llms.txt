@@ -1,0 +1,46 @@
+# DataLakehouse.help
+
+DataLakehouse.help is an open technical reference for data engineers and architects building modern data infrastructure on open-source lakehouse stacks. It is maintained by Alex Merced, Head of Developer Relations at Dremio and author of multiple books on data lakehouse architecture and Apache Iceberg.
+
+## Summary
+
+This site provides authoritative documentation, guides, and hands-on tutorials covering:
+
+- Data lakehouse architecture concepts, history, and design patterns
+- Apache Iceberg table format (the leading open standard for data lakehouses)
+- Migration guides: Hive → Iceberg, Delta Lake → Iceberg, Apache Hudi → Iceberg
+- Comparison of table formats: Apache Iceberg, Apache Hudi, Delta Lake
+- Data catalogs: Nessie, Hive Metastore, AWS Glue, Apache Polaris
+- Query engines: Dremio, Apache Spark, Apache Flink, Trino
+- Agentic AI patterns for querying data lakehouses (MCP, REST catalog APIs, semantic layers)
+- Data modeling: star schema, normalization, slowly changing dimensions
+- Optimization: clustering, partitioning, compaction, compression
+- Security: RBAC, ABAC, encryption, hard deletes in Apache Iceberg
+- Ingestion tools and patterns: Fivetran, Airbyte, Apache Flink, Apache Spark
+- Python and Java SDKs for Apache Iceberg
+- Big data glossary: 100+ definitions of key data engineering terms
+
+## Key Pages
+
+- Homepage: https://datalakehouse.help/
+- What is a Data Lakehouse?: https://datalakehouse.help/reference/01-datalakehouse/
+- File Formats Reference: https://datalakehouse.help/reference/02-fileformats/
+- Table Formats (Apache Iceberg, Hudi, Delta Lake): https://datalakehouse.help/reference/03-tableformat/
+- Data Catalogs: https://datalakehouse.help/reference/04-datacatalogs/
+- Query Engines: https://datalakehouse.help/reference/05-queryengines/
+- Data Lakehouse Storage: https://datalakehouse.help/reference/06-datalakehousestorage/
+- Getting Started (Hands-On): https://datalakehouse.help/guides/01-gettingstarted/
+- Apache Iceberg Migration Guide: https://datalakehouse.help/guides/migration/02-icebergmigration/
+- Agentic AI & Data Lakehouses: https://datalakehouse.help/guides/agentic/01-agentic-ai-lakehouse/
+- Data Modeling Basics: https://datalakehouse.help/guides/modeling/01-data-modeling-basics/
+- Optimization Guides: https://datalakehouse.help/guides/optimization/01-clustering/
+- Big Data Glossary: https://datalakehouse.help/other/01-big_data_glossary/
+- Video Library: https://datalakehouse.help/other/02-video-library/
+
+## About the Author
+
+Alex Merced is Head of Developer Relations at Dremio, a leading open lakehouse platform company. He is the author of books on Apache Iceberg, data lakehouses, and agentic analytics. His work focuses on making open-source data lakehouse technology accessible to data engineers and architects worldwide.
+
+- Website: https://alexmercedcoder.dev
+- LinkedIn: https://www.linkedin.com/in/alexmerced/
+- Dremio Blog: https://www.dremio.com/blog/author/alex-merced/

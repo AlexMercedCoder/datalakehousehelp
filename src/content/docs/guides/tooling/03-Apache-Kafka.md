@@ -1,6 +1,6 @@
 ---
-title: Apache Kafka
-description: A Reference on Apache Kafka
+title: "Apache Kafka"
+description: "A Reference on Apache Kafka"
 ---
 
 ### Apache Kafka and its Architecture

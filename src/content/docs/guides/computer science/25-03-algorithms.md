@@ -1,6 +1,6 @@
 ---
-title: Algorithms
-description: Reference on Algorithms
+title: "Algorithms"
+description: "Reference on Algorithms"
 ---
 
 # What are Algorithms?

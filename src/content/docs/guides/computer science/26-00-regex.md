@@ -1,6 +1,6 @@
 ---
-title: RegEx
-description: Reference on RegEx
+title: "RegEx"
+description: "Reference on RegEx"
 ---
 
 # Regular Expressions (Regex)

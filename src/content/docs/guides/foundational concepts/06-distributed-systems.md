@@ -1,6 +1,6 @@
 ---
-title: Key Concept - Distributed Systems
-description: Foundational Concept of Distributed Systems
+title: "Key Concept - Distributed Systems"
+description: "Foundational Concept of Distributed Systems"
 ---
 
 # Distributed Computing Systems

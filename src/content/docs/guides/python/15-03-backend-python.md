@@ -1,6 +1,6 @@
 ---
-title: Python Backend Development
-description: A reference page on python backend development
+title: "Python Backend Development"
+description: "A reference page on python backend development"
 ---
 
 ## What is Django and Getting Started

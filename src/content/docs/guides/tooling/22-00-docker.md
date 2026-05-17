@@ -1,6 +1,6 @@
 ---
-title: Docker
-description: Reference for using Docker
+title: "Docker"
+description: "Reference for using Docker"
 ---
 
 ## Docker: Containerization Simplified

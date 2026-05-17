@@ -1,6 +1,6 @@
 ---
-title: Pandas and Polars
-description: A Reference on Dataframes, Pandas and Polars
+title: "Pandas and Polars"
+description: "A Reference on Dataframes, Pandas and Polars"
 ---
 
 ### Dataframes and Dataframe Libraries

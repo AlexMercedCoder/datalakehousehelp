@@ -1,6 +1,6 @@
 ---
-title: On-Prem Hadoop to Cloud Migration
-description: A guide to cloud migration and best practices.
+title: "On-Prem Hadoop to Cloud Migration"
+description: "A guide to cloud migration and best practices."
 ---
 
 The migration journey from on-premises Hadoop clusters to cloud environments represents a strategic shift that numerous organizations are embracing. This transformation offers a pathway to enhanced scalability, agility, and modernized data management. This page provides insights into the reasons driving the migration, the challenges that might arise, best practices, mistakes to avoid, and the role of tools like Dremio in simplifying the transition.

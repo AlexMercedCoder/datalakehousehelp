@@ -1,6 +1,6 @@
 ---
-title: Normalization and Denormalization
-description: Discussing the basics of normalization and denormalization
+title: "Normalization and Denormalization"
+description: "Discussing the basics of normalization and denormalization"
 ---
 
 Normalization and denormalization are strategies that shape the structure of relational databases. This page delves into the concepts of normalization and denormalization, discussing their advantages and disadvantages, providing an example using ASCII art tables, sharing best practices, and highlighting common pitfalls to avoid.

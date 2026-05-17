@@ -1,6 +1,6 @@
 ---
-title: Python Virtual Environments
-description: A reference page on python virtual environment
+title: "Python Virtual Environments"
+description: "A reference page on python virtual environment"
 ---
 
 ### Python Virtual Environments

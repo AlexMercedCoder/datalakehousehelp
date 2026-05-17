@@ -1,6 +1,6 @@
 ---
-title: Computer Science
-description: Basic Understanding of Computer Science Concepts
+title: "Computer Science"
+description: "Basic Understanding of Computer Science Concepts"
 ---
 
 # Understanding Base Counting: Base 10, Base 16, and Base 2

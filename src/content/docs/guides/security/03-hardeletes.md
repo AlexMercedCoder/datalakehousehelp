@@ -1,6 +1,6 @@
 ---
-title: Hard Deletes
-description: A guide to hard deleting lakehouse data and best practices.
+title: "Hard Deletes"
+description: "A guide to hard deleting lakehouse data and best practices."
 ---
 
 The concept of hard deletion plays a critical role in maintaining data privacy, compliance, and efficient data management. Modern table formats, often associated with copy-on-write or merge-on-read approaches, introduce complexities when it comes to securely deleting data files while retaining data integrity. This section explores the nuances of hard deletion within data lakehouses, focusing on table snapshots, copy-on-write, and merge-on-read mechanisms, best practices for ensuring timely deletion of sensitive data like Personally Identifiable Information (PII), and key mistakes to avoid.

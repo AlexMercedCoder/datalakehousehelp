@@ -1,6 +1,6 @@
 ---
-title: Dremio
-description: A Reference on Dremio
+title: "Dremio"
+description: "A Reference on Dremio"
 ---
 
 ### Dremio and its Architecture

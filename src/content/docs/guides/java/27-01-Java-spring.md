@@ -1,6 +1,6 @@
 ---
-title: Java Spring
-description: Reference on the Java Spring Framework
+title: "Java Spring"
+description: "Reference on the Java Spring Framework"
 ---
 
 # Java Spring

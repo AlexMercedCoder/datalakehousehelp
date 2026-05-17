@@ -1,6 +1,6 @@
 ---
-title: Key Concept - Data Lakehouses
-description: Foundational Concepts in Data Lakehouses
+title: "Key Concept - Data Lakehouses"
+description: "Foundational Concepts in Data Lakehouses"
 ---
 
 # Data Lakehouses

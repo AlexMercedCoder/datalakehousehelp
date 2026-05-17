@@ -1,18 +1,18 @@
 ---
-title: What is a Data Lakehouse?
-description: A Page describing what is a data lakehouse
+title: "What is a Data Lakehouse?"
+description: "Learn what a data lakehouse is, how it unifies data lake scalability with data warehouse analytics, and why Apache Iceberg is the leading open table format powering modern lakehouse architectures."
 ---
 
 - [Video: What is a Data Lakehouse?]()
 - [Video: How Maersk is Building A Next Gen Data Lakehouse](https://www.youtube.com/watch?v=Jme87z1kGO4)
 
-### Data Lakehouse: Bridging the Gap between Data Storage and Analysis
+## Data Lakehouse: Bridging the Gap between Data Storage and Analysis
 
 In the realm of modern data management, a data lakehouse emerges as a robust solution that seamlessly amalgamates the strengths of data lakes and data warehouses. A data lakehouse presents a strategic approach that addresses the challenges faced by organizations in efficiently storing, processing, and deriving insights from massive and diverse datasets.
 
 At its core, a data lakehouse is a unified repository that marries the scalability and cost-effectiveness of a data lake with the structured querying and analytics capabilities of a data warehouse. This integration eliminates the traditional trade-offs between these two data storage paradigms, allowing organizations to achieve holistic data management without compromising on performance or flexibility.
 
-### Key Problems Solved by a Data Lakehouse:
+## Key Problems Solved by a Data Lakehouse:
 
 - **Data Silos Elimination:** Organizations often grapple with data silos, where information is scattered across various platforms, hindering comprehensive analysis. A data lakehouse resolves this issue by serving as a central repository for diverse data types, fostering collaboration and enabling cross-functional insights.
 

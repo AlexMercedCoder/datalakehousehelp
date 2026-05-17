@@ -1,6 +1,6 @@
 ---
-title: Key Concept - Databases
-description: Foundational Concepts in Databases
+title: "Key Concept - Databases"
+description: "Foundational Concepts in Databases"
 ---
 
 # Understanding Databases

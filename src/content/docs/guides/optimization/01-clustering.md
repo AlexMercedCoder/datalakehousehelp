@@ -1,6 +1,6 @@
 ---
-title: Clustering Data
-description: A guide to what is clustering and best practices.
+title: "Clustering Data"
+description: "A guide to what is clustering and best practices."
 ---
 
 Clustering emerges as a critical strategy to optimize data storage and query performance. By organizing data in a structured manner, clustering significantly enhances the efficiency of data retrieval and analysis. This documentation page delves into the concept of clustering, its relevance in data lakehouse performance, different clustering techniques like Z-Order, and best practices to implement effective clustering strategies.

@@ -1,6 +1,6 @@
 ---
-title: Hands-On With Data Lakehouses
-description: A list of tutorial and resources with hand-on exercises for working with Data Lakehouses.
+title: "Hands-On With Data Lakehouses"
+description: "Hands-on tutorials for building data lakehouses with Apache Iceberg, Dremio, Nessie, and MinIO — covering data ingestion, querying, BI dashboards, and real-world lakehouse architecture patterns."
 ---
 
 On this page you'll find several guides walking your through several types of data lakehouse tasks such as:

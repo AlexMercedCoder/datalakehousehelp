@@ -1,6 +1,6 @@
 ---
-title: Functional Programming
-description: Reference on Functional Programming Techniques
+title: "Functional Programming"
+description: "Reference on Functional Programming Techniques"
 ---
 
 # Functional Programming Techniques
