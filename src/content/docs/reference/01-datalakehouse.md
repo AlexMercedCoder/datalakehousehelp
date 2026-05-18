@@ -3,6 +3,8 @@ title: "What is a Data Lakehouse?"
 description: "Learn what a data lakehouse is, how it unifies data lake scalability with data warehouse analytics, and why Apache Iceberg is the leading open table format powering modern lakehouse architectures."
 ---
 
+import { LinkCard } from '@astrojs/starlight/components';
+
 - [Video: What is a Data Lakehouse?]()
 - [Video: How Maersk is Building A Next Gen Data Lakehouse](https://www.youtube.com/watch?v=Jme87z1kGO4)
 
@@ -31,6 +33,9 @@ At its core, a data lakehouse is a unified repository that marries the scalabili
 In summary, a data lakehouse represents a pivotal advancement in data management, providing a harmonious blend of scalability, agility, and analytics capabilities. By unifying data storage and analysis in a single architecture, organizations can overcome the challenges of fragmented data, evolving schemas, and escalating processing demands, all while realizing substantial cost savings. Embracing a data lakehouse empowers organizations to extract maximum value from their data, fostering innovation and data-driven decision-making at an unparalleled scale.
 
 ## Further reading
+
+<LinkCard title="Data Lake vs Data Warehouse vs Data Lakehouse" description="Understand the evolution of data architecture and the difference between open and closed lakehouses." href="/reference/01a-lakehouse-vs-warehouse/" />
+<LinkCard title="What is an Agentic Lakehouse?" description="Learn how AI agents interact with modern data lakehouse platforms." href="/guides/agentic/01-agentic-ai-lakehouse/" />
 
 - [Blog: What is a Data Lakehouse](https://www.dremio.com/blog/what-is-a-data-lakehouse/)
 - [Blog: 5 use cases for the Lakehouse](https://www.dremio.com/blog/5-use-cases-for-the-dremio-lakehouse/)
