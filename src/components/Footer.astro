@@ -1,0 +1,24 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<Default {...Astro.props} />
+<footer class="site-footer-links">
+	<p>
+		Part of the Alex Merced network:
+		<a href="https://alexmerceddata.com">AlexMercedData.com</a> ·
+		<a href="https://books.alexmerced.com">Books by Alex Merced</a> ·
+		<a href="https://alexmerced.com">AlexMerced.com</a>
+	</p>
+</footer>
+<style>
+	.site-footer-links {
+		padding: 1rem 0 2rem;
+		text-align: center;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+	}
+	.site-footer-links a {
+		color: var(--sl-color-text-accent);
+	}
+</style>
