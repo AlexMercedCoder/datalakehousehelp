@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
 			customCss: ['./src/styles/custom.css'],
 			components: {
 				Footer: './src/components/Footer.astro',
+				Head: './src/components/Head.astro',
 			},
 			sidebar: [
 				{
@@ -168,6 +170,7 @@ export default defineConfig({
 				},
 			  ],
 		}),
+		sitemap(),
 	],
 
 	// Process images with sharp: https://docs.astro.build/en/guides/assets/#using-sharp

@@ -1,0 +1,52 @@
+---
+import Default from '@astrojs/starlight/components/Head.astro';
+
+const route = Astro.locals.starlightRoute;
+const entry = route?.entry;
+const isSplash = entry?.data?.template === 'splash';
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://datalakehouse.help').href;
+
+// Build a simple breadcrumb from the URL path (Home / Section / Page)
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+const crumbs = [{ name: 'Home', item: new URL('/', Astro.site ?? 'https://datalakehouse.help').href }];
+let acc = '';
+for (const seg of segments) {
+  acc += '/' + seg;
+  const isLast = acc === Astro.url.pathname || acc + '/' === Astro.url.pathname;
+  crumbs.push({
+    name: isLast && entry?.data?.title
+      ? entry.data.title
+      : seg.replace(/^\d+[-_]/, '').replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+    item: new URL(acc + '/', Astro.site ?? 'https://datalakehouse.help').href,
+  });
+}
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: c.item,
+  })),
+};
+
+const articleLd = entry && !isSplash ? {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: entry.data.title,
+  description: entry.data.description ?? undefined,
+  mainEntityOfPage: canonical,
+  author: { '@id': 'https://datalakehouse.help/#author' },
+  publisher: { '@id': 'https://datalakehouse.help/#organization' },
+} : null;
+---
+
+<Default {...Astro.props}><slot /></Default>
+{!isSplash && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+)}
+{articleLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+)}
