@@ -37,6 +37,16 @@ export default defineConfig({
 				},
 			],
 			head: [
+				// WebMCP: read-only tools for browser AI agents. Progressive
+				// enhancement; config lives in public/webmcp/init.js
+				{
+				  tag: 'script',
+				  attrs: { src: '/webmcp/alex-merced-webmcp.js', defer: true },
+				},
+				{
+				  tag: 'script',
+				  attrs: { src: '/webmcp/init.js', defer: true },
+				},
 				// Google Fonts — Inter (Sequel Sans substitute per design.md)
 				{
 				  tag: 'link',
@@ -134,13 +144,13 @@ export default defineConfig({
 						"name": "DataLakehouse.help",
 						"description": "Open technical reference for data lakehouse architecture, Apache Iceberg table formats, and agentic AI data patterns.",
 						"inLanguage": "en-US",
-						"publisher": { "@id": "https://datalakehouse.help/#author" }
+						"publisher": { "@id": "https://alexmerced.com/#alexmerced" }
 					  },
 					  {
 						"@type": "Person",
-						"@id": "https://datalakehouse.help/#author",
+						"@id": "https://alexmerced.com/#alexmerced",
 						"name": "Alex Merced",
-						"url": "https://alexmercedcoder.dev",
+						"url": "https://alexmerced.com",
 						"jobTitle": "Head of Developer Relations",
 						"worksFor": {
 						  "@type": "Organization",
