@@ -19,6 +19,7 @@ export default defineConfig({
 				Head: './src/components/Head.astro',
 			},
 			sidebar: [
+				{ label: 'Books by Alex Merced', link: '/books/' },
 				{
 					label: 'Reference',
 					items: [{ autogenerate: { directory: 'reference' } }],
