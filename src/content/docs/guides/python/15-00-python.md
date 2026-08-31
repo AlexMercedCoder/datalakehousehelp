@@ -70,7 +70,7 @@ Python supports various data types and operators for performing operations on da
   - **float:** Represents floating-point (decimal) values, e.g., 3.14, -0.5.
   - **complex:** Represents complex numbers, e.g., 1 + 2j.
 - b. **String Data Type:**
-  - **str:** Represents text or string values, enclosed in single (') or double (") quotes, e.g., 'Hello, World!'.
+  - **str:** Represents text or string values, enclosed in single (`'`) or double (`"`) quotes, e.g., 'Hello, World!'.
 - c. **Boolean Data Type:**
   - **bool:** Represents Boolean values, either True or False.
 - d. **Containers:**

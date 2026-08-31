@@ -209,27 +209,27 @@ docker build [OPTIONS] PATH | URL | -
 ### Flags and Options:
 Here are some of the commonly used flags and options with the docker build command:
 
-**-f, --file file :** Specify the Dockerfile name (default is 'Dockerfile').
+**-f, `--file` file :** Specify the Dockerfile name (default is 'Dockerfile').
 
-**--build-arg key=value :** Set build-time variables that can be accessed in the Dockerfile.
+**`--build-arg` key=value :** Set build-time variables that can be accessed in the Dockerfile.
 
-**--cache-from image-name :** Use images from a previous build as a cache source.
+**`--cache-from` image-name :** Use images from a previous build as a cache source.
 
-**--disable-content-trust :** Skip image verification (not recommended for production).
+**`--disable-content-trust` :** Skip image verification (not recommended for production).
 
-**--label key=value :** Add metadata to the image as key-value pairs.
+**`--label` key=value :** Add metadata to the image as key-value pairs.
 
-**--no-cache :** Do not use the cache during the build process.
+**`--no-cache` :** Do not use the cache during the build process.
 
-**--pull :** Always attempt to pull a newer version of the base image.
+**`--pull` :** Always attempt to pull a newer version of the base image.
 
-**-q, --quiet :** Suppress the build output and only show the final image ID.
+**-q, `--quiet` :** Suppress the build output and only show the final image ID.
 
-**--rm :** Remove intermediate containers after a successful build.
+**`--rm` :** Remove intermediate containers after a successful build.
 
-**-t, --tag name:tag :** Name and optionally tag the output image (e.g., myimage:1.0).
+**-t, `--tag` name:tag :** Name and optionally tag the output image (e.g., myimage:1.0).
 
-**--target stage-name :** Build a specific build stage defined in the Dockerfile.
+**`--target` stage-name :** Build a specific build stage defined in the Dockerfile.
 
 ### Example Usage:
 Build an image from the Dockerfile in the current directory with the tag myimage:1.0:
@@ -485,7 +485,7 @@ You can set environment variables in your Compose file. Additionally, Docker Com
 Specify healthchecks for your services to monitor container health and ensure they are working correctly.
 
 ### 8. Scaling Services
-Use Docker Compose to scale services up or down to handle varying workloads. The docker-compose up --scale command allows you to specify the number of containers to run for a particular service.
+Use Docker Compose to scale services up or down to handle varying workloads. The docker-compose up `--scale` command allows you to specify the number of containers to run for a particular service.
 
 ### 9. Orchestration
 For more complex orchestration and scaling, consider using Docker Compose in conjunction with Docker Swarm or Kubernetes.

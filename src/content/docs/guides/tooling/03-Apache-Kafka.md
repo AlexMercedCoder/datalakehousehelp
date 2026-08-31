@@ -169,7 +169,7 @@ This command checks the versions of the APIs supported by the Kafka brokers.
 
 ### Custom Configurations:
 
-You can specify custom configurations for Kafka CLI commands by providing a --property flag followed by key-value pairs. For example:
+You can specify custom configurations for Kafka CLI commands by providing a `--property` flag followed by key-value pairs. For example:
 
 ```bash
 kafka-console-producer.sh --broker-list localhost:9092 --topic my-topic --property parse.key=true --property key.separator=:
@@ -179,7 +179,7 @@ This allows you to set properties like parse.key and key.separator as needed.
 
 ### Help:
 
-For detailed information on any Kafka CLI command, you can use the --help option. For example:
+For detailed information on any Kafka CLI command, you can use the `--help` option. For example:
 
 ```bash
 kafka-topics.sh --help
@@ -187,7 +187,7 @@ kafka-topics.sh --help
 
 This displays the usage and available options for the kafka-topics.sh command.
 
-The Kafka CLI is a powerful tool for managing Kafka clusters, testing configurations, and debugging issues. Be sure to refer to the official Kafka documentation and command line help (--help) for more detailed information on each command and its options.
+The Kafka CLI is a powerful tool for managing Kafka clusters, testing configurations, and debugging issues. Be sure to refer to the official Kafka documentation and command line help (`--help`) for more detailed information on each command and its options.
 
 # Working with Kafka from Python
 
