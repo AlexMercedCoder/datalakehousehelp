@@ -159,6 +159,9 @@ export default defineConfig({
 						  "url": "https://www.dremio.com"
 						},
 						"sameAs": [
+						  "https://branding.alexmerced.com",
+						  "https://books.alexmerced.com",
+						  "https://alexmercedcoder.dev",
 						  "https://www.linkedin.com/in/alexmerced/",
 						  "https://twitter.com/alexmercedcoder",
 						  "https://www.dremio.com/blog/author/alex-merced/",
@@ -181,7 +184,12 @@ export default defineConfig({
 				},
 			  ],
 		}),
-		sitemap(),
+		sitemap({
+			serialize(item) {
+				item.lastmod = new Date();
+				return item;
+			},
+		}),
 	],
 
 	// Process images with sharp: https://docs.astro.build/en/guides/assets/#using-sharp

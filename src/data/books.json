@@ -3,7 +3,7 @@
   "source": "https://alexmerced.com/entity/books.json",
   "catalog": "https://books.alexmerced.com/",
   "intro": "The docs here are reference material. These books are the long-form versions: lakehouse architecture, Apache Iceberg, catalogs, and the engineering practice around them.",
-  "totalInCatalog": 65,
+  "totalInCatalog": 66,
   "count": 18,
   "books": [
     {
