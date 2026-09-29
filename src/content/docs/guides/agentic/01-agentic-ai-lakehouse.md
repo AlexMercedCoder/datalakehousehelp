@@ -3,8 +3,6 @@ title: "What is an Agentic Lakehouse?"
 description: "Learn what an agentic lakehouse is and how AI agents query data lakehouses built on Apache Iceberg using MCP servers, REST APIs, and semantic layers."
 ---
 
-import { LinkCard } from '@astrojs/starlight/components';
-
 Agentic AI represents a paradigm shift in how organizations interact with their data. Rather than passive dashboards and manual queries, agentic AI systems autonomously plan multi-step data workflows, query data lakehouses in real time, and synthesize insights on demand. Apache Iceberg's open architecture makes it a natural fit for agentic workloads.
 
 ## What is Agentic AI?
@@ -105,8 +103,8 @@ Together, this stack enables organizations to move from manual reporting cycles 
 
 ## Further Reading
 
-<LinkCard title="What is a Data Lakehouse?" description="Understand the foundational architecture that powers Agentic AI." href="/reference/01-datalakehouse/" />
-<LinkCard title="Migrating to Apache Iceberg" description="Learn how to upgrade your tables to the leading open format." href="/guides/migration/02-icebergmigration/" />
+- [What is a Data Lakehouse?](/reference/01-datalakehouse/) — Understand the foundational architecture that powers Agentic AI.
+- [Migrating to Apache Iceberg](/guides/migration/02-icebergmigration/) — Learn how to upgrade your tables to the leading open format.
 
 - [Blog: Agentic Analytics and the Data Lakehouse](https://www.dremio.com/blog/)
 - [Blog: Apache Iceberg 101 — Your Guide to Learning Apache Iceberg](https://www.dremio.com/blog/apache-iceberg-101-your-guide-to-learning-apache-iceberg-concepts-and-practices/)

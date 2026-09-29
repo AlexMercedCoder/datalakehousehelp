@@ -3,12 +3,20 @@ title: "Hands-On With Data Lakehouses"
 description: "Hands-on tutorials for building data lakehouses with Apache Iceberg, Dremio, Nessie, and MinIO — covering data ingestion, querying, BI dashboards, and real-world lakehouse architecture patterns."
 ---
 
-On this page you'll find several guides walking your through several types of data lakehouse tasks such as:
+Choose a task before opening a tutorial. These external walkthroughs use different product versions, so confirm the versions and commands on the linked page against your environment. The three starting links below were reachable on September 29, 2026; their instructions have not been revalidated here.
+
+## Before you begin
+
+- Have a laptop that can run containers, sufficient free disk space for local services, and a terminal.
+- Pick a disposable development environment. Do not use production credentials or data for a first run.
+- Expect to start storage, a catalog, and a query engine; ingest a small table; then query its rows. The exact commands depend on the tutorial you choose.
+
+On this page you'll find guides walking you through data lakehouse tasks such as:
 
 - Ingesting data into the data lakehouse
-- Querying Data into the data lakehouse
+- Querying data in the data lakehouse
 
-It is recommended you start with this tutorial that will setup an environment on your laptop and do some basic ingestion and querying exercises.
+Start with the first tutorial to set up an environment on your laptop and run basic ingestion and querying exercises. If a service does not start, check container logs and port conflicts first; if a query cannot find a table, confirm the catalog connection and namespace before troubleshooting the query itself.
 
 - [Building a Data Lakehouse on your Laptop with Dremio, Nessie, Iceberg and Minio](https://www.dremio.com/blog/intro-to-dremio-nessie-and-apache-iceberg-on-your-laptop/)
 - [Building a Data Lakehouse on Your Laptop](https://dev.to/alexmercedcoder/data-engineering-create-a-apache-iceberg-based-data-lakehouse-on-your-laptop-41a8)

@@ -3,8 +3,6 @@ title: "Data Lake vs Data Warehouse vs Data Lakehouse"
 description: "A definitive comparison of data architecture paradigms: Data Lakes, Data Warehouses, and the modern Data Lakehouse. Learn the differences between Open and Closed lakehouses."
 ---
 
-import { LinkCard } from '@astrojs/starlight/components';
-
 Choosing the right data architecture is one of the most critical decisions an organization makes. Over the past two decades, the dominant paradigm has shifted from data warehouses, to data lakes, and now to the **data lakehouse**. 
 
 This guide provides a definitive comparison of these three architectures and breaks down the crucial difference between an "Open Lakehouse" and a "Closed Lakehouse".
@@ -57,6 +55,6 @@ An Open Data Lakehouse is built on open standards that prevent vendor lock-in.
 
 ## Further Reading
 
-<LinkCard title="What is a Data Lakehouse?" description="A deeper dive into the core concepts and benefits." href="/reference/01-datalakehouse/" />
-<LinkCard title="Migrating to Apache Iceberg" description="Learn how to upgrade your existing data lake to an open lakehouse." href="/guides/migration/02-icebergmigration/" />
-<LinkCard title="What is an Agentic Lakehouse?" description="Discover how AI agents interact with modern lakehouse architectures." href="/guides/agentic/01-agentic-ai-lakehouse/" />
+- [What is a Data Lakehouse?](/reference/01-datalakehouse/) — A deeper dive into the core concepts and benefits.
+- [Migrating to Apache Iceberg](/guides/migration/02-icebergmigration/) — Learn how to upgrade your existing data lake to an open lakehouse.
+- [What is an Agentic Lakehouse?](/guides/agentic/01-agentic-ai-lakehouse/) — Discover how AI agents interact with modern lakehouse architectures.

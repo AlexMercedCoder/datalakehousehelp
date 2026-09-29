@@ -3,8 +3,6 @@ title: "How to Optimize Apache Iceberg: Compaction & Small Files"
 description: "Learn how to optimize Apache Iceberg tables by managing the small file problem. A complete guide to compaction, RewriteDataFiles, and best practices."
 ---
 
-import { LinkCard } from '@astrojs/starlight/components';
-
 Compaction stands as a crucial strategy to optimize storage efficiency and query performance in Apache Iceberg. By consolidating and reducing the number of data files (solving the "small file problem"), compaction significantly enhances data retrieval speed, reduces metadata overhead in manifest files, and improves overall data lakehouse efficiency. This documentation page delves into the concept of compaction in Iceberg, its benefits, best practices for implementation, and key mistakes to avoid.
 
 ### What is Compaction in Apache Iceberg?
@@ -49,7 +47,7 @@ Compaction emerges as a pivotal strategy for enhancing storage efficiency and qu
 
 ## Further reading
 
-<LinkCard title="What is an Agentic Lakehouse?" description="Learn how AI agents interact with your optimized Iceberg tables." href="/guides/agentic/01-agentic-ai-lakehouse/" />
+- [What is an Agentic Lakehouse?](/guides/agentic/01-agentic-ai-lakehouse/) — Learn how AI agents interact with your optimized Iceberg tables.
 
 - [Blog: Maintaining Iceberg Tables – Compaction, Expiring Snapshots, and More](https://www.dremio.com/blog/maintaining-iceberg-tables-compaction-expiring-snapshots-and-more/)
 - [Blog: Compaction in Apache Iceberg: Fine-Tuning Your Iceberg Table’s Data Files](https://www.dremio.com/blog/compaction-in-apache-iceberg-fine-tuning-your-iceberg-tables-data-files/)
