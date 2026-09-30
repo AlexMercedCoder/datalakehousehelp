@@ -1,53 +1,157 @@
 ---
-title: "How to Optimize Apache Iceberg: Compaction & Small Files"
-description: "Learn how to optimize Apache Iceberg tables by managing the small file problem. A complete guide to compaction, RewriteDataFiles, and best practices."
+title: "Compact Apache Iceberg Data Files"
+description: "A runnable procedure for compacting small files in an Apache Iceberg table with the rewrite_data_files Spark procedure, including bin-pack, sort, and filtered rewrites, with checks against the metadata tables."
 ---
 
-Compaction stands as a crucial strategy to optimize storage efficiency and query performance in Apache Iceberg. By consolidating and reducing the number of data files (solving the "small file problem"), compaction significantly enhances data retrieval speed, reduces metadata overhead in manifest files, and improves overall data lakehouse efficiency. This documentation page delves into the concept of compaction in Iceberg, its benefits, best practices for implementation, and key mistakes to avoid.
+Every streaming micro-batch or small `INSERT` adds data files to an Iceberg table. Many small files mean more manifest entries to plan over and more file opens per query. Compaction rewrites those files into fewer, larger ones with the `rewrite_data_files` procedure. The table's data does not change; only its layout does.
 
-### What is Compaction in Apache Iceberg?
+This procedure builds a table with deliberately small files, compacts it, and proves the result with the metadata tables.
 
-Compaction, in the context of Apache Iceberg, refers to the process of merging multiple smaller data files into larger ones, typically using the `RewriteDataFiles` procedure. This consolidation reduces the total number of files, improving storage management and enhancing query performance. Compaction is particularly effective when dealing with small or fragmented data files, often generated through frequent streaming ingestion, frequent updates, or micro-batch inserts.
+## Prerequisites
 
-### Benefits of Iceberg Compaction for Lakehouse Performance:
+- Apache Spark 4.1 (Scala 2.13) with Java 17 or 21. Spark 3.5 works if you swap the runtime package.
+- Iceberg 1.11.0 Spark runtime: `org.apache.iceberg:iceberg-spark-runtime-4.1_2.13:1.11.0` (Spark 3.5: `org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0`).
+- On Spark 3.x, `CALL` needs the Iceberg SQL extensions. Spark 4.x runs procedures natively, but procedure names are case sensitive there, so keep them lowercase.
 
-- **Optimized Query Performance:** Compaction reduces the number of files that need to be scanned and opened during queries, which drastically cuts down on Amazon S3/cloud storage `GET` request latency.
+```bash
+spark-sql --packages org.apache.iceberg:iceberg-spark-runtime-4.1_2.13:1.11.0 \
+  --conf spark.sql.extensions=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions \
+  --conf spark.sql.catalog.local=org.apache.iceberg.spark.SparkCatalog \
+  --conf spark.sql.catalog.local.type=hadoop \
+  --conf spark.sql.catalog.local.warehouse=$PWD/warehouse
+```
 
-- **Reduced Metadata Overhead:** Fewer data files mean smaller Iceberg manifest files. This reduces the metadata overhead during query planning, leading to faster execution times.
+## Steps
 
-- **Enhanced Data Retrieval:** Larger, consolidated files allow for more efficient I/O operations, reducing the time required to read data.
+1. Create a table and write to it in several small commits. Each `INSERT` produces at least one new data file.
 
-- **Reduced Storage Costs:** Compaction reduces storage redundancy and can lead to cost savings, especially in cloud-based data lakehouses.
+   ```sql
+   CREATE NAMESPACE IF NOT EXISTS local.db;
 
-### Best Practices for Effective Compaction:
+   CREATE TABLE local.db.logs (id bigint, level string, msg string)
+   USING iceberg;
 
-- **Schedule Regularly:** Implement a scheduled compaction process to ensure ongoing optimization of data files. The frequency of compaction depends on data update patterns.
+   INSERT INTO local.db.logs VALUES (1, 'INFO',  'start');
+   INSERT INTO local.db.logs VALUES (2, 'INFO',  'load');
+   INSERT INTO local.db.logs VALUES (3, 'WARN',  'retry');
+   INSERT INTO local.db.logs VALUES (4, 'INFO',  'load');
+   INSERT INTO local.db.logs VALUES (5, 'ERROR', 'timeout');
+   INSERT INTO local.db.logs VALUES (6, 'INFO',  'done');
+   ```
 
-- **Monitor Fragmentation:** Regularly monitor the fragmentation level of your data files. Higher fragmentation indicates the need for compaction.
+2. Record the starting point. Write down both numbers.
 
-- **Consider Data Size:** Consolidate smaller files to achieve a balance between improved query performance and manageable file sizes.
+   ```sql
+   SELECT count(*) AS data_files, sum(record_count) AS records,
+          avg(file_size_in_bytes) AS avg_bytes
+   FROM local.db.logs.files;
+   ```
 
-- **Test and Validate:** Before performing large-scale compaction, test the process on a smaller dataset to ensure it aligns with your objectives.
+   Expected: `data_files` of 6 or more and `records` = `6`.
 
-- **Backup Data:** Always keep backups of data before applying compaction to avoid data loss due to unexpected errors.
+3. Run the compaction. The default strategy is `binpack`, which combines small files toward the target size (the table's `write.target-file-size-bytes`, 512 MB by default). A file group is rewritten once it holds `min-input-files` files (default 5); setting it to 2 makes the example deterministic.
 
-### Mistakes to Avoid:
+   ```sql
+   CALL local.system.rewrite_data_files(
+     table   => 'db.logs',
+     strategy => 'binpack',
+     options => map('min-input-files', '2')
+   );
+   ```
 
-- **Compacting Too Often:** Overcompacting can lead to unnecessary overhead and resource consumption. Choose an appropriate frequency based on data patterns.
+   The call returns `rewritten_data_files_count`, `added_data_files_count`, `rewritten_bytes_count`, `failed_data_files_count`, and `removed_delete_files_count`. For this sample expect `rewritten_data_files_count` to equal the file count from step 2 and `added_data_files_count` to be `1`.
 
-- **Lack of Monitoring:** Neglecting to monitor data fragmentation can lead to inefficient storage usage and hinder query performance.
+4. Use the variants you need on real tables:
 
-- **Insufficient Testing:** Failing to test the compaction process on smaller datasets can lead to unforeseen issues in production environments.
+   ```sql
+   -- Only rewrite files that may hold rows matching a predicate (usually a partition range)
+   CALL local.system.rewrite_data_files(
+     table => 'db.logs',
+     where => 'level = "ERROR"'
+   );
 
-- **No Backup:** Performing compaction without data backups can result in irretrievable data loss in case of errors.
+   -- Sort rows while compacting so min/max stats prune better
+   CALL local.system.rewrite_data_files(
+     table      => 'db.logs',
+     strategy   => 'sort',
+     sort_order => 'level ASC NULLS LAST, id DESC NULLS LAST'
+   );
 
-### In Conclusion: Streamlining Iceberg Efficiency through Compaction
+   -- Z-order on two columns
+   CALL local.system.rewrite_data_files(
+     table      => 'db.logs',
+     strategy   => 'sort',
+     sort_order => 'zorder(level, id)'
+   );
 
-Compaction emerges as a pivotal strategy for enhancing storage efficiency and query performance within Apache Iceberg tables. By grasping the concept of compaction, utilizing built-in procedures like `RewriteDataFiles`, understanding its benefits, and adhering to best practices while avoiding common pitfalls, organizations can harness its power to optimize data organization, storage management, and query processing. By making informed compaction decisions and maintaining a balanced approach, you ensure that your data lakehouse operates at its peak efficiency.
+   -- Large tables: commit in pieces and cap the output file size at 256 MB
+   CALL local.system.rewrite_data_files(
+     table   => 'db.logs',
+     options => map(
+       'partial-progress.enabled', 'true',
+       'partial-progress.max-commits', '10',
+       'target-file-size-bytes', '268435456')
+   );
+   ```
+
+   `sort_order` defaults to the table's own sort order when you pick `sort` without it.
+
+## Done when
+
+1. The newest snapshot is a `replace` that removed the small files and added the compacted one:
+
+   ```sql
+   SELECT committed_at, operation,
+          summary['deleted-data-files'] AS deleted_files,
+          summary['added-data-files']   AS added_files,
+          summary['total-data-files']   AS total_files
+   FROM local.db.logs.snapshots
+   ORDER BY committed_at DESC
+   LIMIT 1;
+   ```
+
+   Expected: `operation` = `replace`, `deleted_files` equals the step 2 file count, `added_files` = `1`, `total_files` = `1`.
+
+2. The current file listing shrank and the row count did not change:
+
+   ```sql
+   SELECT count(*) AS data_files, sum(record_count) AS records
+   FROM local.db.logs.files;
+   ```
+
+   Expected: `data_files` = `1`, `records` = `6`.
+
+3. The compaction is part of the current lineage:
+
+   ```sql
+   SELECT made_current_at, snapshot_id, is_current_ancestor
+   FROM local.db.logs.history
+   ORDER BY made_current_at DESC
+   LIMIT 1;
+   ```
+
+   Expected: `is_current_ancestor` = `true`, and `snapshot_id` matches the snapshot from check 1.
+
+The old small files are still in storage because earlier snapshots reference them. They go away when those snapshots expire, which is the next procedure: [Expire snapshots](/guides/optimization/05-expire-snapshots/).
+
+## Operating it
+
+- Schedule compaction per partition with `where` instead of rewriting the whole table each run.
+- Tables with row-level deletes can also clean up delete files: add `'remove-dangling-deletes', 'true'` to `options`.
+- Run compaction before snapshot expiration so the replaced files become eligible for deletion in the same maintenance window.
 
 ## Further reading
 
-- [What is an Agentic Lakehouse?](/guides/agentic/01-agentic-ai-lakehouse/) — Learn how AI agents interact with your optimized Iceberg tables.
+- [Create an Iceberg table](/reference/09-create-iceberg-table/)
+- [What is an Agentic Lakehouse?](/guides/agentic/01-agentic-ai-lakehouse/)
+- [Blog: Maintaining Iceberg Tables: Compaction, Expiring Snapshots, and More](https://www.dremio.com/blog/maintaining-iceberg-tables-compaction-expiring-snapshots-and-more/)
+- [Blog: Compaction in Apache Iceberg: Fine-Tuning Your Iceberg Table's Data Files](https://www.dremio.com/blog/compaction-in-apache-iceberg-fine-tuning-your-iceberg-tables-data-files/)
 
-- [Blog: Maintaining Iceberg Tables – Compaction, Expiring Snapshots, and More](https://www.dremio.com/blog/maintaining-iceberg-tables-compaction-expiring-snapshots-and-more/)
-- [Blog: Compaction in Apache Iceberg: Fine-Tuning Your Iceberg Table’s Data Files](https://www.dremio.com/blog/compaction-in-apache-iceberg-fine-tuning-your-iceberg-tables-data-files/)
+## Sources
+
+Verified against the Apache Iceberg 1.11.0 documentation:
+
+- [Spark Procedures: rewrite_data_files](https://iceberg.apache.org/docs/latest/spark-procedures/#rewrite_data_files)
+- [Spark Queries: inspecting tables](https://iceberg.apache.org/docs/latest/spark-queries/)
+- [Table configuration](https://iceberg.apache.org/docs/latest/configuration/)
+- [Table spec: snapshot operations and summary fields](https://iceberg.apache.org/spec/)
