@@ -3,11 +3,11 @@ title: "Apache Spark"
 description: "A Reference on Apache Spark"
 ---
 
-### Apache Spark and its Architecture
+#### Apache Spark and its Architecture
 
 **Apache Spark** is an open-source, distributed computing system designed for big data processing and analytics. It provides a fast, in-memory data processing engine that can work with large datasets across clusters of computers. Apache Spark is known for its speed, ease of use, and support for various data processing tasks, including batch processing, interactive queries, streaming, and machine learning.
 
-#### Spark Architecture
+##### Spark Architecture
 
 Apache Spark follows a cluster computing model and consists of the following key components:
 
@@ -27,13 +27,13 @@ Apache Spark follows a cluster computing model and consists of the following key
 
 8. **Libraries**: Spark includes libraries for various data processing tasks, including Spark SQL for SQL-based queries, Spark Streaming for real-time data processing, MLlib for machine learning, and GraphX for graph processing.
 
-#### How Spark Works
+##### How Spark Works
 
 Apache Spark works by distributing data and computation across a cluster of machines. It processes data in-memory whenever possible, which significantly speeds up processing. It can handle data from various sources, such as Hadoop Distributed File System (HDFS), Apache Cassandra, Apache HBase, and more.
 
 Spark supports both batch processing and real-time stream processing, making it suitable for a wide range of use cases. Its architecture, with built-in libraries and APIs, makes it a powerful tool for data engineers, data scientists, and developers dealing with big data and complex data processing tasks.
 
-### Order of Operations in Spark Jobs
+#### Order of Operations in Spark Jobs
 
 When you submit a Spark job, it goes through a series of operations, each of which contributes to the overall data processing. Understanding the order of these operations is crucial for optimizing Spark jobs and managing data transformations efficiently. The typical order of operations in a Spark job is as follows:
 
@@ -57,7 +57,7 @@ It's important to note that Spark's lazy evaluation strategy delays the executio
 
 Understanding the order of operations in a Spark job helps developers and data engineers design and optimize their Spark applications, ensuring efficient data processing and resource utilization.
 
-### Best Practices for Writing Spark Jobs
+#### Best Practices for Writing Spark Jobs
 
 Apache Spark is a powerful tool for distributed data processing, but writing efficient and maintainable Spark jobs requires adhering to best practices. Here are some guidelines to follow when writing Spark applications:
 
@@ -97,11 +97,11 @@ Apache Spark is a powerful tool for distributed data processing, but writing eff
 
 By following these best practices, you can develop Spark applications that are efficient, reliable, and easier to maintain, ultimately maximizing the benefits of distributed data processing.
 
-# Writing Spark Jobs in Scala and Python
+## Writing Spark Jobs in Scala and Python
 
 Apache Spark supports multiple programming languages, including Scala and Python, making it accessible to a wide range of developers. Here, we'll cover the basics of writing Spark jobs in both Scala and Python.
 
-## Writing Spark Jobs in Scala
+### Writing Spark Jobs in Scala
 
 Scala is a popular language for developing Spark applications due to its strong integration with Spark's core libraries. Here's a simple example of a Spark job in Scala:
 
@@ -132,7 +132,7 @@ object SimpleSparkJob {
 }
 ```
 
-## Writing Spark Jobs in Python
+### Writing Spark Jobs in Python
 Python is another widely used language for Spark programming, and it's a great choice for data scientists and engineers. Here's a simple Spark job in Python using PySpark:
 
 ```py

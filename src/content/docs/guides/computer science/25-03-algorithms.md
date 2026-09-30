@@ -3,10 +3,10 @@ title: "Algorithms"
 description: "Reference on Algorithms"
 ---
 
-# What are Algorithms?
+## What are Algorithms?
 Algorithms are step-by-step procedures or sets of rules designed to solve specific problems or perform tasks. They are a fundamental concept in computer science and are used to perform various computational tasks efficiently. Algorithms serve as the core building blocks for software and are essential for solving complex problems in a structured and optimized way.
 
-## Why Do Algorithms Matter?
+### Why Do Algorithms Matter?
 Algorithms are crucial in computer science and software development for several reasons:
 
 **Efficiency:** Algorithms help optimize the use of computational resources, such as time and memory. Efficient algorithms can significantly reduce execution time and resource consumption.
@@ -19,7 +19,7 @@ Algorithms are crucial in computer science and software development for several 
 
 **Competitive Advantage:** In competitive industries, having faster and more efficient algorithms can provide a competitive edge by delivering better user experiences or processing data more effectively.
 
-## How to Get Better at Writing Algorithms
+### How to Get Better at Writing Algorithms
 Improving your algorithmic skills is essential for becoming a proficient developer. Here are some tips to help you get better at writing algorithms:
 
 **Learn Data Structures:** Understanding various data structures, such as arrays, linked lists, trees, and graphs, is essential as algorithms often manipulate data.
@@ -36,7 +36,7 @@ Improving your algorithmic skills is essential for becoming a proficient develop
 
 **Build Projects:** Apply your algorithmic knowledge by building projects that involve data manipulation, optimization, or processing.
 
-## Different Types of Algorithms Developers Should Know
+### Different Types of Algorithms Developers Should Know
 Developers should be familiar with a variety of algorithms, including but not limited to:
 
 **Sorting Algorithms:** Quick Sort, Merge Sort, Bubble Sort, etc.
@@ -69,10 +69,10 @@ Developers should be familiar with a variety of algorithms, including but not li
 
 **Parallel and Concurrent Algorithms:** Used to optimize performance on multi-core processors.
 
-# Big O Notation: Analyzing Algorithm Efficiency
+## Big O Notation: Analyzing Algorithm Efficiency
 Big O notation is a mathematical notation used in computer science to analyze and describe the efficiency or complexity of algorithms. It provides a standardized way to describe how the runtime or space requirements of an algorithm grow as the input size increases. Understanding Big O notation is crucial for assessing and comparing the performance of different algorithms and for designing efficient software.
 
-## What is Big O Notation?
+### What is Big O Notation?
 At its core, Big O notation characterizes the upper bound or worst-case scenario of an algorithm's performance. It helps answer questions like:
 
 - How does the execution time of an algorithm change as the input size grows?
@@ -81,7 +81,7 @@ At its core, Big O notation characterizes the upper bound or worst-case scenario
 
 Big O notation is expressed using the letter "O" followed by a function in parentheses. The function represents an upper bound on the algorithm's growth rate concerning the input size.
 
-## Why Does Big O Notation Matter?
+### Why Does Big O Notation Matter?
 **Algorithm Comparison:** Big O notation allows developers to compare algorithms and choose the most efficient one for a specific task. It helps in making informed decisions about which algorithm to use in real-world applications.
 
 **Scaling Predictions:** Big O notation helps estimate how an algorithm will perform as data sizes increase. It provides insights into whether an algorithm can handle larger datasets or if it will become prohibitively slow.
@@ -90,7 +90,7 @@ Big O notation is expressed using the letter "O" followed by a function in paren
 
 **Resource Management:** For applications with limited resources, such as embedded systems or mobile devices, understanding the memory complexity of algorithms is vital to prevent resource exhaustion.
 
-## **Overview of Big O Notation
+### **Overview of Big O Notation
 Here's an overview of some common Big O notations and their characteristics:
 
 **O(1)** - Constant Time: The algorithm's runtime is not dependent on the input size. It executes in a constant amount of time. Example: Accessing an element in an array by index.
@@ -109,10 +109,10 @@ Here's an overview of some common Big O notations and their characteristics:
 
 **O(n^k)** - Polynomial Time: The algorithm's runtime is a polynomial function of the input size. Example: Polynomial interpolation.
 
-# Search Algorithms: Finding What You Need Efficiently
+## Search Algorithms: Finding What You Need Efficiently
 Search algorithms are essential tools in computer science and programming that help locate specific items within a collection of data. These algorithms are used to find elements in arrays, lists, databases, and more. In this section, we'll explore some common search algorithms and provide JavaScript examples for each.
 
-## Linear Search
+### Linear Search
 Linear search is the simplest search algorithm. It works by checking each element in the collection one by one until the desired item is found or the entire collection is exhausted.
 
 JavaScript Example:
@@ -138,7 +138,7 @@ if (result !== -1) {
 }
 ```
 
-## Binary Search
+### Binary Search
 Binary search is a more efficient search algorithm but requires that the collection be sorted. It works by repeatedly dividing the search range in half until the target element is found.
 
 JavaScript Example:
@@ -174,7 +174,7 @@ if (result !== -1) {
 }
 ```
 
-## Interpolation Search
+### Interpolation Search
 Interpolation search is an improvement over binary search when the data is uniformly distributed. It estimates the position of the target element based on the values of the first and last elements in the array.
 
 JavaScript Example:
@@ -217,7 +217,7 @@ if (result !== -1) {
 }
 ```
 
-## Exponential Search
+### Exponential Search
 Exponential search is particularly useful when you have a sorted but unbounded data structure. It starts with a small range and doubles it until it encompasses the target element.
 
 JavaScript Example:
@@ -265,7 +265,7 @@ if (result !== -1) {
 }
 ```
 
-## Jump Search
+### Jump Search
 Jump search is another search algorithm that works on sorted arrays. It divides the array into smaller blocks and performs a linear search within each block.
 
 JavaScript Example:
@@ -312,10 +312,10 @@ if (result !== -1) {
 }
 ```
 
-# Sorting Algorithms
+## Sorting Algorithms
 Sorting is a fundamental operation in computer science and programming. It involves arranging elements in a specific order, such as ascending or descending. There are various sorting algorithms, each with its advantages and disadvantages, depending on the specific use case and data.
 
-## 1. Bubble Sort
+### 1. Bubble Sort
 Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
 
 JavaScript Example:
@@ -343,7 +343,7 @@ const sortedArray = bubbleSort(myArray);
 console.log("Bubble Sorted Array:", sortedArray);
 ```
 
-## 2. Selection Sort
+### 2. Selection Sort
 Selection Sort is an in-place comparison sorting algorithm. It divides the input list into two parts: the left sublist is sorted, and the right sublist contains unsorted elements. It repeatedly selects the minimum element from the unsorted sublist and moves it to the beginning of the sorted sublist.
 
 JavaScript Example:
@@ -377,7 +377,7 @@ const sortedArray = selectionSort(myArray);
 console.log("Selection Sorted Array:", sortedArray);
 ```
 
-## 3. Quick Sort
+### 3. Quick Sort
 Quick Sort is a divide-and-conquer sorting algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
 
 JavaScript Example:
@@ -408,7 +408,7 @@ const sortedArray = quickSort(myArray);
 console.log("Quick Sorted Array:", sortedArray);
 ```
 
-## 4. Merge Sort
+### 4. Merge Sort
 Merge Sort is another divide-and-conquer sorting algorithm that divides the unsorted list into n sublists, each containing one element, and then repeatedly merges sublists to produce new sorted sublists until there is only one sublist remaining.
 
 JavaScript Example:
@@ -449,7 +449,7 @@ const sortedArray = mergeSort(myArray);
 console.log("Merge Sorted Array:", sortedArray);
 ```
 
-## 5. Insertion Sort
+### 5. Insertion Sort
 Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
 
 JavaScript Example:
@@ -478,7 +478,7 @@ const sortedArray = insertionSort(myArray);
 console.log("Insertion Sorted Array:", sortedArray);
 ```
 
-## 6. Heap Sort
+### 6. Heap Sort
 Heap Sort is a comparison-based sorting algorithm that divides the input into a sorted and an unsorted region and iteratively shrinks the unsorted region by extracting the largest element and moving it to the sorted region.
 
 JavaScript Example:
@@ -529,7 +529,7 @@ const sortedArray = heapSort(myArray);
 console.log("Heap Sorted Array:", sortedArray);
 ```
 
-## 7. . Counting Sort
+### 7. . Counting Sort
 Counting Sort is an integer sorting algorithm that works by determining the number of occurrences of each element and using that information to position each element in the sorted output.
 
 JavaScript Example:

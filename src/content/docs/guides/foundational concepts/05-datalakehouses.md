@@ -3,13 +3,13 @@ title: "Key Concept - Data Lakehouses"
 description: "Foundational Concepts in Data Lakehouses"
 ---
 
-# Data Lakehouses
+## Data Lakehouses
 
-## What Is a Data Lakehouse?
+### What Is a Data Lakehouse?
 
 A **data lakehouse** is a modern data architecture that combines the best features of data lakes and data warehouses. It addresses the need for a unified platform that can store, manage, and analyze vast amounts of data while providing robust data governance, query performance, and scalability. Data lakehouses aim to make data more accessible, democratized, and actionable for organizations.
 
-## History of Data Lakehouses
+### History of Data Lakehouses
 
 **Emergence of Data Lakes (2000s):** Data lakes began to gain popularity as a response to the limitations of traditional data warehousing systems. Hadoop, with its distributed file system (HDFS), allowed organizations to store and process large volumes of data in a scalable manner.
 
@@ -17,7 +17,7 @@ A **data lakehouse** is a modern data architecture that combines the best featur
 
 **Convergence of Data Lakes and Data Warehouses (2010s):** Platforms like Databricks and Dremio pioneered the convergence of data lakes and data warehouses. Databricks, Netflix and Uber introduced Delta Lake, Apache Iceberg and Apache Hudi respetively, table formats that introduced ACID transactions to data lakes . Dremio combined a powerful query engine, data virtualization, data reflections and a robust semantic layer to unify data access and enable ZeroETL lakehouses.
 
-#### Benefits of Data Lakehouses
+##### Benefits of Data Lakehouses
 
 **1. Unified Data Storage:** Data lakehouses provide a centralized storage repository where organizations can store raw, semi-structured, and structured data, simplifying data management.
 
@@ -29,7 +29,7 @@ A **data lakehouse** is a modern data architecture that combines the best featur
 
 **5. Cost Efficiency:** Data lakehouses leverage cloud-based storage and computing resources, offering cost-effective solutions without the need for large upfront investments.
 
-#### Dremio's Unique Benefits
+##### Dremio's Unique Benefits
 
 **Data Virtualization:** Dremio's platform excels in data virtualization, providing a semantic layer that abstracts underlying data sources, making data appear as if it's in a single, logical data warehouse.
 

@@ -3,13 +3,13 @@ title: "Key Concept - Data"
 description: "Foundational Concepts in Data"
 ---
 
-# Understanding Data
+## Understanding Data
 
-## What Is Data?
+### What Is Data?
 
 **Data** refers to raw, unprocessed information that can be in the form of text, numbers, images, audio, or any other format. It is the fundamental building block of information and knowledge. Data on its own lacks meaning but becomes valuable when processed, organized, and interpreted.
 
-## Why Is Data Important?
+### Why Is Data Important?
 
 Data plays a crucial role in various aspects of our lives, including business, science, technology, and everyday decision-making. Here are some key reasons why data is important:
 
@@ -25,7 +25,7 @@ Data plays a crucial role in various aspects of our lives, including business, s
 
 6. **Scientific Discovery:** Data is essential in scientific research to test hypotheses, discover patterns, and validate theories. Fields like astronomy, genetics, and climate science rely heavily on data.
 
-## Types of Data:
+### Types of Data:
 
 Data can be categorized into various types based on its nature and format:
 
@@ -41,7 +41,7 @@ Data can be categorized into various types based on its nature and format:
 
 6. **Big Data:** Big data refers to extremely large and complex datasets that exceed the capabilities of traditional data processing tools. It often involves massive volumes of data from various sources, such as social media, sensors, and IoT devices.
 
-## Where Is Data Stored?
+### Where Is Data Stored?
 
 Data can be stored in various locations and formats, depending on its purpose and use. Here are common places where data is stored:
 

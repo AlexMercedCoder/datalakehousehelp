@@ -3,10 +3,10 @@ title: "Design Patterns"
 description: "Design Patterns in OOP"
 ---
 
-# Design Patterns in Programming
+## Design Patterns in Programming
 Design patterns are reusable solutions to common problems that occur during software design and development. They represent best practices and have evolved over time as experienced developers encountered and solved recurring issues in software projects. Design patterns provide a structured approach to solving specific design and coding problems, offering a clear and well-tested solution that can be adapted to various scenarios.
 
-## Why Do Design Patterns Matter?
+### Why Do Design Patterns Matter?
 Design patterns matter for several reasons:
 
 **Code Reusability:** They promote code reusability, reducing the need to reinvent the wheel for common problems. This saves time and effort during development.
@@ -21,10 +21,10 @@ Design patterns matter for several reasons:
 
 **Problem Solving:** Design patterns provide a roadmap for solving recurring design and coding challenges, making development more efficient.
 
-## Common Design Patterns:
+### Common Design Patterns:
 There are several categories of design patterns, each addressing specific aspects of software design and development. Here are some common design patterns:
 
-### 1. Creational Patterns:
+#### 1. Creational Patterns:
 These patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation.
 
 **Singleton Pattern:** Ensures a class has only one instance and provides a global point of access to it.
@@ -33,7 +33,7 @@ These patterns deal with object creation mechanisms, trying to create objects in
 
 **Abstract Factory Pattern:** Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
-### 2. Structural Patterns:
+#### 2. Structural Patterns:
 These patterns focus on class composition, defining relationships between objects to form larger structures.
 
 **Adapter Pattern:** Allows the interface of an existing class to be used as another interface.
@@ -42,7 +42,7 @@ These patterns focus on class composition, defining relationships between object
 
 **Composite Pattern:** Composes objects into tree structures to represent part-whole hierarchies.
 
-### 3. Behavioral Patterns:
+#### 3. Behavioral Patterns:
 Behavioral patterns deal with communication between objects, defining how they operate and interact.
 
 **Observer Pattern:** Defines a one-to-many dependency between objects, where one object (the subject) notifies its observers (dependents) of state changes.
@@ -51,7 +51,7 @@ Behavioral patterns deal with communication between objects, defining how they o
 
 **Command Pattern:** Encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations.
 
-### 4. Architectural Patterns:
+#### 4. Architectural Patterns:
 These patterns address high-level issues, providing solutions for organizing the overall structure of a software application.
 
 **MVC (Model-View-Controller) Pattern:** Separates an application into three interconnected components: Model (data and business logic), View (user interface), and Controller (manages user input and interaction).
@@ -64,10 +64,10 @@ These are just a few examples of design patterns. There are many more patterns a
 
 By understanding and applying design patterns, developers can create more maintainable, efficient, and robust software while benefiting from the collective wisdom of the software development community.
 
-# Creational Design Patterns in JavaScript
+## Creational Design Patterns in JavaScript
 Creational design patterns focus on object creation mechanisms. They provide ways to instantiate objects while hiding the underlying logic involved in the process. In JavaScript, there are several creational design patterns, and we'll explore a few of them with examples.
 
-## 1. Singleton Pattern
+### 1. Singleton Pattern
 The Singleton pattern ensures that a class has only one instance and provides a global point of access to that instance.
 
 Example:
@@ -94,7 +94,7 @@ console.log(singleton1 === singleton2); // Output: true (both references point t
 singleton1.logMessage(); // Output: This is a singleton instance.
 ```
 
-## 2. Factory Method Pattern
+### 2. Factory Method Pattern
 The Factory Method pattern defines an interface for creating an object, but it lets subclasses alter the type of objects that will be created.
 
 Example:
@@ -134,7 +134,7 @@ const product = creator.factoryMethod();
 console.log(product.getProductInfo()); // Output: This is a concrete product.
 ```
 
-## 3. Abstract Factory Pattern
+### 3. Abstract Factory Pattern
 The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
 Example:
@@ -198,7 +198,7 @@ console.log(productA.getProductInfo()); // Output: Product A
 console.log(productB.getProductInfo()); // Output: Product B
 ```
 
-## 4. Builder Pattern
+### 4. Builder Pattern
 The Builder pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
 
 Example:
@@ -250,7 +250,7 @@ const burger = new BurgerBuilder(2)
 console.log(burger); // Output: Burger { size: 2, cheese: true, pepperoni: true, lettuce: true }
 ```
 
-## 5. Prototype Pattern
+### 5. Prototype Pattern
 The Prototype pattern creates new objects by copying an existing object, known as the prototype. This pattern is particularly useful when the cost of creating an object is more expensive.
 
 Example:
@@ -297,10 +297,10 @@ console.log(clonedCircle.type); // Output: Circle
 console.log(clonedSquare.type); // Output: Square
 ```
 
-# Behavioral Design Patterns in JavaScript
+## Behavioral Design Patterns in JavaScript
 Behavioral design patterns focus on communication and interaction between objects. They help manage the responsibilities and behaviors of objects within a system. These patterns provide solutions for various scenarios, such as managing algorithms, responsibilities, and communication between objects.
 
-## 1. Observer Pattern
+### 1. Observer Pattern
 The Observer pattern defines a one-to-many dependency between objects. When one object (the subject) changes state, all its dependents (observers) are notified and updated automatically.
 
 Example:
@@ -348,7 +348,7 @@ subject.notifyObservers();
 // Observer 2 has been notified.
 ```
 
-## 2. Command Pattern
+### 2. Command Pattern
 The Command pattern encapsulates a request as an object, thereby allowing for parameterization of clients with queuing of requests, and logging of requests.
 
 Example:
@@ -411,7 +411,7 @@ remote.setCommand(lightOffCommand);
 remote.pressButton(); // Output: Light is off.
 ```
 
-### 3. Strategy Pattern
+#### 3. Strategy Pattern
 The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. It allows clients to choose an algorithm from a family of algorithms at runtime.
 
 Example:
@@ -463,7 +463,7 @@ cart2.checkout();
 // Output: Paid $40 with PayPal.
 ```
 
-## 4. Chain of Responsibility Pattern
+### 4. Chain of Responsibility Pattern
 The Chain of Responsibility pattern passes a request along a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain.
 
 Example:
@@ -515,7 +515,7 @@ handler1.handleRequest('handler2'); // Output: Handler 2 handled the request.
 handler1.handleRequest('handler3'); // No output, request unhandled.
 ```
 
-## 5. State Pattern
+### 5. State Pattern
 The State pattern allows an object to alter its behavior when its internal state changes. The object appears to change its class.
 
 Example:
@@ -590,10 +590,10 @@ gumballMachine.insertQuarter();
 gumballMachine.turnCrank(); // Output: You turned the crank. A gumball rolls out.
 ```
 
-# Architectural Patterns
+## Architectural Patterns
 Architectural patterns are high-level design patterns that help developers structure their applications in a way that promotes modularity, scalability, and maintainability. These patterns provide a blueprint for organizing different components and modules within an application to address common architectural challenges. Using architectural patterns can lead to cleaner, more understandable, and more maintainable code.
 
-## Why Architectural Patterns Matter
+### Why Architectural Patterns Matter
 Architectural patterns are essential in software development for several reasons:
 
 **Modularity:** They promote the separation of concerns by organizing the codebase into manageable and loosely coupled modules or components. This makes it easier to develop, test, and maintain different parts of the application independently.
@@ -606,40 +606,40 @@ Architectural patterns are essential in software development for several reasons
 
 **Team Collaboration:** Architectural patterns provide a common language and structure for development teams. Team members can better understand and collaborate on projects when they follow a recognized pattern.
 
-## Common Architectural Patterns
+### Common Architectural Patterns
 There are several well-established architectural patterns, each designed to solve specific problems. Here are some of the most commonly used architectural patterns:
 
-### 1. Model-View-Controller (MVC)
+#### 1. Model-View-Controller (MVC)
 Purpose: Separates an application into three interconnected components: Model (data and logic), View (user interface), and Controller (handles user input and communicates between Model and View). This pattern is widely used for building user interfaces.
 
-### 2. Model-View-ViewModel (MVVM)
+#### 2. Model-View-ViewModel (MVVM)
 Purpose: An evolution of MVC, MVVM separates the user interface logic from the business logic by introducing the ViewModel, which binds the View and Model. This pattern is commonly used in frontend development.
 
-### 3. Layered Architecture
+#### 3. Layered Architecture
 Purpose: Divides an application into multiple layers (e.g., Presentation, Business Logic, Data) to enforce separation of concerns and maintainability. Each layer has a specific responsibility and communicates with adjacent layers.
 
-### 4. Microservices Architecture
+#### 4. Microservices Architecture
 Purpose: Decomposes a monolithic application into a collection of small, independently deployable services. Each service has its own database and communicates with others via APIs. Microservices promote scalability and flexibility.
 
-### 5. Serverless Architecture
+#### 5. Serverless Architecture
 Purpose: Focuses on building applications without managing the underlying server infrastructure. Code is executed in stateless, event-triggered functions (e.g., AWS Lambda). Serverless architectures are known for their cost efficiency and scalability.
 
-### 6. Event-Driven Architecture
+#### 6. Event-Driven Architecture
 Purpose: Components of the system communicate primarily through events and messages. This pattern is useful for building systems that respond to and process events in real-time, such as IoT applications or message-driven microservices.
 
-### 7. Hexagonal Architecture (Ports and Adapters)
+#### 7. Hexagonal Architecture (Ports and Adapters)
 Purpose: Encapsulates the core application logic (hexagon) from external dependencies (ports and adapters). This pattern promotes testability and allows developers to replace external components without affecting the core logic.
 
-### 8. Repository Pattern
+#### 8. Repository Pattern
 Purpose: Separates the logic that retrieves data from a data source (e.g., database) from the rest of the application. This pattern is commonly used for abstracting data access and promoting testability.
 
-### 9. Clean Architecture
+#### 9. Clean Architecture
 Purpose: Focuses on separating concerns into concentric circles, with the innermost circle containing the core business logic, and outer circles containing the interface and infrastructure layers. Clean Architecture enforces dependency inversion and testability.
 
-### 10. Service-Oriented Architecture (SOA)
+#### 10. Service-Oriented Architecture (SOA)
 Purpose: Structures an application as a collection of loosely coupled, independently deployable services that communicate through standardized interfaces (e.g., RESTful APIs). SOA promotes reusability and flexibility.
 
-## Choosing the Right Architectural Pattern
+### Choosing the Right Architectural Pattern
 The choice of an architectural pattern depends on the specific requirements, goals, and constraints of your project. It's essential to carefully evaluate these factors and select the pattern that best aligns with your application's needs.
 
 In many cases, projects may combine multiple architectural patterns to address different aspects of the application. The key is to strike a balance that ensures scalability, maintainability, and the ability to meet evolving requirements.

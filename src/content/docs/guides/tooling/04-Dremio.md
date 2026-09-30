@@ -3,11 +3,11 @@ title: "Dremio"
 description: "A Reference on Dremio"
 ---
 
-### Dremio and its Architecture
+#### Dremio and its Architecture
 
 **Dremio** is an open-source data lake engine that provides self-service data analytics for data lakes and data warehouses. It simplifies the process of accessing, querying, and analyzing data stored in various data sources, including data lakes, databases, cloud storage, and more. Dremio's architecture is designed to provide high performance, scalability, and ease of use.
 
-#### Dremio Architecture
+##### Dremio Architecture
 
 Dremio's architecture is built around the concept of a Data Lake Engine, which enables users to interact with data lakes seamlessly. The core components of Dremio's architecture include:
 
@@ -25,7 +25,7 @@ Dremio's architecture is built around the concept of a Data Lake Engine, which e
 
 7. **Web UI and Interfaces**: Dremio provides a web-based user interface (UI) that allows users to explore and analyze data visually. It also offers REST APIs and JDBC/ODBC connectors for programmatic access.
 
-#### How Dremio Works
+##### How Dremio Works
 
 Dremio simplifies data access and analytics with the following workflow:
 
@@ -43,7 +43,7 @@ Dremio simplifies data access and analytics with the following workflow:
 
 7. **Query Results**: The query results are returned to the user through the Dremio UI or external applications.
 
-#### Benefits of Dremio
+##### Benefits of Dremio
 
 Dremio offers several benefits, including:
 
@@ -61,11 +61,11 @@ Dremio offers several benefits, including:
 
 Dremio's architecture and capabilities make it a valuable tool for organizations looking to harness the power of their data lakes and improve data analytics.
 
-### Use Cases for Dremio
+#### Use Cases for Dremio
 
 Dremio is a versatile data lake engine that serves a variety of use cases across different industries. Its ability to simplify data access, optimize query performance, and provide a unified view of data makes it a valuable tool for organizations. Here are some common use cases for Dremio:
 
-#### 1. Self-Service Data Exploration
+##### 1. Self-Service Data Exploration
 
 **Use Case**: Business analysts, data scientists, and non-technical users often need to explore and analyze data without the assistance of IT or data engineering teams. Dremio's self-service data exploration capabilities allow users to easily query and visualize data, empowering them to make data-driven decisions.
 
@@ -74,7 +74,7 @@ Dremio is a versatile data lake engine that serves a variety of use cases across
 - Faster insights into data for informed decision-making.
 - Improved collaboration between business and technical teams.
 
-#### 2. Data Lake Analytics
+##### 2. Data Lake Analytics
 
 **Use Case**: Organizations store vast amounts of data in data lakes like Amazon S3, Azure Data Lake Storage, or Hadoop HDFS. Dremio simplifies data lake analytics by providing a SQL-based interface to query and analyze data directly from data lakes without the need for ETL or data movement.
 
@@ -83,7 +83,7 @@ Dremio is a versatile data lake engine that serves a variety of use cases across
 - Real-time access to data for analytics.
 - Cost-effective data lake utilization.
 
-#### 3. Data Virtualization
+##### 3. Data Virtualization
 
 **Use Case**: Enterprises often have data scattered across multiple data sources, including databases, data warehouses, and cloud platforms. Dremio acts as a data virtualization layer, allowing users to query and join data from various sources seamlessly.
 
@@ -92,7 +92,7 @@ Dremio is a versatile data lake engine that serves a variety of use cases across
 - Reduced data duplication and storage costs.
 - Faster data access without complex integrations.
 
-#### 4. Accelerated BI and Reporting
+##### 4. Accelerated BI and Reporting
 
 **Use Case**: Business intelligence (BI) tools and reporting platforms require fast access to data. Dremio's acceleration engine, including reflections and caching, optimizes query performance for BI tools, enabling interactive and real-time reporting.
 
@@ -101,7 +101,7 @@ Dremio is a versatile data lake engine that serves a variety of use cases across
 - Faster generation of reports and dashboards.
 - Enhanced user experience for data-driven reporting.
 
-#### 5. DataOps and Data Engineering
+##### 5. DataOps and Data Engineering
 
 **Use Case**: Data engineers and DataOps teams use Dremio to simplify data pipeline development and testing. Dremio's ability to preview data and transform it in real time helps streamline ETL processes.
 
@@ -110,7 +110,7 @@ Dremio is a versatile data lake engine that serves a variety of use cases across
 - Reduced errors through data validation and transformation.
 - Faster iteration during development and testing.
 
-#### 6. Data Governance and Security
+##### 6. Data Governance and Security
 
 **Use Case**: Organizations need to enforce data governance policies, access control, and auditing. Dremio provides authentication, authorization, and encryption features to ensure data security and compliance with regulatory requirements.
 
@@ -119,7 +119,7 @@ Dremio is a versatile data lake engine that serves a variety of use cases across
 - Fine-grained access control for sensitive data.
 - Audit trails for data access and changes.
 
-#### 7. Cloud Data Lake Migration
+##### 7. Cloud Data Lake Migration
 
 **Use Case**: Migrating on-premises data warehouses or legacy systems to cloud-based data lakes is a common initiative. Dremio simplifies the migration process by enabling query access to both on-premises and cloud data.
 
@@ -128,7 +128,7 @@ Dremio is a versatile data lake engine that serves a variety of use cases across
 - Minimal disruption to existing data processes.
 - Reduced migration complexity.
 
-#### 8. IoT and Log Analytics
+##### 8. IoT and Log Analytics
 
 **Use Case**: Organizations with large volumes of IoT device data or logs can use Dremio to query and analyze this data in real time. Dremio's acceleration capabilities ensure fast insights into streaming data.
 
@@ -139,73 +139,73 @@ Dremio is a versatile data lake engine that serves a variety of use cases across
 
 Dremio's flexibility and capabilities make it a versatile solution for a wide range of data-related use cases, helping organizations unlock the full potential of their data assets.
 
-### How Dremio Delivers Performance
+#### How Dremio Delivers Performance
 
 Dremio is designed to provide high performance for data access, query execution, and analytics. Its architecture and various optimization techniques contribute to its ability to deliver exceptional query performance. Here's how Dremio achieves this:
 
-#### 1. Distributed Query Execution
+##### 1. Distributed Query Execution
 
 Dremio distributes query processing tasks across multiple executor nodes in a cluster. This parallelism allows for the efficient use of computing resources and speeds up query execution. Queries are divided into smaller tasks, executed in parallel, and results are combined for a faster response.
 
-#### 2. Query Optimization
+##### 2. Query Optimization
 
 Dremio employs advanced query optimization techniques to generate efficient query execution plans. It uses cost-based optimization, statistics, and intelligent caching to choose the most optimal execution path for a query. This leads to reduced query execution times and resource utilization.
 
-#### 3. Caching and Reflections
+##### 3. Caching and Reflections
 
 Dremio's acceleration engine includes two key features: caching and reflections. Caching stores the results of frequently executed queries in memory, making subsequent executions of the same query significantly faster. Reflections are materialized views that precompute and cache aggregations and joins, further improving query performance.
 
-#### 4. Data Pruning and Projection
+##### 4. Data Pruning and Projection
 
 Dremio performs data pruning and projection to minimize the amount of data read from underlying data sources. It intelligently skips unnecessary data based on query predicates and projections, reducing I/O and improving query speed.
 
-#### 5. Columnar Storage
+##### 5. Columnar Storage
 
 Dremio uses Apache Arrow as its internal data representation format, which is a columnar storage format. Columnar storage reduces the amount of data that needs to be read from disk, enhances compression, and enables vectorized processing, resulting in faster query performance.
 
-#### 6. In-Memory Processing
+##### 6. In-Memory Processing
 
 Dremio utilizes in-memory processing whenever possible. By keeping frequently accessed data in memory, Dremio reduces disk I/O and ensures that queries are processed at high speed. It leverages memory for both caching and intermediate query results.
 
-#### 7. Vectorized Execution
+##### 7. Vectorized Execution
 
 Dremio employs vectorized query execution, which operates on batches of data rather than individual rows. Vectorized processing improves CPU cache utilization and reduces function call overhead, resulting in efficient query processing.
 
-#### 8. Cost-Based Optimization
+##### 8. Cost-Based Optimization
 
 Dremio's cost-based optimization considers factors such as data location, data distribution, and available resources when planning query execution. This approach ensures that resources are allocated optimally for each query, minimizing query latency.
 
-#### 9. Adaptive Query Execution
+##### 9. Adaptive Query Execution
 
 Dremio includes adaptive query execution capabilities that dynamically adjust query execution plans based on runtime statistics. This adaptation helps handle varying workloads and changing data distributions effectively.
 
-#### 10. Scale-Out Architecture
+##### 10. Scale-Out Architecture
 
 Dremio's architecture allows for easy horizontal scaling by adding more executor nodes to the cluster. This scalability ensures that Dremio can handle increasing workloads while maintaining performance.
 
-#### 11. Distributed Joins and Aggregations
+##### 11. Distributed Joins and Aggregations
 
 Dremio can perform distributed joins and aggregations across multiple data sources, reducing data movement and improving performance. It leverages pushdown capabilities to execute operations closer to the data source whenever possible.
 
-#### 12. Advanced Indexing
+##### 12. Advanced Indexing
 
 Dremio supports advanced indexing techniques that accelerate data access, especially in scenarios where indexing is appropriate. Indexes help speed up data retrieval for specific queries.
 
 Dremio's focus on performance optimization and its ability to harness distributed computing resources make it an ideal choice for organizations that require fast and efficient data access, analysis, and reporting.
 
-# Getting Started with Dremio Cloud
+## Getting Started with Dremio Cloud
 
 This guide will walk you through the steps to get started with Dremio Cloud, including creating a Sonar project, setting up an Iceberg table, and optimizing queries with data reflections.
 
 - [If you first want to try Dremio on your laptop, follow this tutorial](https://www.dremio.com/blog/intro-to-dremio-nessie-and-apache-iceberg-on-your-laptop/)
 
-## Prerequisites
+### Prerequisites
 
 Before you begin, make sure you have signed up for Dremio Cloud and have met the prerequisites for configuring a Sonar project. Once you have signed up, you will be logged into your organization and directed to your organization homepage.
 
 Now, let's proceed to add a Sonar project.
 
-## Step 1: Add a Sonar Project
+### Step 1: Add a Sonar Project
 
 After signing up for Dremio Cloud, follow these steps to create your first Sonar project:
 
@@ -235,7 +235,7 @@ After signing up for Dremio Cloud, follow these steps to create your first Sonar
 
 13. Click "Create stack," and wait for approximately five minutes while the required storage and compute resources are created.
 
-## Step 2: Create an Iceberg Table
+### Step 2: Create an Iceberg Table
 
 In this step, you will work with the NYC-taxi-trips.csv file (containing 330+ million rows) stored in an Amazon S3 bucket. Follow these steps to create an Iceberg table:
 
@@ -249,7 +249,7 @@ In this step, you will work with the NYC-taxi-trips.csv file (containing 330+ mi
 CREATE FOLDER "catalog_name"."my_folder";
 ```
 
-### Create a Table
+#### Create a Table
 
 Click the SQL Runner icon again.
 
@@ -266,7 +266,7 @@ CREATE TABLE "catalog_name"."my_folder"."nyc_trips" (
 );
 ```
 
-### Populate the Table with Data
+#### Populate the Table with Data
 
 To populate the "nyc_trips" table with sample data, run the following SQL command:
 
@@ -275,7 +275,7 @@ COPY INTO "catalog_name"."my_folder"."nyc_trips"
 FROM '@Samples/samples.dremio.com/' FILES('NYC-taxi-trips.csv');
 ```
 
-### Query the Table
+#### Query the Table
 
 You can now query the populated data using the following SQL command:
 
@@ -284,10 +284,10 @@ SELECT *
 FROM "catalog_name"."my_folder"."nyc_trips";
 ```
 
-## Step 3: Accelerate Queries with a Reflection
+### Step 3: Accelerate Queries with a Reflection
 To optimize queries and achieve sub-second response times on a table with 330+ million rows, you can create a data reflection. Data reflections use various techniques to optimize data close to Dremio Sonar's query engine. Here's how to create an aggregation reflection:
 
-### Run the following SQL in the SQL Runner:
+#### Run the following SQL in the SQL Runner:
 
 ```sql
 ALTER TABLE "catalog_name"."my_folder"."nyc_trips"
@@ -304,7 +304,7 @@ MEASURES (
 
 The reflection is created in just a few seconds. It will accelerate queries on the "nyc_trips" table and any views built on it.
 
-## Step 4: Add Dataset Info to Enhance Discoverability
+### Step 4: Add Dataset Info to Enhance Discoverability
 To help users understand and work with the dataset, you can add a markdown description and label. Follow these steps:
 
 1. Browse to the Datasets page and click on "my_folder" in the upper left corner.
@@ -317,7 +317,7 @@ To help users understand and work with the dataset, you can add a markdown descr
 
 1. Now, users can easily understand and query the "my_folder.nyc_trips" table you created.
 
-## Wrap-up and Next Steps
+### Wrap-up and Next Steps
 In just a few steps, you've created a project, set up an Iceberg table, accelerated queries with reflections, and enhanced dataset discoverability. Here are some key takeaways:
 
 You can quickly create and populate an Iceberg table in Dremio.
@@ -325,7 +325,7 @@ You can quickly create and populate an Iceberg table in Dremio.
 Accelerate your queries using data reflections.
 Improve dataset discoverability with labels and markdown descriptions.
 
-### Clean Up (Optional)
+#### Clean Up (Optional)
 
 If you want to remove the objects created in this tutorial, run the following SQL commands from the SQL Runner:
 

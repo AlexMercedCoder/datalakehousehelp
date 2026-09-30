@@ -3,15 +3,15 @@ title: "RegEx"
 description: "Reference on RegEx"
 ---
 
-# Regular Expressions (Regex)
+## Regular Expressions (Regex)
 
 Regular Expressions, often abbreviated as Regex or RegExp, are a powerful and flexible tool for searching, matching, and manipulating text based on patterns. They are widely used in programming, text processing, and data validation tasks. Here's an overview of Regex, what it's used for, and its syntax:
 
-## What is Regex?
+### What is Regex?
 
 A Regular Expression is a sequence of characters that defines a search pattern. It provides a concise and flexible means of identifying and extracting specific patterns or substrings within text data. Regex is not tied to any particular programming language but is available in many programming languages, including JavaScript, Python, Java, and more.
 
-## What is it Used For?
+### What is it Used For?
 
 Regex serves a variety of purposes in software development and text processing:
 
@@ -25,7 +25,7 @@ Regex serves a variety of purposes in software development and text processing:
 
 **Text Parsing:** Regex helps in parsing structured data like CSV files or config files by defining rules for extracting relevant information.
 
-## Regex Syntax:
+### Regex Syntax:
 
 Regex patterns are composed of a combination of regular characters and special metacharacters that have specific meanings. Here are some common elements of Regex syntax:
 
@@ -50,7 +50,7 @@ Regex patterns are composed of a combination of regular characters and special m
 
 **Modifiers:** Flags like `i` (case-insensitive), `g` (global), and `m` (multi-line) modify how the pattern is applied.
 
-## Example:
+### Example:
 
 Regex Pattern: `/^\d{3}-\d{2}-\d{4}$/`
 
@@ -69,7 +69,7 @@ This pattern can be used to validate a Social Security Number (SSN) in the forma
 
 Regex is a versatile tool, but it can be complex due to its extensive syntax. However, with practice and the right resources, you can become proficient in using Regex to handle a wide range of text-processing tasks in your programming projects.
 
-## Common RegEx Patterns
+### Common RegEx Patterns
 
 | Purpose                                   | Pattern                           |
 |-------------------------------------------|----------------------------------|
@@ -84,9 +84,9 @@ Regex is a versatile tool, but it can be complex due to its extensive syntax. Ho
 | Match an HTML tag                         | `^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$` |
 | Match a hexadecimal color code            | `^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$` |
 
-# Using RegEx with Different Languages
+## Using RegEx with Different Languages
 
-## JavaScript:
+### JavaScript:
 JavaScript provides built-in support for Regular Expressions through the RegExp object and regular expression literals. Here's how you can use Regex in JavaScript:
 
 ```javascript
@@ -105,7 +105,7 @@ const emailPattern = /[\w\.-]+@[\w\.-]+\.\w+/;
 const matchedEmail = text.match(emailPattern);
 ```
 
-## Python:
+### Python:
 Python provides Regex support through the re module. Here's how you can use Regex in Python:
 
 ```python
@@ -126,7 +126,7 @@ if matched_email:
     email = matched_email.group()
 ```
 
-## Ruby:
+### Ruby:
 Ruby provides built-in support for Regex using the =~ operator or the match method. Here's how you can use Regex in Ruby:
 
 ```ruby
@@ -146,7 +146,7 @@ if matched_email
 end
 ```
 
-## PHP
+### PHP
 
 ```php
 // Using preg_match for simple matching
@@ -174,7 +174,7 @@ In PHP, you enclose your regular expression patterns in forward slashes /.../. T
 
 PHP's regex functions provide a wide range of options and flags for performing case-insensitive matches, multiline matches, and more. Additionally, PHP offers functions like preg_replace for replacing matched patterns in strings.
 
-## Go:
+### Go:
 Go provides Regex support through the regexp package. Here's how you can use Regex in Go:
 
 ```go
@@ -196,7 +196,7 @@ func main() {
 }
 ```
 
-## Rust:
+### Rust:
 In Rust, you can use the regex crate for Regex operations. First, add the crate to your Cargo.toml:
 
 ```toml

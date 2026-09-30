@@ -3,11 +3,11 @@ title: "Apache Flink"
 description: "A Reference on Apache Flink"
 ---
 
-### Apache Flink and its Architecture
+#### Apache Flink and its Architecture
 
 **Apache Flink** is an open-source stream processing framework that provides event-time processing, stateful computations, and exactly-once processing guarantees for real-time data stream and batch processing. Flink is designed for high throughput, low-latency, and fault-tolerance, making it suitable for various use cases in data analytics, ETL (Extract, Transform, Load), and more.
 
-#### Flink Architecture
+##### Flink Architecture
 
 Apache Flink's architecture consists of several key components that work together to process data efficiently and reliably:
 
@@ -27,7 +27,7 @@ Apache Flink's architecture consists of several key components that work togethe
 
 8. **Sources and Sinks**: Flink provides connectors for various data sources and sinks, such as Kafka, Apache Cassandra, and filesystems. Sources ingest data into the Flink job, and sinks output processed data.
 
-#### How Flink Works
+##### How Flink Works
 
 Apache Flink processes data in a dataflow model. Users define data transformations and operations on streams or datasets. Flink then generates an execution plan and optimizes it for parallel execution. The key features of Flink include:
 
@@ -41,7 +41,7 @@ Apache Flink processes data in a dataflow model. Users define data transformatio
 
 Apache Flink is a powerful stream processing framework with a robust and scalable architecture. It excels in processing real-time data streams and batch data, making it a valuable tool for data-driven applications and analytics.
 
-### Processing a Job in Apache Flink: Order of Operations
+#### Processing a Job in Apache Flink: Order of Operations
 
 Apache Flink processes data in a systematic and fault-tolerant manner, ensuring accurate and efficient data processing. When you submit a Flink job, it goes through a series of steps in a well-defined order. Here's the typical order of operations in processing a job in Apache Flink:
 
@@ -77,7 +77,7 @@ Apache Flink processes data in a systematic and fault-tolerant manner, ensuring 
 
 Understanding the order of operations in Apache Flink is essential for designing, debugging, and optimizing your data processing jobs. Flink's fault-tolerant and parallel processing capabilities make it a robust choice for real-time stream processing and batch processing applications.
 
-### Best Practices for Writing Apache Flink Jobs
+#### Best Practices for Writing Apache Flink Jobs
 
 Writing efficient and maintainable Apache Flink jobs requires adherence to best practices to ensure optimal performance, scalability, and reliability. Here are some guidelines to follow when developing Flink applications:
 
@@ -117,11 +117,11 @@ Writing efficient and maintainable Apache Flink jobs requires adherence to best 
 
 By following these best practices, you can develop Apache Flink applications that are efficient, reliable, and scalable, ensuring the successful processing of real-time data streams and batch data.
 
-# Writing Apache Flink Jobs in Java and Python
+## Writing Apache Flink Jobs in Java and Python
 
 Apache Flink supports multiple programming languages, including Java and Python. In this section, we'll cover the basics of writing Flink jobs in both languages with an example that reads data from PostgreSQL and lands the data as Parquet files in Amazon S3.
 
-## Writing Flink Jobs in Java
+### Writing Flink Jobs in Java
 
 ```java
 import org.apache.flink.api.common.functions.MapFunction;
@@ -165,7 +165,7 @@ public class FlinkJobJava {
 }
 ```
 
-## Writing Flink Jobs in Python
+### Writing Flink Jobs in Python
 ```python
 from pyflink.datastream import StreamExecutionEnvironment
 from pyflink.table import StreamTableEnvironment

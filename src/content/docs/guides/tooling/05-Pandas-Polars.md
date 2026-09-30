@@ -3,13 +3,13 @@ title: "Pandas and Polars"
 description: "A Reference on Dataframes, Pandas and Polars"
 ---
 
-### Dataframes and Dataframe Libraries
+#### Dataframes and Dataframe Libraries
 
-#### What are Dataframes?
+##### What are Dataframes?
 
 A DataFrame is a two-dimensional, tabular data structure commonly used for data manipulation and analysis. It resembles a spreadsheet or SQL table, where data is organized into rows and columns. Dataframes provide a convenient way to work with structured data, making it easier to perform operations like filtering, sorting, aggregating, and visualizing data.
 
-#### Dataframe Libraries like Pandas and Polars
+##### Dataframe Libraries like Pandas and Polars
 
 Dataframe libraries are software tools that enable users to create, manipulate, and analyze dataframes efficiently. Two popular dataframe libraries in the Python ecosystem are Pandas and Polars:
 
@@ -17,7 +17,7 @@ Dataframe libraries are software tools that enable users to create, manipulate, 
 
 - **Polars**: Polars is a newer dataframe library designed for high-performance data processing. It is built with Rust and offers a Python API. Polars excels in handling large-scale data, making it suitable for big data and analytics tasks. It leverages modern query execution techniques and Arrow-based data storage for speed and efficiency.
 
-#### Why Use Dataframes?
+##### Why Use Dataframes?
 
 Dataframes are essential tools in data analysis and manipulation for several reasons:
 
@@ -31,7 +31,7 @@ Dataframes are essential tools in data analysis and manipulation for several rea
 
 - **Efficiency**: Efficient dataframe libraries like Polars can handle large datasets and perform operations quickly, making them suitable for big data scenarios.
 
-#### Differences between Pandas and Polars
+##### Differences between Pandas and Polars
 
 While both Pandas and Polars are dataframe libraries, they have distinct characteristics:
 
@@ -47,11 +47,11 @@ While both Pandas and Polars are dataframe libraries, they have distinct charact
 
 The choice between Pandas and Polars depends on the specific requirements of your data analysis tasks, the size of your dataset, and your familiarity with the libraries. Pandas is a versatile choice for most tasks, while Polars shines in scenarios where performance and scalability are critical.
 
-# Basics of Using Pandas and Polars
+## Basics of Using Pandas and Polars
 
-## Reading Data into a Dataframe
+### Reading Data into a Dataframe
 
-### Using Pandas
+#### Using Pandas
 
 To read data from various file formats into a Pandas dataframe, you can use functions like `pd.read_csv()`, `pd.read_json()`, and `pd.read_parquet()`. Here are some examples:
 
@@ -69,7 +69,7 @@ df_parquet = pd.read_parquet('data.parquet')
 ```
 These functions allow you to load data into a Pandas dataframe, which you can then manipulate and analyze.
 
-### Using Polars
+#### Using Polars
 Polars also provides functions for reading data from various file formats. To read data into a Polars dataframe, you can use methods like `pl.read_csv()`, `pl.read_json()`, and `pl.read_parquet()`. Here are some examples:
 
 ```python
@@ -87,8 +87,8 @@ df_parquet = pl.read_parquet('data.parquet')
 
 Polars allows you to load data efficiently into its dataframe structure for high-performance data processing.
 
-## Basic Data Validations
-### Using Pandas
+### Basic Data Validations
+#### Using Pandas
 Pandas provides numerous methods for basic data validations. Here are some common examples:
 
 ```python
@@ -110,7 +110,7 @@ df.dtypes
 
 These functions help you understand the data's structure, identify missing values, and detect duplicates.
 
-### Using Polars
+#### Using Polars
 Polars offers similar functionality for basic data validations. Here are some common examples:
 
 ```python
@@ -132,13 +132,13 @@ df.dtypes()
 
 Polars provides a familiar set of validation tools for understanding and preparing your data for analysis.
 
-# Data Manipulation with Pandas and Polars
+## Data Manipulation with Pandas and Polars
 
 Both Pandas and Polars provide a rich set of functions for data manipulation, allowing you to transform, filter, and aggregate data efficiently. Here are some common data manipulation tasks using both libraries:
 
-## Data Filtering
+### Data Filtering
 
-### Using Pandas
+#### Using Pandas
 
 Pandas allows you to filter data using boolean indexing:
 
@@ -150,7 +150,7 @@ filtered_df = df[df['age'] > 30]
 male_df = df[df['gender'] == 'Male']
 ```
 
-### Using Polars
+#### Using Polars
 Polars provides a similar filtering mechanism:
 
 ```python
@@ -160,8 +160,8 @@ filtered_df = df.filter(df['age'] > 30)
 # Filter rows where 'gender' is 'Male'
 male_df = df.filter(df['gender'] == 'Male')
 ```
-## Data Transformation
-### Using Pandas
+### Data Transformation
+#### Using Pandas
 Pandas offers various data transformation functions, such as adding columns and applying functions:
 
 ```py
@@ -172,7 +172,7 @@ df['age_squared'] = df['age'] ** 2
 df['income'] = df['income'].apply(lambda x: x * 1.1)  # Increase income by 10%
 ```
 
-### Using Polars
+#### Using Polars
 Polars allows similar data transformations:
 
 ```py
@@ -182,8 +182,8 @@ df = df.with_column(df['age'] ** 2).alias('age_squared')
 # Apply a function to a column
 df = df.with_column(df['income'] * 1.1).alias('income')  # Increase income by 10%
 ```
-## Data Aggregation
-### Using Pandas
+### Data Aggregation
+#### Using Pandas
 Pandas provides powerful aggregation functions for summarizing data:
 
 ```py
@@ -193,7 +193,7 @@ mean_age = df['age'].mean()
 # Group data by 'gender' and calculate the mean age for each group
 grouped = df.groupby('gender')['age'].mean()
 ```
-### Using Polars
+#### Using Polars
 Polars offers similar aggregation capabilities:
 
 ```py
@@ -204,8 +204,8 @@ mean_age = df.select(df['age'].mean().alias('mean_age'))
 grouped = df.groupby('gender').agg(pl.col('age').mean().alias('mean_age'))
 ```
 
-## Joining Dataframes
-### Using Pandas
+### Joining Dataframes
+#### Using Pandas
 Pandas allows you to join dataframes using various join operations:
 
 ```py
@@ -216,7 +216,7 @@ result = pd.merge(df1, df2, on='common_column', how='inner')
 result = pd.merge(df1, df2, on='common_column', how='left')
 ```
 
-### Using Polars
+#### Using Polars
 Polars provides similar dataframe joining capabilities:
 
 ```py
@@ -229,13 +229,13 @@ result = df1.join(df2, on='common_column', how='left')
 
 These examples illustrate common data manipulation tasks using both Pandas and Polars. Depending on your data processing needs and preferences, you can choose the library that best suits your requirements.
 
-### Generating Visualizations with Matplotlib in Pandas and Polars
+#### Generating Visualizations with Matplotlib in Pandas and Polars
 
 Visualizing data is a crucial part of data analysis, and Matplotlib is a popular Python library for creating a wide range of data visualizations. Both Pandas and Polars can work seamlessly with Matplotlib to generate various types of plots. Below, we'll explore how to create visualizations using Matplotlib with both libraries.
 
-# Generating Basic Plots
+## Generating Basic Plots
 
-### Using Pandas
+#### Using Pandas
 
 Pandas allows you to create basic plots directly from a dataframe using the `plot()` method. Here's an example of creating a histogram:
 
@@ -254,7 +254,7 @@ plt.xlabel('Values')
 plt.ylabel('Frequency')
 plt.show()
 ```
-### Using Polars
+#### Using Polars
 Polars can be used in conjunction with Matplotlib for basic plots. Here's an example of creating a histogram with Polars data:
 
 ```py
@@ -272,8 +272,8 @@ plt.xlabel('Values')
 plt.ylabel('Frequency')
 plt.show()
 ```
-## Generating Scatter Plots
-### Using Pandas
+### Generating Scatter Plots
+#### Using Pandas
 Pandas allows you to create scatter plots easily. Here's an example of a scatter plot:
 
 ```py
@@ -292,7 +292,7 @@ plt.ylabel('Y')
 plt.show()
 ```
 
-### Using Polars
+#### Using Polars
 Polars can work with Matplotlib to generate scatter plots as well. Here's an example:
 
 ```py

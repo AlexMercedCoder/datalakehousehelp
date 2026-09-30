@@ -3,26 +3,26 @@ title: "Advanced Python"
 description: "Advanced Python Techniques"
 ---
 
-# Python List and Dictionary Comprehensions
+## Python List and Dictionary Comprehensions
 
 List comprehensions and dictionary comprehensions are powerful and concise ways to create lists and dictionaries in Python. They allow you to generate new data structures by applying an expression to each item in an iterable (e.g., a list or a range) or by iterating through key-value pairs in a dictionary. These comprehensions are often used to replace loops for simple operations, making your code more readable and efficient.
 
-## List Comprehensions
+### List Comprehensions
 List comprehensions create new lists by applying an expression to each item in an iterable and optionally filtering items based on a condition.
 
-### Basic List Comprehension Syntax:
+#### Basic List Comprehension Syntax:
 
 ```python
 new_list = [expression for item in iterable]
 ```
-#### Example 1: Creating a list of squares
+##### Example 1: Creating a list of squares
 
 ```python
 numbers = [1, 2, 3, 4, 5]
 squares = [x**2 for x in numbers]
 # Result: [1, 4, 9, 16, 25]
 ```
-#### Example 2: Filtering even numbers
+##### Example 2: Filtering even numbers
 
 ```python
 numbers = [1, 2, 3, 4, 5, 6]
@@ -30,23 +30,23 @@ even_numbers = [x for x in numbers if x % 2 == 0]
 # Result: [2, 4, 6]
 ```
 
-## Dictionary Comprehensions
+### Dictionary Comprehensions
 Dictionary comprehensions create new dictionaries by specifying both key-value pairs and an expression for generating values based on an iterable.
 
-### Basic Dictionary Comprehension Syntax:
+#### Basic Dictionary Comprehension Syntax:
 
 ```python
 new_dict = {key: value_expression for item in iterable}
 ```
 
-#### Example 1: Creating a dictionary of squares
+##### Example 1: Creating a dictionary of squares
 
 ```python
 numbers = [1, 2, 3, 4, 5]
 squares_dict = {x: x**2 for x in numbers}
 # Result: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
-#### Example 2: Filtering items based on a condition
+##### Example 2: Filtering items based on a condition
 
 ```python
 data = {'Alice': 30, 'Bob': 35, 'Charlie': 25, 'David': 40}
@@ -54,10 +54,10 @@ adults = {name: age for name, age in data.items() if age >= 18}
 # Result: {'Alice': 30, 'Bob': 35, 'David': 40}
 ```
 
-## Nested Comprehensions
+### Nested Comprehensions
 You can also nest list comprehensions and dictionary comprehensions to create more complex data structures.
 
-### Example: Creating a matrix
+#### Example: Creating a matrix
 
 ```python
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -65,7 +65,7 @@ flattened_matrix = [num for row in matrix for num in row]
 # Result: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-### Example: Transposing a matrix
+#### Example: Transposing a matrix
 
 ```python
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -75,14 +75,14 @@ transposed = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
 
 List and dictionary comprehensions are not only concise but also improve code readability by reducing the need for explicit loops and temporary variables. However, it's important to use them judiciously to maintain code clarity and readability, especially for complex operations.
 
-# The * and ** Operators in Python with Lists and Dictionaries
+## The * and ** Operators in Python with Lists and Dictionaries
 
 In Python, the * and ** operators have special meanings when used with lists and dictionaries. These operators allow you to unpack or spread the contents of iterable objects (lists and dictionaries) in various ways. They are powerful tools for manipulating and passing data in concise and flexible ways.
 
-## The * Operator
+### The * Operator
 The * operator, also known as the "splat" or "unpacking" operator, is used to unpack the elements of an iterable (e.g., a list or tuple). It is often used in function calls and list comprehensions.
 
-### Using * with Lists:
+#### Using * with Lists:
 
 ```python
 # Unpacking elements of a list
@@ -107,7 +107,7 @@ values = [2, 3]
 result = add(*values)  # Equivalent to add(2, 3)
 # Result: 5
 ```
-### Using * in List Comprehensions:
+#### Using * in List Comprehensions:
 
 ```python
 # Flattening a list of lists
@@ -116,10 +116,10 @@ flattened = [num for row in matrix for num in row]
 # Result: [1, 2, 3, 4]
 ```
 
-## The ** Operator
+### The ** Operator
 The ** operator is used to unpack the key-value pairs of a dictionary. It is often used in function calls and when merging dictionaries.
 
-### Using ** with Dictionaries:
+#### Using ** with Dictionaries:
 
 ```python
 # Unpacking key-value pairs of a dictionary
@@ -133,7 +133,7 @@ merged = {**dict1, **dict2}
 # Result: {'a': 1, 'b': 3, 'c': 4}
 ```
 
-#### Using ** in Function Calls:
+##### Using ** in Function Calls:
 
 ```python
 # Unpacking keyword arguments from a dictionary
@@ -147,11 +147,11 @@ message = greet(**person)  # Equivalent to greet(name='Alice', age=30)
 
 The * and ** operators provide a convenient way to manipulate and pass data in Python. They are especially useful when dealing with variable-length arguments or when combining the contents of iterable objects. Understanding how to use these operators effectively can lead to cleaner and more expressive code.
 
-# Python Pattern Matching
+## Python Pattern Matching
 
 Pattern matching is a powerful feature introduced in Python 3.10, inspired by similar syntax found in languages like Scala, Erlang, and others. It allows you to match a value (the subject) against different patterns until a match is found. Each pattern describes the structure and type of accepted values and can capture their contents into variables.
 
-## Patterns and Shapes
+### Patterns and Shapes
 Patterns in Python's pattern matching come in various forms:
 
 **Literal Pattern:** Matches a constant value, such as numbers, strings, None, True, or False.
@@ -220,7 +220,7 @@ match data:
         print(f"Result: {result}")
 ```
 
-## The Match Statement
+### The Match Statement
 The match statement is used to perform pattern matching. It consists of a subject expression (the value to be matched) and one or more case clauses.
 
 ```python
@@ -233,7 +233,7 @@ match subject_expression:
 ```
 The match statement compares the subject expression to each pattern until a match is found. The first matching pattern's code block is executed. If no pattern matches, the code continues with the next statement.
 
-## Motivation
+### Motivation
 Pattern matching is introduced to simplify handling data with varying types, structures, or combinations of attributes. It reduces complex chains of nested if and elif statements, type checks, and attribute access, making code more readable and concise.
 
 Example

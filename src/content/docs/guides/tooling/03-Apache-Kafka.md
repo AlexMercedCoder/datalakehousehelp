@@ -3,11 +3,11 @@ title: "Apache Kafka"
 description: "A Reference on Apache Kafka"
 ---
 
-### Apache Kafka and its Architecture
+#### Apache Kafka and its Architecture
 
 **Apache Kafka** is an open-source distributed event streaming platform used for building real-time data pipelines and streaming applications. It was originally developed by LinkedIn and later open-sourced as an Apache project. Kafka is designed for high throughput, durability, and fault tolerance, making it a fundamental component of many modern data architectures.
 
-#### Kafka Architecture
+##### Kafka Architecture
 
 Apache Kafka's architecture is built around the concept of a distributed commit log. It consists of several key components that work together to enable the ingestion, storage, and processing of streaming data:
 
@@ -31,7 +31,7 @@ Apache Kafka's architecture is built around the concept of a distributed commit 
 
 10. **Replication**: Kafka provides data redundancy and fault tolerance through topic replication. Each partition can have multiple replicas distributed across brokers.
 
-#### How Kafka Works
+##### How Kafka Works
 
 When a producer publishes a message to a topic, Kafka appends it to the end of the appropriate partition's log. Consumers subscribe to topics and read messages from partitions. Kafka guarantees that messages are ordered within a partition, allowing for ordered processing of events.
 
@@ -39,9 +39,9 @@ Kafka's scalability and durability make it a popular choice for various use case
 
 Apache Kafka is a powerful event streaming platform known for its scalability, durability, and real-time capabilities. Its flexible architecture enables the building of robust data pipelines and streaming applications in a variety of domains.
 
-### How Kafka Operates and Best Practices
+#### How Kafka Operates and Best Practices
 
-#### Kafka Operation Overview
+##### Kafka Operation Overview
 
 Apache Kafka operates based on the publish-subscribe model and stores data in a distributed and fault-tolerant manner. Understanding how Kafka operates is essential for effectively using it in your data architecture:
 
@@ -55,7 +55,7 @@ Apache Kafka operates based on the publish-subscribe model and stores data in a 
 
 5. **ZooKeeper**: Kafka traditionally used ZooKeeper for managing broker coordination and leader elections. Newer Kafka versions have reduced dependencies on ZooKeeper, but it may still be used for certain management tasks.
 
-#### Best Practices for Using Kafka
+##### Best Practices for Using Kafka
 
 To make the most of Apache Kafka and ensure the reliability and performance of your data pipelines, consider these best practices:
 
@@ -91,17 +91,17 @@ To make the most of Apache Kafka and ensure the reliability and performance of y
 
 By following these best practices, you can operate Apache Kafka effectively, ensuring the reliability, scalability, and efficiency of your data streaming pipelines.
 
-# Working with the Kafka Command Line Interface (CLI)
+## Working with the Kafka Command Line Interface (CLI)
 
 The Kafka Command Line Interface (CLI) provides essential tools for managing and interacting with Apache Kafka clusters. These tools allow you to perform various administrative and operational tasks, including producing and consuming messages, creating topics, and monitoring cluster health. Below are some common Kafka CLI commands and their usage:
 
-## Prerequisites
+### Prerequisites
 
 Before using the Kafka CLI, make sure you have Apache Kafka installed and configured on your system. Ensure that Kafka is running and reachable from the CLI host.
 
-## Kafka CLI Commands
+### Kafka CLI Commands
 
-### **Create a Topic**:
+#### **Create a Topic**:
 
 ```bash
    kafka-topics.sh --create --bootstrap-server localhost:9092 --topic my-topic --partitions 3 --replication-factor 2
@@ -111,7 +111,7 @@ Before using the Kafka CLI, make sure you have Apache Kafka installed and config
 - `--partitions`: The number of partitions for the topic.
 - `--replication-factor`: The replication factor for the topic.
 
-### List Topics:
+#### List Topics:
 
 ```bash
 kafka-topics.sh --list --bootstrap-server localhost:9092
@@ -119,7 +119,7 @@ kafka-topics.sh --list --bootstrap-server localhost:9092
 
 This command lists all the topics in the Kafka cluster.
 
-### Produce Messages:
+#### Produce Messages:
 
 ```bash
 kafka-console-producer.sh --broker-list localhost:9092 --topic my-topic
@@ -127,7 +127,7 @@ kafka-console-producer.sh --broker-list localhost:9092 --topic my-topic
 
 This interactive producer allows you to send messages to a specified topic.
 
-### Consume Messages:
+#### Consume Messages:
 
 ```bash
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-topic --from-beginning
@@ -135,7 +135,7 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-topic --f
 
 This consumer reads messages from a specified topic, starting from the beginning (`--from-beginning`).
 
-### Describe a Topic:
+#### Describe a Topic:
 
 ```bash
 kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic my-topic
@@ -143,7 +143,7 @@ kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic my-topic
 
 This command provides details about a specific topic, including partition information and leader replicas.
 
-### Delete a Topic:
+#### Delete a Topic:
 
 ```bash
 kafka-topics.sh --delete --bootstrap-server localhost:9092 --topic my-topic
@@ -151,7 +151,7 @@ kafka-topics.sh --delete --bootstrap-server localhost:9092 --topic my-topic
 
 Use this command to delete a topic. Be cautious when using this command, as it permanently removes data.
 
-### View Consumer Group Offset:
+#### View Consumer Group Offset:
 
 ```bash
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-group --describe
@@ -159,7 +159,7 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-group --de
 
 This command displays information about a consumer group, including the offset position for each partition.
 
-### Cluster Health Check:
+#### Cluster Health Check:
 
 ```bash
 kafka-broker-api-versions.sh --bootstrap-server localhost:9092
@@ -167,7 +167,7 @@ kafka-broker-api-versions.sh --bootstrap-server localhost:9092
 
 This command checks the versions of the APIs supported by the Kafka brokers.
 
-### Custom Configurations:
+#### Custom Configurations:
 
 You can specify custom configurations for Kafka CLI commands by providing a `--property` flag followed by key-value pairs. For example:
 
@@ -177,7 +177,7 @@ kafka-console-producer.sh --broker-list localhost:9092 --topic my-topic --proper
 
 This allows you to set properties like parse.key and key.separator as needed.
 
-### Help:
+#### Help:
 
 For detailed information on any Kafka CLI command, you can use the `--help` option. For example:
 
@@ -189,11 +189,11 @@ This displays the usage and available options for the kafka-topics.sh command.
 
 The Kafka CLI is a powerful tool for managing Kafka clusters, testing configurations, and debugging issues. Be sure to refer to the official Kafka documentation and command line help (`--help`) for more detailed information on each command and its options.
 
-# Working with Kafka from Python
+## Working with Kafka from Python
 
 Apache Kafka provides a Python client library called `confluent-kafka-python` that allows you to interact with Kafka clusters using Python. This library provides easy-to-use interfaces for producing and consuming messages, as well as managing Kafka topics and consumer groups. Here's how you can work with Kafka from Python:
 
-## Prerequisites
+### Prerequisites
 
 Before using the `confluent-kafka-python` library, make sure you have it installed, and you have access to a running Kafka cluster.
 
@@ -203,7 +203,7 @@ You can install the library using pip:
 pip install confluent-kafka
 ```
 
-## Producer Example
+### Producer Example
 ```python
 from confluent_kafka import Producer
 
@@ -222,7 +222,7 @@ producer.produce(topic, key=key, value=value)
 # Wait for any outstanding messages to be delivered and delivery reports to be received
 producer.flush()
 ```
-## Consumer Example
+### Consumer Example
 ```python
 from confluent_kafka import Consumer, KafkaError
 
@@ -253,7 +253,7 @@ while True:
         # Print the received message's key and value
         print('Received message: key={}, value={}'.format(msg.key(), msg.value()))
 ```
-## Topic Management
+### Topic Management
 You can use the confluent_kafka.admin module to manage Kafka topics programmatically. Here's an example of creating a Kafka topic:
 
 ```python

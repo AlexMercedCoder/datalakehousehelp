@@ -3,13 +3,13 @@ title: "Key Concept - Databases"
 description: "Foundational Concepts in Databases"
 ---
 
-# Understanding Databases
+## Understanding Databases
 
-## What Are Databases?
+### What Are Databases?
 
 A **database** is a structured collection of data organized in a way that allows efficient storage, retrieval, and manipulation of that data. Databases serve as the backbone of modern information systems, enabling the management of vast amounts of data in a structured and organized manner.
 
-## General Architecture of Databases
+### General Architecture of Databases
 
 Databases typically consist of the following components:
 
@@ -27,7 +27,7 @@ Databases typically consist of the following components:
 
 7. **Transactions:** Databases support transactions, which are sequences of operations that are executed as a single unit. Transactions ensure data consistency and integrity.
 
-## Types of Databases
+### Types of Databases
 
 Databases can be categorized into various types based on their data models, structures, and use cases. Here are some common types of databases along with examples of databases in each category:
 

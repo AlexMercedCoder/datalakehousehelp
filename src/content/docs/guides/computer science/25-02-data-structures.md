@@ -3,17 +3,17 @@ title: "Data Structures"
 description: "Data Structures"
 ---
 
-# Data Structures
+## Data Structures
 Data structures are fundamental constructs used to organize and store data in a computer's memory or storage. They provide a way to efficiently access, manipulate, and manage data in various applications and algorithms. Data structures play a critical role in computer science and programming, as they influence the efficiency and effectiveness of software solutions.
 
-## What Are Data Structures?
+### What Are Data Structures?
 Data structures are containers that hold, organize, and manage data elements or values. They define how data is stored, retrieved, and operated upon within a program or algorithm. Data structures can be classified into two main categories: primitive data types and composite data types.
 
 **Primitive Data Types:** These are the basic building blocks for data storage and include integer, floating-point, character, and Boolean types. They represent single values and are not considered traditional data structures.
 
 **Composite Data Types:** These are more complex structures that can hold multiple data elements and are fundamental to data organization. Common composite data types include arrays, linked lists, stacks, queues, trees, graphs, and hash tables.
 
-## Why Data Structures Matter
+### Why Data Structures Matter
 Data structures are essential in computer science and programming for several reasons:
 
 **Efficient Data Storage:** Data structures enable efficient storage of large volumes of data, optimizing memory usage and reducing storage costs.
@@ -28,7 +28,7 @@ Data structures are essential in computer science and programming for several re
 
 **Abstraction:** Data structures abstract the underlying details of data storage, allowing developers to focus on high-level functionality without worrying about low-level storage concerns.
 
-## Common Data Structures
+### Common Data Structures
 There is a wide variety of data structures available, each designed for specific use cases. Some of the most common data structures include:
 
 **Arrays:** Ordered collections of elements, each identified by an index or a key.
@@ -73,10 +73,10 @@ Bitmaps: Arrays of bits used to represent sets or efficiently store binary data.
 
 These data structures are the building blocks for designing efficient algorithms and solving various computational problems. Choosing the right data structure for a specific problem is a critical skill for software developers and computer scientists.
 
-# JavaScript Data Structures and Examples
+## JavaScript Data Structures and Examples
 JavaScript, as a versatile language, provides support for implementing various data structures. In this section, we'll explore some common data structures, their purposes, and example implementations.
 
-## 1. Arrays
+### 1. Arrays
 Purpose: Arrays are ordered collections that store multiple values of different types. They are widely used for list-like data storage and manipulation.
 
 Logic: Arrays use integer-based indices to access elements. Elements can be added, modified, or removed from an array.
@@ -89,7 +89,7 @@ fruits[1] = "orange"; // Modify an element
 fruits.pop(); // Remove the last element
 ```
 
-## 2. Linked Lists
+### 2. Linked Lists
 Purpose: Linked lists are linear data structures consisting of nodes. Each node contains data and a reference to the next node, forming a chain.
 
 Logic: Linked lists allow dynamic insertion and deletion of elements. They are used in scenarios where efficient insertions and deletions are required.
@@ -139,7 +139,7 @@ class LinkedList {
 }
 ```
 
-### 3. Stacks
+#### 3. Stacks
 Purpose: Stacks are linear data structures following the Last-In-First-Out (LIFO) principle. They are used for managing function calls, undo operations, and parsing expressions.
 
 Logic: Elements are pushed onto the stack and popped off the stack. The last element pushed is the first to be popped.
@@ -169,7 +169,7 @@ class Stack {
 }
 ```
 
-## 4. Queues
+### 4. Queues
 Purpose: Queues are linear data structures following the First-In-First-Out (FIFO) principle. They are used for task scheduling, managing resources, and breadth-first search algorithms.
 
 Logic: Elements are enqueued (added) at the rear and dequeued (removed) from the front.
@@ -199,7 +199,7 @@ class Queue {
 }
 ```
 
-## 5. Trees (Binary Search Tree)
+### 5. Trees (Binary Search Tree)
 Purpose: Trees are hierarchical data structures used for efficient searching, sorting, and organizing data. Binary Search Trees (BSTs) maintain order for efficient retrieval.
 
 Logic: BSTs have a root node with left and right subtrees. Nodes are ordered so that values in the left subtree are less than the root, and values in the right subtree are greater.
@@ -246,7 +246,7 @@ class BinarySearchTree {
 }
 ```
 
-## 6. Hash Tables (HashMaps)
+### 6. Hash Tables (HashMaps)
 Purpose: Hash tables are used to store key-value pairs, allowing for efficient data retrieval based on keys. They are commonly used for caching, data indexing, and implementing associative arrays.
 
 Logic: Keys are hashed to determine their storage location in an array. Collisions are resolved using techniques like chaining or open addressing.
@@ -291,7 +291,7 @@ class HashTable {
 }
 ```
 
-## 7. Doubly Linked Lists
+### 7. Doubly Linked Lists
 Purpose: Doubly linked lists are similar to singly linked lists but have two pointers per node, allowing for efficient traversal in both directions.
 
 Logic: Each node has references to both the next and previous nodes. This structure is useful when you need bidirectional traversal.
@@ -326,7 +326,7 @@ class DoublyLinkedList {
 }
 ```
 
-## 8. Graphs (Adjacency List)
+### 8. Graphs (Adjacency List)
 Purpose: Graphs represent connections between nodes. Adjacency lists store these connections efficiently.
 
 Logic: Each node in the graph maintains a list of its adjacent nodes. Graphs can be used for modeling networks, relationships, and more.
@@ -351,7 +351,7 @@ class Graph {
 }
 ```
 
-## 9. Priority Queues (Min-Heap)
+### 9. Priority Queues (Min-Heap)
 Purpose: Priority queues are used when elements have associated priorities, and you need to access the element with the highest (or lowest) priority first.
 
 Logic: Min-heaps, in particular, ensure that the minimum element is always at the root. Priority queues can be used in algorithms like Dijkstra's shortest path.
@@ -384,7 +384,7 @@ class PriorityQueue {
 }
 ```
 
-## 10. Tries (Prefix Trees)
+### 10. Tries (Prefix Trees)
 Purpose: Tries are used for efficient string searching and prefix-based operations. They are often employed in autocomplete systems and spell checkers.
 
 Logic: Each node in the trie represents a character. Words or strings are stored by traversing the tree from the root to the leaf nodes.
@@ -434,7 +434,7 @@ class Trie {
 }
 ```
 
-## 11. Queue (using Arrays)
+### 11. Queue (using Arrays)
 Purpose: Queues are used to manage data in a First-In-First-Out (FIFO) manner. They are useful for managing tasks that need to be processed in a specific order.
 
 Logic: Arrays can be used as a simple queue by pushing elements to the back and shifting them from the front.
@@ -461,7 +461,7 @@ class Queue {
 ```
 
 
-## 12. Stack (using Arrays)
+### 12. Stack (using Arrays)
 Purpose: Stacks are used to manage data in a Last-In-First-Out (LIFO) manner. They are helpful for tasks like maintaining function call history.
 
 Logic: Arrays can also be used as a simple stack by pushing and popping elements from the end.
@@ -488,7 +488,7 @@ class Stack {
 ```
 
 
-## 13. Bloom Filter
+### 13. Bloom Filter
 Purpose: Bloom filters are probabilistic data structures used to test whether an element is a member of a set. They are used in cases where false positives are acceptable.
 
 Logic: A Bloom filter consists of an array of bits and multiple hash functions. Elements are hashed and set the corresponding bits to 1.
@@ -526,7 +526,7 @@ class BloomFilter {
 }
 ```
 
-## 14. Circular Linked List
+### 14. Circular Linked List
 Purpose: A circular linked list is similar to a singly linked list, but the tail node points back to the head node. It can be used in situations where elements need to be processed in a circular manner.
 
 Logic: The last node's next pointer points back to the first node, forming a loop.
@@ -560,7 +560,7 @@ class CircularLinkedList {
 }
 ```
 
-## 15. Disjoin Set
+### 15. Disjoin Set
 Purpose: A disjoint-set (or union-find) data structure is used to manage disjoint sets of elements. It's commonly used in algorithms involving connected components.
 
 Logic: Elements are grouped into disjoint sets. The data structure provides methods to determine which set an element belongs to and merge sets.

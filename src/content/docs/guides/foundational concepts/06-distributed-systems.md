@@ -3,13 +3,13 @@ title: "Key Concept - Distributed Systems"
 description: "Foundational Concept of Distributed Systems"
 ---
 
-# Distributed Computing Systems
+## Distributed Computing Systems
 
-## What Are Distributed Computing Systems?
+### What Are Distributed Computing Systems?
 
 **Distributed computing systems** are computing environments in which multiple interconnected computers, often referred to as nodes or servers, work together to solve complex computational problems or perform tasks. These systems enable the processing of data and execution of applications across a network of machines rather than relying on a single, centralized computer. Distributed computing systems can be organized into clusters, grids, or cloud computing infrastructures.
 
-## Problems They Solve
+### Problems They Solve
 
 Distributed computing systems address various challenges and problems in the world of computing and technology:
 
@@ -25,7 +25,7 @@ Distributed computing systems address various challenges and problems in the wor
 
 **6. Geographical Distribution:** Distributed systems can span multiple geographical locations, allowing for global data access, collaboration, and disaster recovery.
 
-## Problems They Don't Solve
+### Problems They Don't Solve
 
 While distributed computing systems offer numerous advantages, they are not without limitations and do not address all computing challenges:
 
@@ -43,11 +43,11 @@ While distributed computing systems offer numerous advantages, they are not with
 
 In summary, distributed computing systems play a vital role in addressing scalability, high availability, and performance challenges in modern computing. However, they introduce complexities related to network communication, data consistency, security, and coordination. Organizations must carefully assess their requirements and design distributed systems accordingly to maximize their benefits while mitigating potential drawbacks.
 
-# General Architecture of Distributed Data Processing Systems
+## General Architecture of Distributed Data Processing Systems
 
 Distributed data processing systems like MapReduce, Spark, and Dremio are designed to process large-scale data across clusters of interconnected computers. Their architectures involve the coordination of multiple nodes to efficiently execute data processing tasks. Here, we'll delve into the general cluster structure and operational principles of these systems:
 
-## MapReduce Architecture
+### MapReduce Architecture
 
 **Cluster Structure:**
 - **Master Node:** The master node coordinates the entire MapReduce job. It divides tasks into smaller units called "splits" and assigns them to worker nodes.
@@ -59,7 +59,7 @@ Distributed data processing systems like MapReduce, Spark, and Dremio are design
 3. The master node sorts and shuffles these intermediate data to group values by key.
 4. Reducer functions process the grouped data, producing the final output.
 
-## Apache Spark Architecture
+### Apache Spark Architecture
 
 **Cluster Structure:**
 - **Cluster Manager:** Spark clusters are typically managed by cluster managers like Apache Mesos, Hadoop YARN, or Spark's standalone cluster manager.
@@ -71,7 +71,7 @@ Distributed data processing systems like MapReduce, Spark, and Dremio are design
 2. Tasks are scheduled on executor nodes, which process data in memory and can cache intermediate results.
 3. Spark's Resilient Distributed Datasets (RDDs) allow fault-tolerant distributed data processing.
 
-## Dremio Architecture
+### Dremio Architecture
 
 **Cluster Structure:**
 - **Coordinator Node:** The coordinator node manages query planning and optimization. It also routes queries to appropriate execution engines.
@@ -84,15 +84,15 @@ Distributed data processing systems like MapReduce, Spark, and Dremio are design
 3. Query fragments are distributed to executor nodes, which retrieve and process data in parallel.
 4. Dremio's data reflections technology accelerates query performance by creating optimized data structures.
 
-#### Conclusion
+##### Conclusion
 
 In distributed data processing systems, the cluster structure and operational principles are critical for achieving scalability, fault tolerance, and high performance. Understanding the roles of master nodes, worker nodes, driver nodes, and their interactions is key to efficiently harnessing the power of these systems for big data processing and analytics.
 
-# Avoiding Performance-Draining Mistakes in Distributed Data Processing
+## Avoiding Performance-Draining Mistakes in Distributed Data Processing
 
 Distributed data processing systems offer the potential for high-performance data analysis, but several common mistakes can significantly impact their efficiency and effectiveness. Here are some of the most critical mistakes to avoid:
 
-## 1. Data Skew
+### 1. Data Skew
 
 **Mistake:** Uneven data distribution, where some partitions or shards contain much more data than others, can lead to performance bottlenecks. Processing nodes with skewed data may become overloaded while others remain underutilized.
 
@@ -100,7 +100,7 @@ Distributed data processing systems offer the potential for high-performance dat
 - Use data shuffling and partitioning techniques to evenly distribute data.
 - Consider using hash-based or range-based partitioning to balance data distribution.
 
-## 2. Insufficient Hardware Resources
+### 2. Insufficient Hardware Resources
 
 **Mistake:** Underestimating the hardware requirements can lead to poor performance. Inadequate CPU, memory, or network resources may result in slow processing and increased latency.
 
@@ -108,7 +108,7 @@ Distributed data processing systems offer the potential for high-performance dat
 - Regularly monitor resource utilization and scale the cluster as needed.
 - Choose cloud-based solutions that offer easy scalability based on demand.
 
-## 3. Inefficient Data Serialization
+### 3. Inefficient Data Serialization
 
 **Mistake:** Serializing and deserializing data inefficiently can be a performance bottleneck. Using heavyweight serialization formats or not optimizing serialization can slow down data processing.
 
@@ -116,7 +116,7 @@ Distributed data processing systems offer the potential for high-performance dat
 - Choose efficient serialization formats like Apache Avro, Protocol Buffers, or Apache Parquet.
 - Optimize serialization/deserialization code to minimize overhead.
 
-## 4. Lack of Data Compression
+### 4. Lack of Data Compression
 
 **Mistake:** Storing and transmitting uncompressed data can lead to increased storage costs and slower data transfer times, especially in distributed systems.
 
@@ -124,7 +124,7 @@ Distributed data processing systems offer the potential for high-performance dat
 - Implement data compression techniques to reduce data size.
 - Use columnar storage formats like Parquet, which inherently support compression.
 
-## 5. Poor Data Locality
+### 5. Poor Data Locality
 
 **Mistake:** Data processing jobs that don't consider data locality can result in unnecessary data movement across the network, increasing latency.
 
@@ -132,7 +132,7 @@ Distributed data processing systems offer the potential for high-performance dat
 - Leverage data co-location strategies to ensure that processing nodes work on data stored locally.
 - Use data-aware scheduling mechanisms to minimize data transfer.
 
-## 6. Inefficient Joins and Data Aggregations
+### 6. Inefficient Joins and Data Aggregations
 
 **Mistake:** Performing joins and aggregations inefficiently, especially on large datasets, can lead to slow query execution times.
 
@@ -140,7 +140,7 @@ Distributed data processing systems offer the potential for high-performance dat
 - Optimize query plans and use appropriate data indexing techniques.
 - Consider using pre-aggregated tables or data reflections (Dremio Feature) for frequently executed queries.
 
-## 7. Lack of Monitoring and Profiling
+### 7. Lack of Monitoring and Profiling
 
 **Mistake:** Failing to monitor cluster performance and profile job executions can result in undetected bottlenecks and inefficiencies.
 
@@ -148,7 +148,7 @@ Distributed data processing systems offer the potential for high-performance dat
 - Implement comprehensive monitoring solutions to track resource usage, job execution times, and data flow.
 - Use profiling tools to identify performance bottlenecks and optimize code.
 
-## 8. Neglecting Data Pruning and Cleanup
+### 8. Neglecting Data Pruning and Cleanup
 
 **Mistake:** Accumulating unnecessary data over time can lead to increased storage costs and longer backup and restore times.
 
@@ -156,6 +156,6 @@ Distributed data processing systems offer the potential for high-performance dat
 - Implement data pruning and cleanup policies to remove outdated or irrelevant data.
 - Automate data retention and archiving processes.
 
-## Conclusion
+### Conclusion
 
 Avoiding these performance-draining mistakes is crucial for achieving efficient and scalable distributed data processing. Regular performance testing, optimization, and monitoring are essential practices to ensure that your distributed data processing system operates at its best, delivering timely and accurate results for your data-driven applications.
