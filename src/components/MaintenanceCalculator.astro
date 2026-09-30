@@ -1,0 +1,335 @@
+---
+/**
+ * Apache Iceberg table maintenance calculator. Everything runs in the browser;
+ * nothing is sent anywhere. The procedure names, arguments, option names and
+ * defaults are the ones documented for Iceberg 1.11.0 at
+ * https://iceberg.apache.org/docs/latest/spark-procedures/ and
+ * https://iceberg.apache.org/docs/latest/configuration/ (checked 2026-09-29).
+ * The thresholds that turn inputs into a cadence are rules of thumb, and the
+ * page says so next to each one.
+ */
+---
+
+<div class="mc" data-mc>
+  <form class="mc-form" data-mc-form>
+    <fieldset>
+      <legend>Your table</legend>
+      <label>
+        <span>Table name (catalog.namespace.table)</span>
+        <input name="table" type="text" value="my_catalog.db.events" spellcheck="false" autocomplete="off" pattern="[A-Za-z0-9_.`]+" required />
+      </label>
+      <label>
+        <span>Daily ingest volume (GB per day, compressed on storage)</span>
+        <input name="gbPerDay" type="number" min="0.01" step="any" value="50" required />
+      </label>
+      <label>
+        <span>Write pattern</span>
+        <select name="pattern">
+          <option value="append">Append only (batch inserts)</option>
+          <option value="stream">Streaming append (frequent small commits)</option>
+          <option value="mor">Upserts and deletes, merge-on-read</option>
+          <option value="cow">Upserts and deletes, copy-on-write</option>
+        </select>
+      </label>
+      <label>
+        <span>Commits per day</span>
+        <input name="commitsPerDay" type="number" min="1" step="1" value="24" required list="mc-commit-presets" />
+        <datalist id="mc-commit-presets">
+          <option value="1">daily batch</option>
+          <option value="24">hourly</option>
+          <option value="96">every 15 minutes</option>
+          <option value="288">every 5 minutes</option>
+          <option value="1440">every minute</option>
+        </datalist>
+      </label>
+      <label>
+        <span>Partitions written per commit</span>
+        <input name="partitions" type="number" min="1" step="1" value="1" required />
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Targets and retention</legend>
+      <label>
+        <span>Target file size</span>
+        <select name="target">
+          <option value="auto">Recommend one for me</option>
+          <option value="128">128 MB</option>
+          <option value="256">256 MB</option>
+          <option value="512">512 MB (Iceberg default)</option>
+          <option value="1024">1 GB</option>
+        </select>
+      </label>
+      <label>
+        <span>Time travel window you need (days)</span>
+        <input name="retentionDays" type="number" min="0" step="any" value="7" required />
+      </label>
+      <label>
+        <span>Snapshots always kept for rollback</span>
+        <input name="retainLast" type="number" min="1" step="1" value="10" required />
+      </label>
+      <label>
+        <span>Longest write or compaction job (hours)</span>
+        <input name="longestJobHours" type="number" min="0.1" step="any" value="2" required />
+      </label>
+    </fieldset>
+  </form>
+
+  <div class="mc-out" aria-live="polite" data-mc-out></div>
+</div>
+
+<script>
+  const MB = 1024 * 1024;
+  const GB = 1024 * MB;
+  const DAY_MS = 24 * 60 * 60 * 1000;
+
+  type Inputs = {
+    table: string; gbPerDay: number; pattern: string; commitsPerDay: number; partitions: number;
+    target: string; retentionDays: number; retainLast: number; longestJobHours: number;
+  };
+
+  const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const fmtBytes = (b: number) => (b >= GB ? `${(b / GB).toFixed(b >= 10 * GB ? 0 : 1)} GB` : b >= MB ? `${(b / MB).toFixed(b >= 10 * MB ? 0 : 1)} MB` : `${(b / 1024).toFixed(0)} KB`);
+  const fmtNum = (n: number) => Math.round(n).toLocaleString('en-US');
+  const sqlStr = (s: string) => `'${s.replace(/'/g, "''")}'`;
+  const pad = (n: number) => String(n).padStart(2, '0');
+  const tsLiteral = (d: Date) =>
+    `TIMESTAMP '${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}:00'`;
+
+  const CADENCES = [
+    { hours: 1, label: 'every hour' },
+    { hours: 4, label: 'every 4 hours' },
+    { hours: 12, label: 'every 12 hours' },
+    { hours: 24, label: 'once a day' },
+    { hours: 168, label: 'once a week' },
+  ];
+
+  function read(form: HTMLFormElement): Inputs {
+    const f = new FormData(form);
+    const num = (k: string, min: number) => Math.max(min, Number(f.get(k)) || min);
+    const rawTable = String(f.get('table') || '').trim();
+    return {
+      table: /^[A-Za-z0-9_.`]+$/.test(rawTable) ? rawTable : 'my_catalog.db.events',
+      gbPerDay: num('gbPerDay', 0.01),
+      pattern: String(f.get('pattern')),
+      commitsPerDay: Math.round(num('commitsPerDay', 1)),
+      partitions: Math.round(num('partitions', 1)),
+      target: String(f.get('target')),
+      retentionDays: Math.max(0, Number(f.get('retentionDays')) || 0),
+      retainLast: Math.round(num('retainLast', 1)),
+      longestJobHours: num('longestJobHours', 0.1),
+    };
+  }
+
+  function compute(i: Inputs) {
+    const catalog = i.table.split('.')[0];
+    const tableArg = i.table.split('.').slice(1).join('.') || i.table;
+    const bytesPerDay = i.gbPerDay * GB;
+    const bytesPerPartitionDay = bytesPerDay / i.partitions;
+    const bytesPerCommitFile = bytesPerDay / i.commitsPerDay / i.partitions; // best case: one file per partition per commit
+    const mor = i.pattern === 'mor';
+
+    // 1. Target file size.
+    let target: number;
+    let targetWhy: string;
+    if (i.target !== 'auto') {
+      target = Number(i.target) * MB;
+      targetWhy = `You chose ${fmtBytes(target)}.`;
+    } else if (bytesPerPartitionDay >= 10 * GB) {
+      target = 512 * MB;
+      targetWhy = `Each partition receives about ${fmtBytes(bytesPerPartitionDay)} a day, enough to fill 512 MB files, which is Iceberg's default (write.target-file-size-bytes).`;
+    } else if (bytesPerPartitionDay >= 1 * GB) {
+      target = 256 * MB;
+      targetWhy = `Each partition receives about ${fmtBytes(bytesPerPartitionDay)} a day. 256 MB files fill within a day and still give the engine several files per partition to read in parallel.`;
+    } else {
+      target = 128 * MB;
+      targetWhy = `Each partition receives only about ${fmtBytes(bytesPerPartitionDay)} a day. At that rate a 512 MB file takes a day or more to fill, so compaction runs in between keep rewriting the same undersized files (anything under 75% of the target is always a rewrite candidate). 128 MB files fill within hours.`;
+    }
+    const minFile = 0.75 * target;
+
+    // 2. Compaction cadence. Rule of thumb: run often enough that a partition
+    // collects no more than about 50 small files between runs, never more often
+    // than hourly, and at least daily for merge-on-read tables.
+    const smallWrites = bytesPerCommitFile < minFile;
+    const filesPerPartitionHour = i.commitsPerDay / 24;
+    let cadence = CADENCES[CADENCES.length - 1];
+    let cadenceWhy: string;
+    if (!smallWrites && !mor) {
+      cadenceWhy = `Each commit writes about ${fmtBytes(bytesPerCommitFile)} per partition, ${bytesPerCommitFile >= target ? 'enough to fill full-size files' : `above the ${fmtBytes(minFile)} small-file threshold`}, so compaction is housekeeping rather than rescue. Weekly catches the undersized files that the last task of each write leaves behind.`;
+    } else {
+      const fits = CADENCES.filter((c) => filesPerPartitionHour * c.hours <= 50);
+      cadence = fits.length ? fits[fits.length - 1] : CADENCES[0];
+      const bumped = mor && cadence.hours > 24;
+      if (bumped) cadence = CADENCES[3];
+      const between = filesPerPartitionHour * cadence.hours;
+      const betweenTxt = between < 10 ? between.toFixed(1) : fmtNum(between);
+      if (!smallWrites) {
+        cadenceWhy = 'Commits already produce reasonably sized files, but merge-on-read deletes add delete files that every read has to merge. Daily compaction folds them back into the data files.';
+      } else if (!fits.length) {
+        cadenceWhy = `Each commit writes about ${fmtBytes(bytesPerCommitFile)} per partition, under the ${fmtBytes(minFile)} small-file threshold, and at ${fmtNum(i.commitsPerDay)} commits a day a partition gains about ${betweenTxt} small files even between hourly runs. The rule used here aims for no more than about 50 per partition between runs but never schedules compaction more often than hourly, because each run is itself a commit that competes with your writers. At this rate the better fix is upstream: commit less often or buffer larger batches.`;
+      } else {
+        cadenceWhy = `Each commit writes about ${fmtBytes(bytesPerCommitFile)} per partition, under the ${fmtBytes(minFile)} small-file threshold. At ${fmtNum(i.commitsPerDay)} commits a day a partition gains about ${betweenTxt} small files between runs ${cadence.label}. The rule used here: the least frequent schedule that keeps that number at or below about 50 per partition, never more often than hourly.`;
+        if (bumped) cadenceWhy += ' Merge-on-read tables get at least daily runs regardless, so delete files do not pile up.';
+      }
+    }
+    const runsPerDay = 24 / cadence.hours;
+    const minInputFiles = filesPerPartitionHour * cadence.hours < 5 ? 2 : 5;
+    const partialProgress = i.gbPerDay >= 500;
+
+    // 3. Snapshot expiration.
+    const compactionSnapshotsPerDay = Math.max(runsPerDay, 1 / 7) * (mor ? 2 : 1);
+    const snapshotsPerDay = i.commitsPerDay + compactionSnapshotsPerDay;
+    const keptSnapshots = Math.max(i.retainLast, snapshotsPerDay * i.retentionDays);
+    const maxAgeMs = Math.round(i.retentionDays * DAY_MS);
+    const expireEvery = i.commitsPerDay >= 24 ? 'once a day' : 'once a week';
+    const bigTable = bytesPerDay * Math.max(i.retentionDays, 1) >= 1024 * GB || keptSnapshots > 5000;
+
+    // 4. Orphan files. Docs: the default older_than is 3 days, and a window
+    // shorter than the longest write can delete in-flight files.
+    const orphanDays = Math.max(3, Math.ceil((i.longestJobHours * 2) / 24));
+    const orphanEvery = i.gbPerDay >= 100 || i.commitsPerDay >= 96 ? 'once a week' : 'once a month';
+
+    // 5. Manifests.
+    const manifestsEvery = i.commitsPerDay >= 96 ? 'once a week' : 'once a month';
+
+    // 6. Metadata JSON files.
+    const metadataCleanup = i.commitsPerDay >= 24;
+
+    // SQL
+    const t = sqlStr(tableArg);
+    const opts: [string, string][] = [['target-file-size-bytes', String(target)]];
+    if (minInputFiles !== 5) opts.push(['min-input-files', String(minInputFiles)]);
+    if (mor) opts.push(['remove-dangling-deletes', 'true']);
+    if (partialProgress) opts.push(['partial-progress.enabled', 'true']);
+    const optMap = opts.map(([k, v]) => `${sqlStr(k)}, ${sqlStr(v)}`).join(',\n    ');
+
+    const props: [string, string][] = [
+      ['history.expire.max-snapshot-age-ms', String(maxAgeMs)],
+      ['history.expire.min-snapshots-to-keep', String(i.retainLast)],
+      ['write.target-file-size-bytes', String(target)],
+    ];
+    if (metadataCleanup) props.push(['write.metadata.delete-after-commit.enabled', 'true'], ['write.metadata.previous-versions-max', '100']);
+
+    const now = new Date();
+    const orphanTs = tsLiteral(new Date(now.getTime() - orphanDays * DAY_MS));
+    const expireTs = tsLiteral(new Date(now.getTime() - maxAgeMs));
+
+    const sql = {
+      props: `ALTER TABLE ${i.table} SET TBLPROPERTIES (\n${props.map(([k, v]) => `  ${sqlStr(k)} = ${sqlStr(v)}`).join(',\n')}\n);`,
+      compact: `CALL ${catalog}.system.rewrite_data_files(\n  table => ${t},\n  strategy => 'binpack',\n  options => map(\n    ${optMap}\n  )\n);`,
+      expire: `-- Scheduled: no older_than or retain_last, so the table properties above apply.\nCALL ${catalog}.system.expire_snapshots(\n  table => ${t}${bigTable ? ",\n  stream_results => true" : ''}\n);\n\n-- One-off equivalent with explicit arguments, as of now (UTC):\nCALL ${catalog}.system.expire_snapshots(\n  table => ${t},\n  older_than => ${expireTs},\n  retain_last => ${i.retainLast}${bigTable ? ",\n  stream_results => true" : ''}\n);`,
+      orphans: `-- 1. Dry run: lists candidates, deletes nothing.\nCALL ${catalog}.system.remove_orphan_files(\n  table => ${t},\n  older_than => ${orphanTs},\n  dry_run => true\n);\n\n-- 2. The real run, once the dry-run list looks right.\nCALL ${catalog}.system.remove_orphan_files(\n  table => ${t},\n  older_than => ${orphanTs}${bigTable ? ",\n  stream_results => true" : ''}\n);`,
+      manifests: `CALL ${catalog}.system.rewrite_manifests(\n  table => ${t}\n);`,
+    };
+
+    return {
+      target, targetWhy, minFile, cadence, cadenceWhy, minInputFiles, partialProgress, mor,
+      snapshotsPerDay, keptSnapshots, expireEvery, bigTable, orphanDays, orphanEvery,
+      manifestsEvery, metadataCleanup, sql, i, bytesPerCommitFile,
+    };
+  }
+
+  function block(id: string, code: string) {
+    return `<div class="mc-code"><pre id="${id}"><code>${esc(code)}</code></pre><button type="button" class="mc-copy" data-copy="${id}">Copy</button></div>`;
+  }
+
+  function render(r: ReturnType<typeof compute>) {
+    const i = r.i;
+    const days = i.retentionDays;
+    const retentionWarn = r.keptSnapshots > 10000
+      ? `<p class="mc-warn">That keeps about ${fmtNum(r.keptSnapshots)} snapshots in metadata. Each commit reads and rewrites table metadata, so tens of thousands of snapshots slow every writer. Consider a shorter window and <a href="https://iceberg.apache.org/docs/latest/branching/">tags</a> for the few points in time you must keep longer.</p>`
+      : '';
+    return `
+      <h2 id="recommendations">Recommendations</h2>
+      <dl class="mc-summary">
+        <div><dt>Target file size</dt><dd>${fmtBytes(r.target)}</dd></div>
+        <div><dt>Compaction</dt><dd>${r.cadence.label}</dd></div>
+        <div><dt>Snapshot expiration</dt><dd>${r.expireEvery}, keep ${days} day${days === 1 ? '' : 's'} and at least ${i.retainLast}</dd></div>
+        <div><dt>Orphan file cleanup</dt><dd>${r.orphanEvery}, files older than ${r.orphanDays} days</dd></div>
+        <div><dt>Manifest rewrite</dt><dd>${r.manifestsEvery}</dd></div>
+      </dl>
+
+      <h3>1. Set the table properties once</h3>
+      <p>These make the scheduled calls below short and keep writers producing the right file size. <code>history.expire.max-snapshot-age-ms</code> is your ${days}-day window in milliseconds (default 5 days) and <code>history.expire.min-snapshots-to-keep</code> is your rollback floor (default 1). ${r.metadataCleanup ? `At ${fmtNum(i.commitsPerDay)} commits a day, every commit also writes a new metadata JSON file, so <code>write.metadata.delete-after-commit.enabled</code> is on: it keeps the newest 100 tracked metadata files (<code>write.metadata.previous-versions-max</code>) and deletes the oldest after each commit. It is off by default.` : 'At your commit rate the metadata JSON files grow slowly, so automatic metadata cleanup is left at its default (off); orphan file cleanup removes untracked ones.'}</p>
+      ${block('mc-sql-props', r.sql.props)}
+
+      <h3>2. Compact data files ${r.cadence.label}</h3>
+      <p>${esc(r.targetWhy)}</p>
+      <p>${esc(r.cadenceWhy)}</p>
+      <ul>
+        <li><code>target-file-size-bytes</code> is ${fmtNum(r.target)} (${fmtBytes(r.target)}). Files under 75% of it (${fmtBytes(r.minFile)}) are always rewrite candidates.</li>
+        ${r.minInputFiles !== 5 ? `<li><code>min-input-files</code> is 2 instead of the default 5 because a partition collects fewer than 5 new files between runs, and a group of small files that is below the target size is only rewritten once it reaches this count.</li>` : '<li><code>min-input-files</code> stays at its default of 5: a partition collects at least that many files between runs.</li>'}
+        ${r.mor ? '<li><code>remove-dangling-deletes</code> is on: after compaction, delete files that no longer apply to any live data file are dropped in an extra commit. With merge-on-read, those otherwise stay in metadata. Data files with 30% or more of their rows deleted (<code>delete-ratio-threshold</code>, default 0.3) are rewritten automatically.</li>' : ''}
+        ${r.partialProgress ? '<li><code>partial-progress.enabled</code> is on because each run rewrites a lot of data: file groups commit as they finish (up to 10 commits by default), so a failure late in the job does not throw away the whole run.</li>' : ''}
+        <li>For large tables, add a <code>where =&gt; '...'</code> predicate on your partition column so a run only rewrites recent partitions. Files that may match the predicate are selected.</li>
+      </ul>
+      ${block('mc-sql-compact', r.sql.compact)}
+
+      <h3>3. Expire snapshots ${r.expireEvery}</h3>
+      <p>You create about ${fmtNum(r.snapshotsPerDay)} snapshots a day (${fmtNum(i.commitsPerDay)} commits plus compaction commits), so a ${days}-day window keeps about ${fmtNum(r.keptSnapshots)}. Expiring removes those snapshots from metadata and deletes data files that only they referenced, which is also what finally frees the space compaction replaced. Snapshots still referenced by a branch or tag are never removed.${r.bigTable ? ' <code>stream_results =&gt; true</code> is set because the file list is large; the docs recommend it to avoid driver out-of-memory errors.' : ''} The first call uses the table properties from step 1, so the same statement works on every scheduled run.</p>
+      ${retentionWarn}
+      ${block('mc-sql-expire', r.sql.expire)}
+
+      <h3>4. Remove orphan files ${r.orphanEvery}</h3>
+      <p>Failed tasks and jobs leave files that no metadata references. The Iceberg docs warn that an <code>older_than</code> window shorter than your longest write can delete files a running job is about to commit, and the default is 3 days. Your longest job is ${i.longestJobHours} hours, so the window is ${r.orphanDays} days: at least 3, and at least twice the longest job. Orphan cleanup lists the whole table location, which is slow on object storage, so it runs ${r.orphanEvery} rather than with every compaction. The timestamp below is computed from now; have your scheduler compute it at run time.</p>
+      ${block('mc-sql-orphans', r.sql.orphans)}
+
+      <h3>5. Rewrite manifests ${r.manifestsEvery}</h3>
+      <p>Writers merge manifests automatically once 100 accumulate (<code>commit.manifest.min-count-to-merge</code>), but merged manifests are not clustered by partition. ${i.commitsPerDay >= 96 ? `At ${fmtNum(i.commitsPerDay)} commits a day they multiply quickly` : 'At your commit rate they grow slowly'}, so a ${r.manifestsEvery === 'once a week' ? 'weekly' : 'monthly'} rewrite keeps scan planning fast. Also run it after a partition spec change or a large compaction. It invalidates cached Spark plans that reference the table.</p>
+      ${block('mc-sql-manifests', r.sql.manifests)}
+
+      <h3>Run order</h3>
+      <p>Compact, then rewrite manifests, then expire snapshots, then remove orphans. Expiration after compaction is what deletes the replaced small files, and orphan cleanup last catches anything the failed runs left behind.</p>
+    `;
+  }
+
+  function init(root: HTMLElement) {
+    const form = root.querySelector<HTMLFormElement>('[data-mc-form]')!;
+    const out = root.querySelector<HTMLElement>('[data-mc-out]')!;
+    const update = () => { out.innerHTML = render(compute(read(form))); };
+    form.addEventListener('input', update);
+    form.addEventListener('change', update);
+    form.addEventListener('submit', (e) => e.preventDefault());
+    out.addEventListener('click', async (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-copy]');
+      if (!btn) return;
+      const text = document.getElementById(btn.dataset.copy!)?.textContent ?? '';
+      try { await navigator.clipboard.writeText(text); btn.textContent = 'Copied'; }
+      catch { btn.textContent = 'Select and copy'; }
+      setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
+    });
+    update();
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-mc]').forEach(init);
+</script>
+
+<style>
+  .mc { display: flex; flex-direction: column; gap: 1.5rem; }
+  .mc-form { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .mc fieldset {
+    border: 1px solid var(--sl-color-gray-5); border-radius: 12px;
+    padding: 1rem 1.1rem 1.2rem; margin: 0; display: flex; flex-direction: column; gap: 0.85rem;
+  }
+  .mc legend { font-weight: 600; padding: 0 0.35rem; }
+  .mc label { display: flex; flex-direction: column; gap: 0.3rem; margin: 0; }
+  .mc label span { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); }
+  .mc input, .mc select {
+    font: inherit; font-size: var(--sl-text-sm); padding: 0.5rem 0.65rem;
+    border: 1px solid var(--sl-color-gray-4); border-radius: 8px;
+    background: var(--sl-color-black); color: var(--sl-color-white); width: 100%; box-sizing: border-box;
+  }
+  .mc input:focus-visible, .mc select:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 1px; }
+  .mc-summary { display: grid; gap: 0.6rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin: 0; }
+  .mc-summary div { border: 1px solid var(--sl-color-gray-5); border-radius: 10px; padding: 0.7rem 0.85rem; margin: 0; }
+  .mc-summary dt { font-size: var(--sl-text-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--sl-color-gray-3); font-weight: 600; }
+  .mc-summary dd { margin: 0.2rem 0 0; font-weight: 600; }
+  .mc-code { position: relative; }
+  .mc-code pre { margin: 0; padding: 1rem; padding-right: 5rem; overflow-x: auto; border-radius: 10px; border: 1px solid var(--sl-color-gray-5); background: var(--sl-color-gray-6); font-size: var(--sl-text-sm); }
+  .mc-copy {
+    position: absolute; top: 0.5rem; right: 0.5rem; font: inherit; font-size: var(--sl-text-xs);
+    padding: 0.25rem 0.6rem; border-radius: 6px; border: 1px solid var(--sl-color-gray-4);
+    background: var(--sl-color-black); color: var(--sl-color-white); cursor: pointer;
+  }
+  .mc-warn { border-left: 3px solid var(--sl-color-orange); padding-left: 0.8rem; }
+</style>

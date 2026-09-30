@@ -33,6 +33,7 @@ This site provides authoritative documentation, guides, and hands-on tutorials c
 - Create an Apache Iceberg Table (procedure): https://datalakehouse.help/reference/09-create-iceberg-table/
 - Compact Iceberg Data Files (procedure): https://datalakehouse.help/guides/optimization/03-compaction/
 - Expire Iceberg Snapshots (procedure): https://datalakehouse.help/guides/optimization/05-expire-snapshots/
+- Iceberg Table Maintenance Calculator (tool; compaction cadence, snapshot expiry, orphan cleanup, generated Spark SQL CALL statements): https://datalakehouse.help/tools/maintenance-calculator/
 - Migrate a Hive Table to Apache Iceberg (procedure): https://datalakehouse.help/guides/migration/02-icebergmigration/
 - Agentic AI & Data Lakehouses: https://datalakehouse.help/guides/agentic/01-agentic-ai-lakehouse/
 - Data Modeling Basics: https://datalakehouse.help/guides/modeling/01-data-modeling-basics/

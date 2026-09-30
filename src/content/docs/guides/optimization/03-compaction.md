@@ -139,6 +139,7 @@ The old small files are still in storage because earlier snapshots reference the
 - Schedule compaction per partition with `where` instead of rewriting the whole table each run.
 - Tables with row-level deletes can also clean up delete files: add `'remove-dangling-deletes', 'true'` to `options`.
 - Run compaction before snapshot expiration so the replaced files become eligible for deletion in the same maintenance window.
+- To choose a cadence and target file size for your own table, the [table maintenance calculator](/tools/maintenance-calculator/) works them out from ingest volume and commit rate and writes the `CALL` statements.
 
 ## Further reading
 

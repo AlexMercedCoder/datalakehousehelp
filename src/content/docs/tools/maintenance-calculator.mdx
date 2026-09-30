@@ -1,0 +1,39 @@
+---
+title: "Iceberg Table Maintenance Calculator"
+description: "Enter ingest volume, write pattern, commit rate and retention to get a compaction cadence, target file size, snapshot expiration, orphan cleanup schedule, and the exact Spark SQL CALL statements for an Apache Iceberg table."
+sidebar:
+  label: Maintenance calculator
+---
+
+import MaintenanceCalculator from '../../../components/MaintenanceCalculator.astro';
+
+Describe one Apache Iceberg table and this page works out how often to compact it, what file size to aim for, how long to keep snapshots, how often to clean up orphan files, and writes the Spark SQL `CALL` statements with those arguments filled in. It runs entirely in your browser; nothing you type leaves the page.
+
+<MaintenanceCalculator />
+
+## How to read the output
+
+The numbers come from two kinds of input, and the page keeps them apart:
+
+- **Documented Iceberg behavior.** Procedure names, argument names, option names and defaults are the ones in the Iceberg 1.11.0 documentation: the 512 MB default target file size, the 75% small-file threshold, `min-input-files` of 5, snapshot expiry defaults of 5 days and 1 snapshot, the 3-day orphan window, and the 100-manifest merge threshold.
+- **Rules of thumb.** The cadence thresholds (at most about 50 small files per partition between compaction runs, the 1 GB and 10 GB per-partition-per-day steps for target file size, weekly versus monthly orphan and manifest runs) are starting points from running these tables, not Iceberg defaults. Watch the `files` and `snapshots` metadata tables for a week or two and adjust.
+
+The file-size estimate assumes the best case of one file per partition per commit. Real writers with many tasks produce more, smaller files, so if anything your table needs compaction more often than shown, not less.
+
+The statements use the Spark procedure syntax `CALL <catalog>.system.<procedure>(...)` with named arguments. On Spark 4, procedure names are case-sensitive, so keep `system` and the procedure names in lower case.
+
+## Walk through each procedure
+
+These pages run each step by hand against a small local table, with checks you can use to confirm it worked:
+
+- [Compact data files](/guides/optimization/03-compaction/) with `rewrite_data_files`
+- [Expire snapshots](/guides/optimization/05-expire-snapshots/) with `expire_snapshots`
+- [Create an Iceberg table](/reference/09-create-iceberg-table/) to practice on
+
+## Sources
+
+Checked against the Iceberg 1.11.0 documentation on September 29, 2026:
+
+- [Spark procedures](https://iceberg.apache.org/docs/latest/spark-procedures/): `rewrite_data_files` options, `expire_snapshots`, `remove_orphan_files`, `rewrite_manifests`
+- [Maintenance](https://iceberg.apache.org/docs/latest/maintenance/): the orphan file retention warning and metadata file cleanup
+- [Configuration](https://iceberg.apache.org/docs/latest/configuration/): `write.target-file-size-bytes`, `history.expire.*`, `write.metadata.*`, `commit.manifest.min-count-to-merge`

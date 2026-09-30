@@ -128,6 +128,7 @@ If you pass neither `older_than` nor `retain_last`, the procedure uses the table
 - Tables created with the `snapshot` migration procedure share files with their source table, so Iceberg blocks `expire_snapshots` on them.
 - Files that were brought in with `add_files` belong to Iceberg afterward. Expiring the snapshots that last referenced them deletes them from storage.
 - Expiration does not remove orphan files left by failed writes. That is the separate `remove_orphan_files` procedure.
+- To pick a retention window and schedule for your own table, the [table maintenance calculator](/tools/maintenance-calculator/) turns your commit rate and time travel needs into table properties and `CALL` statements.
 
 ## Sources
 
