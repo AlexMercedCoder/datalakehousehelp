@@ -1,0 +1,337 @@
+{
+  "generatedBy": "scripts/build-git-dates.mjs",
+  "files": {
+    "src/assets/datalakehouseicon.png": {
+      "modified": "2023-09-03T14:39:15-04:00",
+      "created": "2023-09-02T12:23:39-04:00"
+    },
+    "src/assets/houston.webp": {
+      "modified": "2023-09-02T11:04:54-04:00",
+      "created": "2023-09-02T11:04:54-04:00"
+    },
+    "src/components/Footer.astro": {
+      "modified": "2026-09-29T20:17:10-04:00",
+      "created": "2026-07-25T11:43:05-04:00"
+    },
+    "src/components/Head.astro": {
+      "modified": "2026-09-29T20:17:10-04:00",
+      "created": "2024-08-05T07:39:57-04:00"
+    },
+    "src/components/MaintenanceCalculator.astro": {
+      "modified": "2026-09-29T21:01:15-04:00",
+      "created": "2026-09-29T21:01:15-04:00"
+    },
+    "src/content.config.ts": {
+      "modified": "2026-05-17T18:51:54-04:00",
+      "created": "2026-05-17T18:51:54-04:00"
+    },
+    "src/content/config.ts": {
+      "modified": "2026-05-17T18:51:54-04:00",
+      "created": "2023-09-02T11:04:54-04:00"
+    },
+    "src/content/docs/guides/01-gettingstarted.md": {
+      "modified": "2026-09-29T12:52:28-04:00",
+      "created": "2023-09-02T12:23:39-04:00"
+    },
+    "src/content/docs/guides/agentic/01-agentic-ai-lakehouse.md": {
+      "modified": "2026-09-29T12:52:28-04:00",
+      "created": "2026-05-17T18:15:28-04:00"
+    },
+    "src/content/docs/guides/computer science/25-00-computer-science.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/25-01-design-patterns.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/25-02-data-structures.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/25-03-algorithms.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/25-04-functional-prog.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/25-05-concurrency.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/25-06-frontend-architecture.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/25-07-backend-architecture.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/25-08-memory-management.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/computer science/26-00-regex.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/example.md": {
+      "modified": "2023-09-02T12:23:39-04:00",
+      "created": "2023-09-02T11:04:54-04:00"
+    },
+    "src/content/docs/guides/foundational concepts/01-data.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:25:11-04:00"
+    },
+    "src/content/docs/guides/foundational concepts/02-databases.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:25:11-04:00"
+    },
+    "src/content/docs/guides/foundational concepts/03-datawarehouses.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:25:11-04:00"
+    },
+    "src/content/docs/guides/foundational concepts/04-datalakes.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-10-21T23:25:11-04:00"
+    },
+    "src/content/docs/guides/foundational concepts/05-datalakehouses.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:25:11-04:00"
+    },
+    "src/content/docs/guides/foundational concepts/06-distributed-systems.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:25:11-04:00"
+    },
+    "src/content/docs/guides/ingestion/01-principles-of-ingestion.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T12:09:01-04:00"
+    },
+    "src/content/docs/guides/java/27-00-JVM.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/java/27-01-Java-spring.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/migration/01-hadooptocloud.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T17:46:14-04:00"
+    },
+    "src/content/docs/guides/migration/02-icebergmigration.md": {
+      "modified": "2026-09-29T20:23:12-04:00",
+      "created": "2023-09-02T17:46:14-04:00"
+    },
+    "src/content/docs/guides/modeling/01-data-modeling-basics.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T20:50:42-04:00"
+    },
+    "src/content/docs/guides/modeling/02-design.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T20:50:42-04:00"
+    },
+    "src/content/docs/guides/modeling/03-normalization.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T20:50:42-04:00"
+    },
+    "src/content/docs/guides/modeling/04-relationships.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T20:50:42-04:00"
+    },
+    "src/content/docs/guides/modeling/05-types.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T20:50:42-04:00"
+    },
+    "src/content/docs/guides/modeling/06-scd.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T20:50:42-04:00"
+    },
+    "src/content/docs/guides/optimization/01-clustering.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T17:21:53-04:00"
+    },
+    "src/content/docs/guides/optimization/02-partitioning.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T17:46:14-04:00"
+    },
+    "src/content/docs/guides/optimization/03-compaction.md": {
+      "modified": "2026-09-29T21:01:15-04:00",
+      "created": "2023-09-02T17:46:14-04:00"
+    },
+    "src/content/docs/guides/optimization/04-compression.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T17:46:14-04:00"
+    },
+    "src/content/docs/guides/optimization/05-expire-snapshots.md": {
+      "modified": "2026-09-29T21:01:15-04:00",
+      "created": "2026-09-29T20:23:12-04:00"
+    },
+    "src/content/docs/guides/python/15-00-python.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T22:40:16-04:00"
+    },
+    "src/content/docs/guides/python/15-01-advanced-python.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T22:40:16-04:00"
+    },
+    "src/content/docs/guides/python/15-02-virtual-environments.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T22:40:16-04:00"
+    },
+    "src/content/docs/guides/python/15-03-backend-python.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-21T22:40:16-04:00"
+    },
+    "src/content/docs/guides/python/16-python-tricks.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-10-21T22:40:16-04:00"
+    },
+    "src/content/docs/guides/quality/01-data-quality-checks.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T12:09:01-04:00"
+    },
+    "src/content/docs/guides/querying/01-ansi-sql.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-02T20:28:44-07:00"
+    },
+    "src/content/docs/guides/security/01-access-controls.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T17:46:14-04:00"
+    },
+    "src/content/docs/guides/security/02-encryption.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T17:46:14-04:00"
+    },
+    "src/content/docs/guides/security/03-hardeletes.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T17:46:14-04:00"
+    },
+    "src/content/docs/guides/tooling/01-Apache-Spark.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-16T10:40:24-04:00"
+    },
+    "src/content/docs/guides/tooling/02-Apache-Flink.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-16T10:40:24-04:00"
+    },
+    "src/content/docs/guides/tooling/03-Apache-Kafka.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-16T10:40:24-04:00"
+    },
+    "src/content/docs/guides/tooling/04-Dremio.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-16T10:40:24-04:00"
+    },
+    "src/content/docs/guides/tooling/05-Pandas-Polars.md": {
+      "modified": "2026-09-29T20:18:19-04:00",
+      "created": "2023-10-16T15:52:18-04:00"
+    },
+    "src/content/docs/guides/tooling/22-00-docker.md": {
+      "modified": "2026-08-30T22:19:23-04:00",
+      "created": "2023-10-21T23:27:29-04:00"
+    },
+    "src/content/docs/guides/transfer/01-jdbc-odbc-arrow-flight.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T12:09:01-04:00"
+    },
+    "src/content/docs/index.mdx": {
+      "modified": "2026-09-29T21:01:15-04:00",
+      "created": "2023-09-02T11:04:54-04:00"
+    },
+    "src/content/docs/other/01-big_data_glossary.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T12:09:01-04:00"
+    },
+    "src/content/docs/other/02-video-library.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-03T12:09:01-04:00"
+    },
+    "src/content/docs/other/big_data_glossary.md": {
+      "modified": "2023-09-03T12:09:01-04:00",
+      "created": "2023-09-03T09:12:49-04:00"
+    },
+    "src/content/docs/reference/01-datalakehouse.md": {
+      "modified": "2026-09-29T12:52:28-04:00",
+      "created": "2023-09-02T12:23:39-04:00"
+    },
+    "src/content/docs/reference/01a-lakehouse-vs-warehouse.md": {
+      "modified": "2026-09-29T12:52:28-04:00",
+      "created": "2026-05-17T20:26:32-04:00"
+    },
+    "src/content/docs/reference/02-fileformats.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T12:23:39-04:00"
+    },
+    "src/content/docs/reference/03-tableformat.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T12:23:39-04:00"
+    },
+    "src/content/docs/reference/04-datacatalogs.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T12:23:39-04:00"
+    },
+    "src/content/docs/reference/05-queryengines.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T12:23:39-04:00"
+    },
+    "src/content/docs/reference/06-datalakehousestorage.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-02T16:33:15-04:00"
+    },
+    "src/content/docs/reference/07-datamesh.md": {
+      "modified": "2023-09-05T16:01:12-04:00",
+      "created": "2023-09-02T22:04:02-04:00"
+    },
+    "src/content/docs/reference/07-python.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-05T16:01:12-04:00"
+    },
+    "src/content/docs/reference/08-python.md": {
+      "modified": "2023-09-05T16:01:12-04:00",
+      "created": "2023-09-02T22:27:20-04:00"
+    },
+    "src/content/docs/reference/08-sql.md": {
+      "modified": "2026-05-17T18:15:28-04:00",
+      "created": "2023-09-05T16:01:12-04:00"
+    },
+    "src/content/docs/reference/09-create-iceberg-table.md": {
+      "modified": "2026-09-29T20:23:12-04:00",
+      "created": "2026-09-29T20:23:12-04:00"
+    },
+    "src/content/docs/reference/09-sql.md": {
+      "modified": "2023-09-05T16:01:12-04:00",
+      "created": "2023-09-03T09:12:49-04:00"
+    },
+    "src/content/docs/reference/example.md": {
+      "modified": "2023-09-02T12:23:39-04:00",
+      "created": "2023-09-02T11:04:54-04:00"
+    },
+    "src/content/docs/tools/maintenance-calculator.mdx": {
+      "modified": "2026-09-29T21:01:15-04:00",
+      "created": "2026-09-29T21:01:15-04:00"
+    },
+    "src/data/books.json": {
+      "modified": "2026-09-29T20:50:51-04:00",
+      "created": "2026-08-29T13:59:00-04:00"
+    },
+    "src/env.d.ts": {
+      "modified": "2023-09-02T11:04:54-04:00",
+      "created": "2023-09-02T11:04:54-04:00"
+    },
+    "src/lib/git-dates.mjs": {
+      "modified": "2026-09-29T21:01:15-04:00",
+      "created": "2026-09-29T21:01:15-04:00"
+    },
+    "src/pages/books.astro": {
+      "modified": "2026-08-29T13:59:00-04:00",
+      "created": "2026-08-29T13:59:00-04:00"
+    },
+    "src/styles/custom.css": {
+      "modified": "2026-05-17T19:07:52-04:00",
+      "created": "2026-05-17T19:07:52-04:00"
+    }
+  }
+}
