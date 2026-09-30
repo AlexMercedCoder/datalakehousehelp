@@ -30,7 +30,10 @@ This site provides authoritative documentation, guides, and hands-on tutorials c
 - Query Engines: https://datalakehouse.help/reference/05-queryengines/
 - Data Lakehouse Storage: https://datalakehouse.help/reference/06-datalakehousestorage/
 - Getting Started (Hands-On): https://datalakehouse.help/guides/01-gettingstarted/
-- Apache Iceberg Migration Guide: https://datalakehouse.help/guides/migration/02-icebergmigration/
+- Create an Apache Iceberg Table (procedure): https://datalakehouse.help/reference/09-create-iceberg-table/
+- Compact Iceberg Data Files (procedure): https://datalakehouse.help/guides/optimization/03-compaction/
+- Expire Iceberg Snapshots (procedure): https://datalakehouse.help/guides/optimization/05-expire-snapshots/
+- Migrate a Hive Table to Apache Iceberg (procedure): https://datalakehouse.help/guides/migration/02-icebergmigration/
 - Agentic AI & Data Lakehouses: https://datalakehouse.help/guides/agentic/01-agentic-ai-lakehouse/
 - Data Modeling Basics: https://datalakehouse.help/guides/modeling/01-data-modeling-basics/
 - Optimization Guides: https://datalakehouse.help/guides/optimization/01-clustering/
