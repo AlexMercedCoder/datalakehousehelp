@@ -1,6 +1,34 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
+import { existsSync, readdirSync } from 'node:fs';
+import { latestModified } from './src/lib/git-dates.mjs';
+
+// Source file behind a Starlight URL, for git-derived sitemap <lastmod>.
+// Starlight slugifies file paths (lower case, spaces to hyphens), so match
+// against a slugified index of the docs folder rather than guessing names.
+const DOCS = 'src/content/docs';
+const slugify = (p) => p.toLowerCase().replace(/\s+/g, '-').replace(/\.(md|mdx)$/, '');
+const DOC_BY_PATH = {};
+(function walk(dir) {
+	for (const e of readdirSync(dir, { withFileTypes: true })) {
+		const full = `${dir}/${e.name}`;
+		if (e.isDirectory()) walk(full);
+		else if (/\.(md|mdx)$/.test(e.name)) {
+			const rel = slugify(full.slice(DOCS.length + 1)).replace(/(^|\/)index$/, '');
+			DOC_BY_PATH[`/${rel}${rel ? '/' : ''}`] = full;
+		}
+	}
+})(DOCS);
+const PAGE_SOURCES = { '/books/': ['src/pages/books.astro', 'src/data/books.json'] };
+function sourcesFor(pathname) {
+	const path = pathname.endsWith('/') ? pathname : `${pathname}/`;
+	if (PAGE_SOURCES[path]) return PAGE_SOURCES[path].filter((f) => existsSync(f));
+	const doc = DOC_BY_PATH[path];
+	if (!doc) return null;
+	// The calculator's logic lives in a component, not the MDX file.
+	return path === '/tools/maintenance-calculator/' ? [doc, 'src/components/MaintenanceCalculator.astro'] : [doc];
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,6 +55,10 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					items: [{ autogenerate: { directory: 'guides' } }],
+				},
+				{
+					label: 'Tools',
+					items: [{ autogenerate: { directory: 'tools' } }],
 				},
 				{
 					label: 'Agentic AI',
@@ -144,8 +176,12 @@ export default defineConfig({
 			  ],
 		}),
 		sitemap({
+			// lastmod is the last commit that touched the page's source, from git
+			// (or the committed snapshot on a shallow clone). No source, no lastmod.
 			serialize(item) {
-				item.lastmod = new Date();
+				const sources = sourcesFor(new URL(item.url).pathname);
+				const lastmod = sources && latestModified(sources);
+				if (lastmod) item.lastmod = new Date(lastmod).toISOString();
 				return item;
 			},
 		}),
