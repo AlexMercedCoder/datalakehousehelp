@@ -7,7 +7,7 @@ export default defineConfig({
 	site: 'https://datalakehouse.help',
 	integrations: [
 		starlight({
-			title: 'DataLakehouse.help – Data Lakehouse & Apache Iceberg Guides',
+			title: 'DataLakehouse.help',
 			favicon: '/favicon.ico',
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/developer-advocacy-dremio/quick-guides-from-dremio' },
@@ -68,23 +68,8 @@ export default defineConfig({
 					href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap',
 				  },
 				},
-				// Google Analytics
-				{
-				  tag: 'script',
-				  attrs: {
-					async: true,
-					src: 'https://www.googletagmanager.com/gtag/js?id=G-DQMSHK8YQM',
-				  },
-				},
-				{
-				  tag: 'script',
-				  content: `
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					gtag('config', 'G-DQMSHK8YQM');
-				  `,
-				},
+				// Google Analytics and the Person JSON-LD come from network/network-head.html,
+				// injected by src/components/Head.astro.
 				// Open Graph global defaults
 				{
 				  tag: 'meta',
@@ -113,10 +98,6 @@ export default defineConfig({
 				},
 				{
 				  tag: 'meta',
-				  attrs: { name: 'twitter:site', content: '@alexmercedcoder' },
-				},
-				{
-				  tag: 'meta',
 				  attrs: { name: 'twitter:creator', content: '@alexmercedcoder' },
 				},
 				{
@@ -131,7 +112,7 @@ export default defineConfig({
 					content: 'data lakehouse, apache iceberg, agentic ai, data engineering, table format, apache hudi, delta lake, dremio, data catalog, open lakehouse',
 				  },
 				},
-				// Global JSON-LD: WebSite + Person
+				// Global JSON-LD: WebSite + Organization (Person comes from the network head)
 				{
 				  tag: 'script',
 				  attrs: { type: 'application/ld+json' },
@@ -146,28 +127,6 @@ export default defineConfig({
 						"description": "Open technical reference for data lakehouse architecture, Apache Iceberg table formats, and agentic AI data patterns.",
 						"inLanguage": "en-US",
 						"publisher": { "@id": "https://alexmerced.com/#alexmerced" }
-					  },
-					  {
-						"@type": "Person",
-						"@id": "https://alexmerced.com/#alexmerced",
-						"name": "Alex Merced",
-						"url": "https://alexmerced.com",
-						"jobTitle": "Head of Developer Relations",
-						"worksFor": {
-						  "@type": "Organization",
-						  "name": "Dremio",
-						  "url": "https://www.dremio.com"
-						},
-						"sameAs": [
-						  "https://branding.alexmerced.com",
-						  "https://books.alexmerced.com",
-						  "https://alexmercedcoder.dev",
-						  "https://www.linkedin.com/in/alexmerced/",
-						  "https://twitter.com/alexmercedcoder",
-						  "https://www.dremio.com/blog/author/alex-merced/",
-						  "https://alexmerceddata.com",
-						  "https://www.youtube.com/@alexmercedcoder"
-						]
 					  },
 					  {
 						"@type": "Organization",

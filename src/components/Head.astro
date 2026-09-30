@@ -1,5 +1,7 @@
 ---
 import Default from '@astrojs/starlight/components/Head.astro';
+import networkHead from '../../network/network-head.html?raw';
+import network from '../../network/network.json';
 
 const route = Astro.locals.starlightRoute;
 const entry = route?.entry;
@@ -44,6 +46,8 @@ const articleLd = entry && !isSplash ? {
 ---
 
 <Default {...Astro.props}><slot /></Default>
+<Fragment set:html={networkHead} />
+{network.twitterSite && <meta name="twitter:site" content={network.twitterSite} />}
 {!isSplash && (
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
 )}

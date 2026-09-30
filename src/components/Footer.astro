@@ -1,38 +1,39 @@
 ---
 import Default from '@astrojs/starlight/components/Footer.astro';
+import network from '../../network/network.json';
+
+const { footer, cta } = network;
 ---
 
 <Default {...Astro.props} />
+{cta && (
+	<section class="network-cta" aria-label={cta.heading}>
+		<p class="network-cta__heading">{cta.heading}</p>
+		<ul class="network-cta__links">
+			{cta.links.map((link) => (
+				<li>
+					<a href={link.url} data-network-event={link.event}>{link.label}</a>
+				</li>
+			))}
+		</ul>
+	</section>
+)}
 <footer class="site-footer-links">
-	<p>
-		Part of the Alex Merced network:
-		<a href="https://alexmerced.com">AlexMerced.com</a> ·
-		<a href="https://whoisalexmerced.com">WhoIsAlexMerced.com</a> ·
-		<a href="https://alexmercedmedia.com">AlexMercedMedia.com</a> ·
-		<a href="https://books.alexmerced.com">Books by Alex Merced</a> ·
-		<a href="https://branding.alexmerced.com">Branding.AlexMerced.com</a> ·
-		<a href="https://alexmercedcoder.dev">AlexMercedCoder.dev</a> ·
-		<a href="https://www.alexmercedai.com">AlexMercedAI.com</a> ·
-		<a href="https://alexmerceddata.com">AlexMercedData.com</a> ·
-		<a href="https://resources.alexmerced.com">Resources.AlexMerced.com</a> ·
-		<a href="https://opendatalakehouse.com">OpenDataLakehouse.com</a> ·
-		<a href="https://openlakehouse.alexmerced.com">OpenLakehouse.AlexMerced.com</a> ·
-		<a href="https://semanticlakehouse.com">SemanticLakehouse.com</a> ·
-		<a href="https://agenticlakehouse.com">AgenticLakehouse.com</a> ·
-		<a href="https://agenticanalyticsnow.com">AgenticAnalyticsNow.com</a> ·
-		<a href="https://openagenticplatform.com">OpenAgenticPlatform.com</a> ·
-		<a href="https://dataengnr.com">DataEngnr.com</a> ·
-		<a href="https://dataaiwiki.com">DataAIWiki.com</a> ·
-		<a href="https://iceberglakehouse.com">IcebergLakehouse.com</a> ·
-		<a href="https://datalakehousehub.com">DataLakehouseHub.com</a> ·
-		<a href="https://tuts.alexmercedcoder.dev">Tuts.AlexMercedCoder.dev</a> ·
-		<a href="https://weekofdata.com">WeekOfData.com</a> ·
-		<a href="https://alexmerced.blog">AlexMerced.blog</a> ·
-		<a href="https://ingestthis.com">IngestThis.com</a> ·
-		<a href="https://grokoverflow.com">GrokOverflow.com</a> ·
-		<a href="https://alexmercedlibertarian.com">AlexMercedLibertarian.com</a> ·
-		<a href="https://alexmercedmusic.com">AlexMercedMusic.com</a> ·
-		<a href="https://d6storyteller.alexmerced.com">D6Storyteller.AlexMerced.com</a>
+	{footer.groups.map((group) => (
+		<div class="site-footer-group">
+			<p class="site-footer-group__title">{group.title}</p>
+			<p>
+				{group.links.map((link, i) => (
+					<Fragment>
+						{i > 0 && ' · '}
+						<a href={link.url}>{link.title}</a>
+					</Fragment>
+				))}
+			</p>
+		</div>
+	))}
+	<p class="site-footer-all">
+		<a href={footer.allSitesUrl}>{footer.allSitesLabel}</a>
 	</p>
 	<p class="site-footer-newsletter">
 		Two free weekly newsletters: an AI newsletter on Thursdays and an Apache lakehouse newsletter on Fridays.
@@ -40,6 +41,33 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 	</p>
 </footer>
 <style>
+	.network-cta {
+		margin-top: 2rem;
+		padding: 1.25rem 1rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		background: var(--sl-color-gray-6);
+		text-align: center;
+	}
+	.network-cta__heading {
+		margin: 0 0 0.75rem;
+		font-weight: 600;
+		font-size: var(--sl-text-lg);
+		color: var(--sl-color-white);
+	}
+	.network-cta__links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem 1.25rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.network-cta__links a {
+		color: var(--sl-color-text-accent);
+		font-weight: 500;
+	}
 	.site-footer-links {
 		padding: 1rem 0 2rem;
 		text-align: center;
@@ -48,6 +76,19 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 	}
 	.site-footer-links a {
 		color: var(--sl-color-text-accent);
+	}
+	.site-footer-links p {
+		margin: 0;
+	}
+	.site-footer-group {
+		margin-bottom: 0.75rem;
+	}
+	.site-footer-group__title {
+		font-weight: 600;
+		color: var(--sl-color-gray-2);
+	}
+	.site-footer-all {
+		margin-top: 0.5rem;
 	}
 	.site-footer-newsletter {
 		margin-top: 0.5rem;
