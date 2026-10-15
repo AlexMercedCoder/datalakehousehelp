@@ -1,6 +1,6 @@
 ---
 title: "Dremio"
-description: "A Reference on Dremio"
+description: "How Dremio works and how to start with it: coordinator, executors and reflections, then a Dremio Cloud walkthrough to create an Iceberg table and speed queries."
 ---
 
 #### Dremio and its Architecture

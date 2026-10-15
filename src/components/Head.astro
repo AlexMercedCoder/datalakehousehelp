@@ -2,6 +2,7 @@
 import Default from '@astrojs/starlight/components/Head.astro';
 import networkHead from '../../network/network-head.html?raw';
 import network from '../../network/network.json';
+import { fileDates } from '../lib/git-dates.mjs';
 
 const route = Astro.locals.starlightRoute;
 const entry = route?.entry;
@@ -34,15 +35,31 @@ const breadcrumbLd = {
   })),
 };
 
-const articleLd = entry && !isSplash ? {
+// Real content dates for the doc's source file, from src/data/git-dates.json.
+const dates = entry?.filePath ? fileDates(entry.filePath) : null;
+
+// Docs are articles; a page with no source doc (the generated /books/ list)
+// is a collection page.
+const articleLd = entry && !isSplash ? (dates ? {
   '@context': 'https://schema.org',
   '@type': 'TechArticle',
+  ...(dates.created ? { datePublished: dates.created } : {}),
+  ...(dates.modified ? { dateModified: dates.modified } : {}),
   headline: entry.data.title,
   description: entry.data.description ?? undefined,
   mainEntityOfPage: canonical,
   author: { '@id': 'https://alexmerced.com/#alexmerced' },
   publisher: { '@id': 'https://alexmerced.com/#alexmerced' },
-} : null;
+} : {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: entry.data.title,
+  description: entry.data.description ?? undefined,
+  mainEntityOfPage: canonical,
+  url: canonical,
+  author: { '@id': 'https://alexmerced.com/#alexmerced' },
+  publisher: { '@id': 'https://alexmerced.com/#alexmerced' },
+}) : null;
 ---
 
 <Default {...Astro.props}><slot /></Default>

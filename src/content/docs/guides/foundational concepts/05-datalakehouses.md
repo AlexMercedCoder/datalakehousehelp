@@ -1,6 +1,6 @@
 ---
 title: "Key Concept - Data Lakehouses"
-description: "Foundational Concepts in Data Lakehouses"
+description: "What a data lakehouse is and how it joins data lake storage with warehouse features, plus its history, core benefits, and data virtualization and reflections."
 ---
 
 ## Data Lakehouses

@@ -1,6 +1,6 @@
 ---
 title: "Apache Kafka"
-description: "A Reference on Apache Kafka"
+description: "How Apache Kafka works and how to use it: producers, brokers, topics, partitions and consumer groups, CLI commands, and Python examples with confluent-kafka."
 ---
 
 #### Apache Kafka and its Architecture

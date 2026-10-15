@@ -1,6 +1,6 @@
 ---
 title: "Key Concept - Distributed Systems"
-description: "Foundational Concept of Distributed Systems"
+description: "How distributed data processing works: what these systems solve, MapReduce, Spark and Dremio architectures, and eight performance mistakes such as data skew."
 ---
 
 ## Distributed Computing Systems

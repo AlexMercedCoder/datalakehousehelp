@@ -1,6 +1,6 @@
 ---
 title: "Migrate a Hive Table to Apache Iceberg"
-description: "A runnable procedure for moving a Hive table to Apache Iceberg in Spark SQL with the snapshot, migrate, and add_files procedures, including the risks of in-place migration and checks against the metadata tables."
+description: "How to move a Hive table to Apache Iceberg in Spark SQL without rewriting data, choosing between the snapshot, migrate and add_files procedures safely."
 ---
 
 Iceberg can adopt the Parquet, ORC, or Avro files a Hive table already has, so moving to Iceberg does not require rewriting data. Spark ships three procedures for this, and they behave very differently. Pick the right one before you run anything.

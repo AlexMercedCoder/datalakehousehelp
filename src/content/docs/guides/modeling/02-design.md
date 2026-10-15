@@ -1,6 +1,6 @@
 ---
 title: "Data Model Design"
-description: "Discussing the basics of designing a data model"
+description: "How to design a data model by choosing the right entities, attributes, relationships and keys, with best practices, common mistakes, and ASCII ERD examples."
 ---
 
 Designing data models is akin to crafting a map that guides data organization, relationships, and integrity. This page delves into the art of data model design, offering insights into selecting entities, attributes, relationships, and keys, along with best practices to follow and common pitfalls to steer clear of.

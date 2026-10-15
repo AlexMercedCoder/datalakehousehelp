@@ -1,6 +1,6 @@
 ---
 title: "What is a Table Format?"
-description: "Understand data lakehouse table formats — Apache Iceberg, Apache Hudi, and Delta Lake — and how they bring ACID transactions, schema evolution, and time travel to open data lakes."
+description: "What a table format is and how Apache Iceberg, Apache Hudi and Delta Lake add schema evolution, transactions, and batch and streaming support to data lakes."
 ---
 
 - [Video: The Who, What and Why of Data Lakehouse Table Formats](https://www.youtube.com/watch?v=1eEcWopaFqE&pp=ygUhd2hvIHdoYXQgd2h5IHRhYmxlIGZvcm1hdHMgZHJlbWlv)

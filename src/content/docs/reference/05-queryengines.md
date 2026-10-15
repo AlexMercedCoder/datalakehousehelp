@@ -1,6 +1,6 @@
 ---
 title: "What is a Query Engine?"
-description: "Explore how data lakehouse query engines like Dremio, Apache Spark, Apache Flink, and Trino enable high-performance analytics on Apache Iceberg tables and open data lakes."
+description: "What a lakehouse query engine does to turn stored data into insights, with Dremio as the example: data virtualization, reflections and a semantic layer."
 ---
 
 Query engines stand as the driving force behind unlocking the potential of the data lakehouse architecture. These engines play a pivotal role in transforming raw data stored within data lakes into actionable insights, enabling organizations to harness the full value of their data assets. In this section, we explore the significance of query engines in the data lakehouse ecosystem and highlight Dremio as a prime example, showcasing its unique features and contributions.

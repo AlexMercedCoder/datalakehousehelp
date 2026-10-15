@@ -1,6 +1,6 @@
 ---
 title: "Apache Spark"
-description: "A Reference on Apache Spark"
+description: "How Apache Spark works and how to use it: driver, cluster manager and executors, the life of a job, Spark jobs in Scala and Python, and performance practices."
 ---
 
 #### Apache Spark and its Architecture

@@ -1,6 +1,6 @@
 ---
 title: "Docker"
-description: "Reference for using Docker"
+description: "How to use Docker: containers vs virtual machines, writing Dockerfiles with best practices, the docker build command and its flags, and Docker Compose files."
 ---
 
 ## Docker: Containerization Simplified

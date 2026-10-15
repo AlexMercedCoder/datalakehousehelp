@@ -1,6 +1,6 @@
 ---
 title: "Key Concept - Databases"
-description: "Foundational Concepts in Databases"
+description: "What a database is and how it works: tables, schemas, the DBMS, indexes and transactions, plus ten types of database from relational and NoSQL to graph."
 ---
 
 ## Understanding Databases

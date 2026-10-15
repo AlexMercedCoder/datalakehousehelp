@@ -1,6 +1,6 @@
 ---
 title: "Python for Data Lakehouses"
-description: "Learn how Python powers data lakehouse workflows — from PySpark and PyFlink for distributed processing to PyIceberg, DuckDB, and Pandas for querying Apache Iceberg tables."
+description: "How Python fits into data lakehouse work: notebooks, Pandas and Polars dataframes, PySpark and PyFlink for big data, and in-process DuckDB and SQLite3."
 ---
 
 Python, a versatile and dynamic programming language, has revolutionized the landscape of data analytics and plays a pivotal role within the data lakehouse ecosystem. This page delves into Python's significance, its journey to popularity in data analytics, the allure of Python notebooks, prominent dataframe libraries, Big Data processing through PySpark and PyFlink, and the potential of in-process databases like SQLite3 and DuckDB.

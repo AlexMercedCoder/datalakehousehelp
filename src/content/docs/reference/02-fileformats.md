@@ -1,6 +1,6 @@
 ---
 title: "Data Lake File Formats"
-description: "Compare data lake file formats — Parquet, ORC, and Avro — and learn which columnar format powers the best performance in Apache Iceberg and data lakehouse architectures."
+description: "How Parquet, ORC and Avro differ as data lake file formats in storage efficiency, query performance, schema flexibility and compression, and how to choose."
 ---
 
 The choice of file format plays a pivotal role in determining how data is stored, organized, and accessed within a data lake environment. Each file format brings a unique set of characteristics that influence factors such as storage efficiency, query performance, and compatibility. In this section, we delve into the significance of data lake file formats and shed light on the distinctions between popular formats like Parquet, ORC, and Avro.

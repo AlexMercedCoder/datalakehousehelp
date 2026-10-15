@@ -1,6 +1,6 @@
 ---
 title: "Types of Data Models"
-description: "The Basics on Types of Data Models"
+description: "How the Kimball and Inmon data modeling methods differ, with pros, cons and ASCII ERD diagrams, plus other models such as star schema, snowflake and Data Vault."
 ---
 
 In the realm of data modeling, various approaches have emerged to tackle the complexities of organizing and structuring data for effective analysis. This page delves into two prominent types of data models—the Kimball and Inmon methodologies—and provides insights into their characteristics, along with ASCII art ERD diagrams to visually depict each type. Additionally, other types of data models are explored, highlighting their unique attributes, benefits, and drawbacks.

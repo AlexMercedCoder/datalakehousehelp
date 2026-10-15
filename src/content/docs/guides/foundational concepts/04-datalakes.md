@@ -1,6 +1,6 @@
 ---
 title: "Key Concept - Data Lakes"
-description: "Foundational Concepts in Data Lakes"
+description: "What a data lake is and how it stores raw data of any structure, its history from Hadoop to the cloud, and the pros and cons of on-prem vs cloud data lakes."
 ---
 
 ### Data Lakes

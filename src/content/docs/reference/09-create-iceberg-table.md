@@ -1,6 +1,6 @@
 ---
 title: "Create an Apache Iceberg Table with Spark SQL"
-description: "A runnable procedure for creating a partitioned Apache Iceberg table in Spark SQL with hidden partition transforms, loading rows, and checking the result in the metadata tables."
+description: "How to create a partitioned Apache Iceberg table in Spark SQL with hidden partition transforms, load rows, and confirm the table is healthy in its metadata."
 ---
 
 This procedure creates a partitioned Apache Iceberg table from the `spark-sql` shell, writes a few rows, and confirms the table is healthy by reading its metadata tables. It uses a local, path-based catalog so you can run it on a laptop before pointing the same SQL at a production catalog.

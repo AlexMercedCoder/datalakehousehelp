@@ -1,6 +1,6 @@
 ---
 title: "Video Library"
-description: "Curated video playlist covering data lakehouse architecture, Apache Iceberg, Nessie catalog, and agentic AI data engineering — from Subsurface conference talks to hands-on tutorials."
+description: "Video playlists and talks on data lakehouses, Apache Iceberg and Nessie, including Subsurface conference recordings, Gnarly Data Waves, and tutorials."
 ---
 
 ## Data Lakehouses

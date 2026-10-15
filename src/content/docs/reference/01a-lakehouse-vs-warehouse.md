@@ -1,6 +1,6 @@
 ---
 title: "Data Lake vs Data Warehouse vs Data Lakehouse"
-description: "A definitive comparison of data architecture paradigms: Data Lakes, Data Warehouses, and the modern Data Lakehouse. Learn the differences between Open and Closed lakehouses."
+description: "How data lakes, data warehouses and data lakehouses differ in data types, schema and compute, and what separates an open lakehouse from a closed one."
 ---
 
 Choosing the right data architecture is one of the most critical decisions an organization makes. Over the past two decades, the dominant paradigm has shifted from data warehouses, to data lakes, and now to the **data lakehouse**. 

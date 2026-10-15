@@ -1,6 +1,6 @@
 ---
 title: "File Compression"
-description: "A guide to file compression algorithms and performance trade-offs."
+description: "How file compression cuts lakehouse storage and transfer costs, comparing Gzip, Snappy and LZ4, with tips on balancing compression ratio against speed."
 ---
 
 File compression stands as a pivotal strategy for enhancing storage efficiency, reducing data transfer costs, and optimizing query performance. By compressing data files, organizations can effectively minimize storage requirements while maintaining data integrity. This documentation page delves into the concept of file compression, its benefits, popular compression algorithms, best practices for implementation, and key mistakes to avoid.

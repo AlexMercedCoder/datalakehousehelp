@@ -1,6 +1,6 @@
 ---
 title: "SQL for Data Lakehouses"
-description: "Understand how SQL powers analytics and data engineering in data lakehouses — from traditional databases to Apache Iceberg table queries using engines like Dremio, Spark, and Trino."
+description: "What SQL is and how it is used in analytics and data engineering, from its history to joins, window functions and ETL, across warehouses and lakehouse engines."
 ---
 
 SQL, short for Structured Query Language, is a cornerstone of modern data management and analysis. This domain-specific language empowers users to interact with relational databases, data warehouses, and data lakehouse query engines in a standardized and efficient manner. This documentation page provides an in-depth exploration of SQL, its history, its significance in data analytics and data engineering, and its applications in various data processing environments.

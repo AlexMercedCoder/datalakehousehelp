@@ -1,6 +1,6 @@
 ---
 title: "Hands-On With Data Lakehouses"
-description: "Hands-on tutorials for building data lakehouses with Apache Iceberg, Dremio, Nessie, and MinIO — covering data ingestion, querying, BI dashboards, and real-world lakehouse architecture patterns."
+description: "Where to start building a data lakehouse on your laptop: tutorials using Dremio, Nessie, Iceberg, MinIO and Airbyte, plus setup tips and BI dashboard guides."
 ---
 
 Choose a task before opening a tutorial. These external walkthroughs use different product versions, so confirm the versions and commands on the linked page against your environment. The three starting links below were reachable on September 29, 2026; their instructions have not been revalidated here.

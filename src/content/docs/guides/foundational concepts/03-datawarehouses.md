@@ -1,6 +1,6 @@
 ---
 title: "Key Concept - Data Warehouses"
-description: "Foundational Concepts in Data Warehouses"
+description: "What a data warehouse is and how it differs from a transactional database, plus the move from on-premises to cloud warehouses with the pros and cons of each."
 ---
 
 ## Data Warehouses

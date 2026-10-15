@@ -1,6 +1,6 @@
 ---
 title: "ANSI SQL"
-description: "A Guide to Writing ANSI SQL"
+description: "How to write ANSI SQL queries: SELECT, WHERE with LIKE and BETWEEN, aggregations, joins, UNION, INTERSECT and EXCEPT, and window functions, each with examples."
 ---
 
 ## ANSI SQL: A Foundation for Database Querying

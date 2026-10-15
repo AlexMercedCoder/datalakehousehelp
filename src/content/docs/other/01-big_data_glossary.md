@@ -1,6 +1,6 @@
 ---
 title: "Glossary"
-description: "100+ definitions of key big data and data lakehouse terms — from ACID and Apache Iceberg to ZeroETL, semantic layers, and agentic AI data patterns."
+description: "Definitions of common big data and lakehouse terms, from MPP, Hadoop and Hive to table formats, data catalogs, semantic layers, RBAC and ABAC."
 ---
 
 Welcome to the Big Data Glossary, your guide to understanding key terms in the realm of data management, analytics, and technology. Whether you're a data professional or a curious learner, this glossary provides concise explanations of essential concepts within the big data ecosystem.

@@ -1,6 +1,6 @@
 ---
 title: "Normalization and Denormalization"
-description: "Discussing the basics of normalization and denormalization"
+description: "What normalization and denormalization are and when to use each, with their pros and cons, a worked table example, 1NF, 2NF and 3NF, and mistakes to avoid."
 ---
 
 Normalization and denormalization are strategies that shape the structure of relational databases. This page delves into the concepts of normalization and denormalization, discussing their advantages and disadvantages, providing an example using ASCII art tables, sharing best practices, and highlighting common pitfalls to avoid.

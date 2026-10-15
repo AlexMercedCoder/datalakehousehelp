@@ -1,6 +1,6 @@
 ---
 title: "What is a Data Lakehouse?"
-description: "Learn what a data lakehouse is, how it unifies data lake scalability with data warehouse analytics, and why Apache Iceberg is the leading open table format powering modern lakehouse architectures."
+description: "What a data lakehouse is: one repository that pairs data lake scale and cost with warehouse-style analytics, and the problems it solves, like data silos."
 ---
 
 - [Video: What is a Data Lakehouse?]()

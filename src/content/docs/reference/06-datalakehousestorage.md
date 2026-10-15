@@ -1,6 +1,6 @@
 ---
 title: "What are data lakehouse storage solutions?"
-description: "Compare data lakehouse storage solutions — HDFS, cloud object storage (S3, Azure Blob, GCS), and on-premises alternatives — and choose the right foundation for your Apache Iceberg lakehouse."
+description: "How HDFS and object storage like Amazon S3, Azure Blob Storage and Google Cloud Storage compare for a lakehouse, and the trade-offs of cloud vs on-prem."
 ---
 
 The choice of storage solution lays the foundation for how data is stored, managed, and accessed. Two prominent options, Hadoop Distributed File System (HDFS) and object storage, each offer distinct advantages and considerations. Furthermore, the decision to deploy storage in the cloud or on-premises introduces a new layer of complexity. In this section, we delve into these storage solutions and explore their pros and cons, along with insights into choosing the right approach for your data lakehouse.

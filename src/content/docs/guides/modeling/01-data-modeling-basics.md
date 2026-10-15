@@ -1,6 +1,6 @@
 ---
 title: "What is Data Modeling?"
-description: "What is Data Modeling"
+description: "What data modeling is and why it matters, with the key topics to learn: entities, attributes, relationships, keys, normalization, constraints and model types."
 ---
 
 Data modeling is a foundational practice in the realm of data management, providing a structured framework for representing and organizing data. This page delves into the essence of data modeling, why it holds significance, and highlights key topics essential for creating comprehensive and effective data models.

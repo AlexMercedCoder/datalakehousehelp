@@ -1,6 +1,6 @@
 ---
 title: "Key Concept - Data"
-description: "Foundational Concepts in Data"
+description: "What data is and why it matters: structured, unstructured and semi-structured types, quantitative and qualitative data, and where it is stored, like data lakes."
 ---
 
 ## Understanding Data

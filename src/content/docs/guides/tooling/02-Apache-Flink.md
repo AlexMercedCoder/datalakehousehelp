@@ -1,6 +1,6 @@
 ---
 title: "Apache Flink"
-description: "A Reference on Apache Flink"
+description: "How Apache Flink works and how to use it: JobManager, TaskManager and checkpointing, the life of a job, Flink jobs in Java and Python, and best practices."
 ---
 
 #### Apache Flink and its Architecture

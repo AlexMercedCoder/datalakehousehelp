@@ -1,6 +1,6 @@
 ---
 title: "Compact Apache Iceberg Data Files"
-description: "A runnable procedure for compacting small files in an Apache Iceberg table with the rewrite_data_files Spark procedure, including bin-pack, sort, and filtered rewrites, with checks against the metadata tables."
+description: "How to compact small files in an Apache Iceberg table with the rewrite_data_files Spark procedure, using bin-pack, sort and filtered rewrites, then verify it."
 ---
 
 Every streaming micro-batch or small `INSERT` adds data files to an Iceberg table. Many small files mean more manifest entries to plan over and more file opens per query. Compaction rewrites those files into fewer, larger ones with the `rewrite_data_files` procedure. The table's data does not change; only its layout does.

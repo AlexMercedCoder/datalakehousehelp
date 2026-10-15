@@ -1,6 +1,6 @@
 ---
 title: "Expire Apache Iceberg Snapshots"
-description: "A runnable procedure for expiring old Apache Iceberg snapshots with the expire_snapshots Spark procedure, using older_than and retain_last, and checking the result in the snapshots and files metadata tables."
+description: "How to expire old Apache Iceberg snapshots with the expire_snapshots Spark procedure, using older_than and retain_last, then check the metadata tables."
 ---
 
 Every commit to an Iceberg table creates a snapshot, and every snapshot keeps its data files alive for time travel. Left alone, metadata grows with every write and storage keeps files that no current query reads. The `expire_snapshots` procedure removes old snapshots and deletes the files that only those snapshots needed. It never deletes a file that a remaining snapshot still uses.

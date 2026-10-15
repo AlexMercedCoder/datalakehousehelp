@@ -1,6 +1,6 @@
 ---
 title: "Pandas and Polars"
-description: "A Reference on Dataframes, Pandas and Polars"
+description: "How to work with dataframes in Pandas and Polars side by side: reading CSV, JSON and Parquet, basic data validations, filtering rows, and how the two differ."
 ---
 
 #### Dataframes and Dataframe Libraries

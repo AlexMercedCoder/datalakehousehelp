@@ -1,6 +1,6 @@
 ---
 title: "Basics of Data Ingestion"
-description: "The Basics Concepts around ingesting data."
+description: "What data ingestion is and how to choose batch or streaming, with best practices, mistakes to avoid, and open-source tools like Apache NiFi, Kafka and Sqoop."
 ---
 
 
