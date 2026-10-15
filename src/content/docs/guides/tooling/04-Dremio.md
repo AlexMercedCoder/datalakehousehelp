@@ -195,6 +195,8 @@ Dremio's focus on performance optimization and its ability to harness distribute
 
 ## Getting Started with Dremio Cloud
 
+> **Update (October 2026):** The steps below show the original Dremio Cloud setup flow, including its Sonar projects and Dremio Arctic catalog. Dremio Arctic has since become Dremio Catalog, which is built on Apache Polaris, and the setup screens have changed. For current steps, see the [Dremio Cloud documentation](https://docs.dremio.com/dremio-cloud/).
+
 This guide will walk you through the steps to get started with Dremio Cloud, including creating a Sonar project, setting up an Iceberg table, and optimizing queries with data reflections.
 
 - [If you first want to try Dremio on your laptop, follow this tutorial](https://www.dremio.com/blog/intro-to-dremio-nessie-and-apache-iceberg-on-your-laptop/)

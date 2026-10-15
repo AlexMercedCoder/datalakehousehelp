@@ -49,8 +49,10 @@ In conclusion, data catalogs are indispensable in modern data lakehouse environm
 - [Blog: Resources for Learning more about Catalog level versioning (Rollbacks, Branching, Tagging and Multi-Table Txns)](https://dev.to/alexmercedcoder/resources-for-learning-more-about-catalog-level-versioning-with-project-nessie-dremio-arctic-4bcj)
 
 #### Data Catalog/Management Services
-- Dremio Arctic (Nessie Based)
-  - [Docs: Dremio Arctic Docs](https://docs.dremio.com/cloud/arctic/)
+- Dremio Catalog (built on Apache Polaris; formerly Dremio Arctic, which was Nessie-based)
+  - [Docs: Dremio Catalog](https://docs.dremio.com/dremio-cloud/admin/open-catalog/)
+  - Older Dremio Arctic material, kept for history:
+  - [Docs: Dremio Arctic Docs (legacy)](https://docs.dremio.com/cloud/arctic/)
   - [Blog: Multi-Table Transactions on the Lakehouse – Enabled by Dremio Arctic](https://www.dremio.com/blog/multi-table-transactions-on-the-lakehouse-enabled-by-dremio-arctic/)
   - [Blog: Managing Data as Code with Dremio Arctic: Support Machine Learning Experimentation in Your Data Lakehouse](https://www.dremio.com/blog/managing-data-as-code-with-dremio-arctic-support-machine-learning-experimentation-in-your-data-lakehouse/)
   - [Blog: Managing Data as Code with Dremio Arctic – Easily ensure data quality in your data lakehouse](https://www.dremio.com/blog/managing-data-as-code-with-dremio-arctic-easily-ensure-data-quality-in-your-data-lakehouse/)
